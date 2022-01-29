@@ -32,13 +32,13 @@ app.use('/', routes.dreams);
 app.use('/', routes.oauth);
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 app.set('view engine', 'ejs')
 
 
-app.listen(process.env.port || PORT, function() {
+app.listen(PORT, function() {
     console.log(`dreams live on port: ${PORT}`)
 })
 
