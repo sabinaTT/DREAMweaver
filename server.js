@@ -38,11 +38,6 @@ const PORT = 3000;
 app.set('view engine', 'ejs')
 
 
-// app.get('/', (req, res) => {
-//     res.render('index')
-// })
-
-
 app.listen(PORT, function() {
     console.log(`dreams live on http://localhost:${PORT}`)
 })
