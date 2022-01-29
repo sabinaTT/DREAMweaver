@@ -32,7 +32,7 @@ app.use('/', routes.dreams);
 app.use('/', routes.oauth);
 
 
-const PORT = 3000;
+const PORT = 3000 || process.env.port;
 
 
 app.set('view engine', 'ejs')
