@@ -1,7 +1,23 @@
 <%- include ('./partials/header') %>
+<<<<<<< HEAD
 
 <body>
     <h1>We are awesome!!</h1>
 </body>
+=======
+<h1>we are awesome!!!!!!</h1>
+
+<ul>
+	<li>
+	<% if (user) { %>
+		<a href="/logout"><i>trending_flat</i>Log Out</a>
+	<% } else { %>
+		<a href="/auth/google">Login with Google</a>
+	<% } %>
+	</li>
+</ul>
+
+
+>>>>>>> 52a2ef8fc3f9aa43f02db1b2cc53f0e39855a083
 
 <%- include ('./partials/footer') %>
