@@ -24,7 +24,7 @@ const dreamerSchema = new Schema({
     {timestamps: true}
 )
 
-const Dreamer = mongoose.model('Dream', dreamerSchema);
+const Dreamer = mongoose.model('Dreamer', dreamerSchema);
 
 module.exports = {
     Dreamer,

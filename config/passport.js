@@ -1,3 +1,4 @@
+require('dotenv').config();
 const passport = require('passport'); 
 
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
@@ -12,13 +13,13 @@ passport.use(
             callbackURL: process.env.GOOGLE_CALLBACK, 
         },
         function(accessToken, refreshToken, profile, cb){
-            Dreamer.findOne({ googleId: profile.id }, function (err, dreamer) {
+            Dreamer.Dreamer.findOne({ googleId: profile.id }, function (err, dreamer) {
                     if (err) return cb(err);
                     if (dreamer) {
                     return cb(null, dreamer);
                     } else {
                     // we have a new student via OAuth!
-                    const newDreamer = new Dreamer({
+                    const newDreamer = new Dreamer.Dreamer({
                         name: profile.displayName,
                         email: profile.emails[0].value,
                         googleId: profile.id,
@@ -38,7 +39,7 @@ passport.serializeUser(function(dreamer, done){
 });
 
 passport.deserializeUser(function(id, done){
-    Dreamer.findById(id, function(err, dreamer){
+    Dreamer.Dreamer.findById(id, function(err, dreamer){
         done(err, dreamer);
     })
 });

@@ -7,6 +7,7 @@ const session = require('express-session')
 const passport = require('passport')
 
 
+
 const routes = require('./routes');
 const app = express();
 
@@ -27,7 +28,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// app.use('/', routes.dreams)
+app.use('/', routes.dreams);
+app.use('/', routes.oauth);
 
 
 const PORT = 3000;
@@ -36,9 +38,9 @@ const PORT = 3000;
 app.set('view engine', 'ejs')
 
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
+// app.get('/', (req, res) => {
+//     res.render('index')
+// })
 
 
 app.listen(PORT, function() {
