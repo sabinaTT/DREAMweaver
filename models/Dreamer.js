@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const dreamerSchema = new Schema({
     name: String,
+    email: String,
+    googleId: String,
     profile: String,
+    zipCode: Number,
     activeDream: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ActiveDream'
@@ -17,8 +20,12 @@ const dreamerSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
     }],
-    zipCode: Number,
 },
     {timestamps: true}
 )
 
+const Dreamer = mongoose.model('Dream', dreamerSchema);
+
+module.exports = {
+    Dreamer,
+}
