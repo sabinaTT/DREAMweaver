@@ -33,4 +33,13 @@ passport.use(
     )
 );
 
+passport.serializeUser(function(dreamer, done){
+    done(null, dreamer.id);
+});
+
+passport.deserializeUser(function(id, done){
+    Dreamer.findById(id, function(err, dreamer){
+        done(err, dreamer);
+    })
+});
 
