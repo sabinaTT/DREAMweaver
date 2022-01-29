@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 
 mongoose
@@ -13,5 +13,5 @@ mongoose
     })
 
 module.exports = {
-    
+    Dreamer: require('./Dreamer')
 }

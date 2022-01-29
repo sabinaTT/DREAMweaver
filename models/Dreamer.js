@@ -7,15 +7,18 @@ const dreamerSchema = new Schema({
     profile: String,
     activeDream: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Dream'
+        ref: 'ActiveDream'
     },
     inactiveDreams: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Dream'
+        ref: 'InactiveDream'
     }],
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Comment'
     }],
+    zipCode: Number,
+},
+    {timestamps: true}
+)
 
-})
