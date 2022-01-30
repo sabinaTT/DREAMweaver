@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const { Dreamer } = require('.');
 const Schema = mongoose.Schema;
 
-const activeDreamSchema = new Schema ({
+const inactiveDreamSchema = new Schema ({
     Dreamer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Dreamer"
@@ -21,6 +20,6 @@ const activeDreamSchema = new Schema ({
     {timestamps: true}   
 )
 
-const ActiveDream = mongoose.model('ActiveDream', activeDreamSchema);
+const InactiveDream = mongoose.model("InactiveDream", inactiveDreamSchema);
 
-module.exports = ActiveDream;
+module.exports = InactiveDream;

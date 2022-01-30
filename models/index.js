@@ -13,5 +13,5 @@ mongoose
     })
 
 module.exports = {
-    Dreamer: require('./Dreamer')
+    Dreamer: require('./Dreamer'),
 }
