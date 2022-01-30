@@ -13,6 +13,10 @@ const commentSchema = new Schema ({
     ActiveDream: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "ActiveDream"
+    },
+    comment: {
+        type: String,
+        require: true
     }
 },
     {timestamps: true}
