@@ -9,6 +9,11 @@ function index (req, res, next){
     });
 };
 
+function profile (req, res) {
+    res.render('dreamer/profile')
+};
+
 module.exports = {
     index,
+    profile, 
 }
