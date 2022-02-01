@@ -1,14 +1,23 @@
-const DreamerModel = require("../models/Dreamer");
+const db = require("../models");
 
 function index (req, res, next){
-    DreamerModel.find({}, function(err, dreamers){
-    res.render('index', {
-        dreamers, 
-        user: req.user
+    db.Dreamer.find({}, function(err, dreamers){
+        res.render('index', {
+            dreamers, // I don't think we need this 'dreamers'
+            user: req.user
+            });
         });
-    });
+};
+
+function profile (req, res) {
+    db.Dreamer.find({}, function(err, foundDreamer){
+        res.render('dreamer/profile', { 
+            user: req.user
+            });
+        });
 };
 
 module.exports = {
     index,
+    profile, 
 }
