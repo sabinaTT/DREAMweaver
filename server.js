@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config()
 require('./models/index')
 require('./config/passport')
 const express = require('express')

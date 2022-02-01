@@ -13,5 +13,8 @@ mongoose
     })
 
 module.exports = {
-    Dreamer: require('./Dreamer')
+    Dreamer: require('./Dreamer'),
+    ActiveDream: require('./ActiveDream'),
+    InactiveDream: require('./InactiveDream'),
+    Comment: require('./Comment')
 }

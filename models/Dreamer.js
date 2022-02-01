@@ -26,6 +26,4 @@ const dreamerSchema = new Schema({
 
 const Dreamer = mongoose.model('Dreamer', dreamerSchema);
 
-module.exports = {
-    Dreamer,
-}
+module.exports = Dreamer;
