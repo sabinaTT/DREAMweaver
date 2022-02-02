@@ -7,7 +7,7 @@ const ctrl = require('../controllers');
 //router.get('/:id', ctrl.dreamers.showDreamer);
 //router.post('/', ctrl.dreamers.createDreamer);
 router.get('/:id/edit', ctrl.dreamers.edit);
-//router.put(':/id', ctrl.dreamers.update);
+router.put('/:id', ctrl.dreamers.update);
 //router.delete('/:id', ctrl.dreamers.destroy);
 
 //export routes

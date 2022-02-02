@@ -23,7 +23,25 @@ const edit = (req, res) => {
     });
 };
 
+//update
+const update = (req, res) => {
+    db.Dreamer.findOneAndUpdate(
+        {_id: req.params.id},
+        {
+            $set: {
+                ...req.body,
+            },
+        },
+        {new: true,
+        returnOriginal: false},
+        function(err, updatedDreamer) {
+            if(err) res.send(err);
+            res.redirect(`/dreamer/${updatedDreamer._id}`)
+        }
+    )
+}
 
 module.exports = {
     edit,
+    update,
 }
