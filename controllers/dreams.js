@@ -17,7 +17,12 @@ function profile (req, res) {
         });
 };
 
+function about (req, res) {
+    res.render('about')
+};
+
 module.exports = {
     index,
     profile, 
+    about,
 }
