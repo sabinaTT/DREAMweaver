@@ -27,10 +27,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use('/', routes.dreamers)
 app.use('/', routes.dreams);
 app.use('/', routes.oauth);
-app.use('/dreamers', routes.dreamers)
+// app.use('/dreams/', routes.dreams)
+
 
 
 const PORT = process.env.PORT || 3000;
