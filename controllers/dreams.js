@@ -12,6 +12,18 @@ const db=require('../models')
  */
 
 
+//show
+const showDream = (req, res) => {
+    db.ActiveDream.findById(req.params.id)
+        .populate("Dreamer")
+        .exec((err, foundDream) => {
+            if(err) res.send(err);
+
+            const context = {dream: foundDream};
+            res.render("dreams/show", context)
+        })
+}
+
 //new
 const newDream = (req, res) => {
     // console.log("line 17: " + req.params.id)
@@ -53,6 +65,7 @@ const create = (req, res) => {
 
 
 module.exports = {
+    showDream,
     newDream,
     create,
 }
