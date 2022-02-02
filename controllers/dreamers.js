@@ -30,11 +30,14 @@ function index (req, res, next){
             });
     };
 
+// Show: About Page
 function about (req, res) {
     res.render('about')
 };
 
+// Show: How-To page after user is logged in
 function howTo (req, res) {
+    // will need to add function to see if user if indeed logged in in order to make this visible
     res.render('dreamer/how-to')
 };
 
