@@ -3,7 +3,7 @@ const router = require('express').Router();
 const ctrl = require('../controllers');
 
 //routes
-// router.get("/", ctrl.dreams.idx);
+router.get("/", ctrl.dreams.index);
 router.get("/:id/new", ctrl.dreams.newDream);
 router.post("/", ctrl.dreams.create);
 router.get("/:id", ctrl.dreams.showDream);
