@@ -44,7 +44,6 @@ function howTo (req, res) {
 //show
 function showDreamer (req, res) {
     db.Dreamer.findById(req.params.id, function(err, foundDreamer){
-        console.log(req.params.id)
         res.render('dreamer/profile', { 
             user: foundDreamer
             });
@@ -74,7 +73,7 @@ const update = (req, res) => {
         returnOriginal: false},
         function(err, updatedDreamer) {
             if(err) res.send(err);
-            res.redirect(`/dreamer/${updatedDreamer._id}`)
+            res.redirect(`/dreamers/${updatedDreamer._id}`)
         }
     )
 }

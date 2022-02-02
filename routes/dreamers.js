@@ -14,8 +14,8 @@ router.get('/dreamers/:id', ctrl.dreamers.showDreamer);
 //router.get('new', ctrl.dreamers.newDreamer);
 //router.get('/', ctrl.dreamers.showDreamer);
 //router.post('/', ctrl.dreamers.createDreamer);
-router.get('/:id/edit', ctrl.dreamers.edit);
-router.put('/:id', ctrl.dreamers.update);
+router.get('/dreamers/:id/edit', ctrl.dreamers.edit);
+router.put('/dreamers/:id', ctrl.dreamers.update);
 //router.delete('/:id', ctrl.dreamers.destroy);
 
 //export routes
