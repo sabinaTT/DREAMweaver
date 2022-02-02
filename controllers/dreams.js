@@ -31,9 +31,9 @@ function profile (req, res) {
         });
 };
 
-function about (req, res) {
-    res.render('about')
-};
+// function about (req, res) {
+//     res.render('about')
+// };
 
 // function dreams (req, res) {
 //     db.Dreamer.find({}, function(err, dreamers) {
@@ -50,7 +50,7 @@ function howTo (req, res) {
 module.exports = {
     // index,
     profile, 
-    about,
+    // about,
     // dreams,
     howTo,
 }

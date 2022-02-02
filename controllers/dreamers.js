@@ -30,6 +30,10 @@ function index (req, res, next){
             });
     };
 
+function about (req, res) {
+    res.render('about')
+};
+
 //show
 // function showDreamer (req, res) {
 //     db.Dreamer.find({}, function(err, foundDreamer){
@@ -74,4 +78,5 @@ module.exports = {
     edit,
     update,
     dreams,
+    about,
 }

@@ -4,6 +4,7 @@ const ctrl = require('../controllers');
 
 router.get('/', ctrl.dreamers.dreams);
 router.get('/home', ctrl.dreamers.index);
+router.get('/about', ctrl.dreamers.about)
 //router.get('new', ctrl.dreamers.newDreamer);
 //router.get('/', ctrl.dreamers.showDreamer);
 //router.post('/', ctrl.dreamers.createDreamer);
