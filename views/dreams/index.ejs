@@ -1,4 +1,11 @@
 <body>
 <h1>Index.ejs</h1>
 
+<% dreams.forEach(dream => { %>
+    <li>
+        <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
+    </li>
+<% }) %>
+
+
 </body>

@@ -12,9 +12,10 @@ const db=require('../models')
  */
 
 const index = (req, res) => {
-    db.Dreamer.find({}, (err, foundDreams) => {
+    db.ActiveDream.find({}, (err, foundDreams) => {
         if(err) res.send(err);
         const context = { dreams: foundDreams };
+        console.log("line 18: " + foundDreams)
         res.render("dreams/index", context)
     })
 }
