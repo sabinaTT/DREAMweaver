@@ -11,6 +11,15 @@ const db = require('../models');
  * Delete - DELETE - /dreamers/:id  - Functional - Deletes dreamer by id from request
  */
 
+
+function dreams (req, res) {
+        db.Dreamer.find({}, function(err, dreamers) {
+            res.render('dreamer/dreamers', {
+                dreamers
+            })
+        })
+    }
+
 //index: home page, show login etc
 function index (req, res, next){
         db.Dreamer.find({}, function(err, dreamers){
@@ -21,15 +30,25 @@ function index (req, res, next){
             });
     };
 
+// Show: About Page
+function about (req, res) {
+    res.render('about')
+};
+
+// Show: How-To page after user is logged in
+function howTo (req, res) {
+    // will need to add function to see if user if indeed logged in in order to make this visible
+    res.render('dreamer/how-to')
+};
+
 //show
-// function showDreamer (req, res) {
-//     db.Dreamer.find({}, function(err, foundDreamer){
-//         console.log(req.params)
-//         res.render('dreamer/profile', { 
-//             user: req.user
-//             });
-//         });
-// };
+function showDreamer (req, res) {
+    db.Dreamer.findById(req.params.id, function(err, foundDreamer){
+        res.render('dreamer/profile', { 
+            user: foundDreamer
+            });
+        });
+};
 
 //edit
 const edit = (req, res) => {
@@ -54,14 +73,17 @@ const update = (req, res) => {
         returnOriginal: false},
         function(err, updatedDreamer) {
             if(err) res.send(err);
-            res.redirect(`/dreamer/${updatedDreamer._id}`)
+            res.redirect(`/dreamers/${updatedDreamer._id}`)
         }
     )
 }
 
 module.exports = {
     index,
-    // showDreamer,
+    showDreamer,
     edit,
     update,
+    dreams,
+    about,
+    howTo
 }

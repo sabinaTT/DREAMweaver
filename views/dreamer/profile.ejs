@@ -1,13 +1,17 @@
 <%- include ('../partials/header') %>
 
 <body>
-    <a href="/">Home</a>
+    <a href="/home">Home</a>
     <h1>Dreamer Profile</h1>
     <h3>Name</h3>
     <p><%= user.name %></p>
     <h3>Email</h3>
     <p><%= user.email %></p>
-    <a href="/dreamers/<%=user.id%>/edit">Edit</a>
+    <h3>Bio</h3>
+    <p><%= user.profile %></p>
+    <h3>Zip Code</h3>
+    <p><%= user.zipCode %></p>
+    <a href="/dreamers/<%=user._id%>/edit">Edit</a>
 </body>
 
 <%- include ('../partials/footer') %>
