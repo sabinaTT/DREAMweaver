@@ -42,14 +42,14 @@ function howTo (req, res) {
 };
 
 //show
-// function showDreamer (req, res) {
-//     db.Dreamer.find({}, function(err, foundDreamer){
-//         console.log(req.params)
-//         res.render('dreamer/profile', { 
-//             user: req.user
-//             });
-//         });
-// };
+function showDreamer (req, res) {
+    db.Dreamer.findById(req.params.id, function(err, foundDreamer){
+        console.log(req.params.id)
+        res.render('dreamer/profile', { 
+            user: foundDreamer
+            });
+        });
+};
 
 //edit
 const edit = (req, res) => {
@@ -81,7 +81,7 @@ const update = (req, res) => {
 
 module.exports = {
     index,
-    // showDreamer,
+    showDreamer,
     edit,
     update,
     dreams,
