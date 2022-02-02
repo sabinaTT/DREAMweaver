@@ -20,6 +20,18 @@ const index = (req, res) => {
     })
 }
 
+//show
+const showDream = (req, res) => {
+    db.ActiveDream.findById(req.params.id)
+        .populate("Dreamer")
+        .exec((err, foundDream) => {
+            if(err) res.send(err);
+
+            const context = {dream: foundDream};
+            res.render("dreams/show", context)
+        })
+}
+
 //new
 const newDream = (req, res) => {
     // console.log("line 17: " + req.params.id)
@@ -48,20 +60,49 @@ const create = (req, res) => {
             //add created Dream to dreamer's activeDream
             // console.log("line 34: " + createdDream);
             // console.log("line 36: " + foundDreamer)
-            foundDreamer.inactiveDreams.push(createdDream);
+            foundDreamer.activeDreams.push(createdDream);
             //save dreamer changes
             createdDream.save();
-            console.log(createdDream);
+            foundDreamer.save();
+            console.log("foundDreamer post update: " + foundDreamer)
+            console.log("createdDream: " + createdDream);
             res.redirect('/dreams')
         })
     })
 }
+//edit
+const edit = (req, res) => {
+    db.ActiveDream.findById(req.params.id), (err, foundDream) => {
+        if(err) res.send(err);
 
+        const context = {dream: foundDream}
 
+        res.render("dreams/edit", context)
+    }
+}
 
+//update
+const update = (req, res) => {
+    db.ActiveDream.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body
+            },
+        },
+        {new: true},
+        (err, updatedDream) => {
+            if(err) res.send(err);
+            res.redirect(`/dreams/${updatedDream._id}`);
+        }
+    )
+}
 
 module.exports = {
+    showDream,
     index,
     newDream,
     create,
+    edit,
+    update,
 }

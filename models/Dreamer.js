@@ -8,7 +8,7 @@ const dreamerSchema = new Schema({
     googleId: String,
     profile: String,
     zipCode: Number,
-    activeDream: [{
+    activeDreams: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ActiveDream'
     }],
