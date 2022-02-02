@@ -1,3 +1,4 @@
 module.exports = {
-    dreamers: require('./dreamers')
+    dreamers: require('./dreamers'),
+    dreams: require('./dreams')
 }

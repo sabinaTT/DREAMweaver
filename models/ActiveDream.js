@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Dreamer } = require('.');
+//const { Dreamer } = require('.');
 const Schema = mongoose.Schema;
 
 const activeDreamSchema = new Schema ({
@@ -7,13 +7,13 @@ const activeDreamSchema = new Schema ({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Dreamer"
     },
-    dream: {
+    dream: [{
         type: String,
         require: true
-    },
+    }],
     obstacle: [{
         type: String,
-        require: true
+        // require: true
     }],
     updates: [String],
     Comments: [{
@@ -22,7 +22,7 @@ const activeDreamSchema = new Schema ({
     }],
     published: {
         type: Boolean,
-        require: true
+        // require: true
     },
     isComplete: Boolean,
 },
