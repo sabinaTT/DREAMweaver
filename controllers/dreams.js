@@ -30,9 +30,14 @@ function dreams (req, res) {
     })
 }
 
+function howTo (req, res) {
+    res.render('dreamer/how-to')
+};
+
 module.exports = {
     index,
     profile, 
     about,
     dreams,
+    howTo,
 }
