@@ -33,4 +33,5 @@ module.exports = {
     index,
     profile, 
     about,
+    dreams,
 }
