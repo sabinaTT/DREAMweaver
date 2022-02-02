@@ -30,7 +30,7 @@ app.use(passport.session());
 app.use('/', routes.dreamers)
 // app.use('/', routes.dreams);
 app.use('/', routes.oauth);
-// app.use('/dreams/', routes.dreams)
+app.use('/dreams/', routes.dreams)
 
 
 
