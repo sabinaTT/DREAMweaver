@@ -11,6 +11,15 @@ const db = require('../models');
  * Delete - DELETE - /dreamers/:id  - Functional - Deletes dreamer by id from request
  */
 
+
+function dreams (req, res) {
+        db.Dreamer.find({}, function(err, dreamers) {
+            res.render('dreamer/dreamers', {
+                dreamers
+            })
+        })
+    }
+
 //index: home page, show login etc
 function index (req, res, next){
         db.Dreamer.find({}, function(err, dreamers){
@@ -64,4 +73,5 @@ module.exports = {
     // showDreamer,
     edit,
     update,
+    dreams,
 }

@@ -35,13 +35,13 @@ function about (req, res) {
     res.render('about')
 };
 
-function dreams (req, res) {
-    db.Dreamer.find({}, function(err, dreamers) {
-        res.render('dreamer/dreamers', {
-            dreamers
-        })
-    })
-}
+// function dreams (req, res) {
+//     db.Dreamer.find({}, function(err, dreamers) {
+//         res.render('dreamer/dreamers', {
+//             dreamers
+//         })
+//     })
+// }
 
 function howTo (req, res) {
     res.render('dreamer/how-to')
@@ -51,6 +51,6 @@ module.exports = {
     // index,
     profile, 
     about,
-    dreams,
+    // dreams,
     howTo,
 }

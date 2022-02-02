@@ -2,7 +2,8 @@ const router = require('express').Router();
 const ctrl = require('../controllers');
 
 
-router.get('/', ctrl.dreamers.index);
+router.get('/', ctrl.dreamers.dreams);
+router.get('/home', ctrl.dreamers.index);
 //router.get('new', ctrl.dreamers.newDreamer);
 //router.get('/', ctrl.dreamers.showDreamer);
 //router.post('/', ctrl.dreamers.createDreamer);
