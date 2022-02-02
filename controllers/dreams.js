@@ -52,20 +52,31 @@ const create = (req, res) => {
             //add created Dream to dreamer's activeDream
             // console.log("line 34: " + createdDream);
             // console.log("line 36: " + foundDreamer)
-            foundDreamer.inactiveDreams.push(createdDream);
+            foundDreamer.activeDreams.push(createdDream);
             //save dreamer changes
             createdDream.save();
-            console.log(createdDream);
+            foundDreamer.save();
+            console.log("foundDreamer post update: " + foundDreamer)
+            console.log("createdDream: " + createdDream);
             res.redirect('/dreams')
         })
     })
 }
 
+const edit = (req, res) => {
+    db.ActiveDream.findById(req.params.id), (err, foundDream) => {
+        if(err) res.send(err);
 
+        const context = {dream: foundDream}
+
+        res.render("dreams/edit", context)
+    }
+}
 
 
 module.exports = {
     showDream,
     newDream,
     create,
+    edit,
 }
