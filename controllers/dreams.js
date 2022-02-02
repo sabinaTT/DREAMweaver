@@ -11,6 +11,13 @@ const db=require('../models')
  * Delete - DELETE - /dreams/:id  - Functional - Deletes dream by id from request
  */
 
+const index = (req, res) => {
+    db.Dreamer.find({}, (err, foundDreams) => {
+        if(err) res.send(err);
+        const context = { dreams: foundDreams };
+        res.render("dreams/index", context)
+    })
+}
 
 //new
 const newDream = (req, res) => {
@@ -50,6 +57,7 @@ const create = (req, res) => {
 
 
 module.exports = {
+    index,
     newDream,
     create,
 }
