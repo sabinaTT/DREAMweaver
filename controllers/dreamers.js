@@ -32,8 +32,9 @@ const update = (req, res) => {
                 ...req.body,
             },
         },
-        {new: true},
-        (err, updatedDreamer) => {
+        {new: true,
+        returnOriginal: false},
+        function(err, updatedDreamer) {
             if(err) res.send(err);
             res.redirect(`/dreamer/${updatedDreamer._id}`)
         }

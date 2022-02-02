@@ -1,5 +1,16 @@
 const db = require("../models");
 
+// Rest Routes
+/*
+ * Index - GET - /dreams  - Presentational - respond with all dreams
+ * New - GET - /dreams/new  - Presentational Form - a page with a form to create a new dream
+ * Show - GET - /dreams/:id  - Presentational - respond with specific dream by id
+ * Create - Post - /dreams  - Functional - recieve data from new route to create a dream
+ * Edit - GET - /dreams/:id/edit  - Presentational Form - respond with a form prefilled with dream data
+ * Update - PUT - /dreams/:id  - Functional - recieve data from edit to update a specific dream
+ * Delete - DELETE - /dreams/:id  - Functional - Deletes dream by id from request
+ */
+
 function index (req, res, next){
     db.Dreamer.find({}, function(err, dreamers){
         res.render('index', {
