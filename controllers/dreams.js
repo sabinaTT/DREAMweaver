@@ -18,7 +18,21 @@ function profile (req, res) {
         });
 };
 
+function about (req, res) {
+    res.render('about')
+};
+
+function dreams (req, res) {
+    db.Dreamer.find({}, function(err, dreamers) {
+        res.render('dreamer/dreamers', {
+            dreamers
+        })
+    })
+}
+
 module.exports = {
     index,
     profile, 
+    about,
+    dreams,
 }

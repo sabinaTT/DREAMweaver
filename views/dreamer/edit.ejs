@@ -1,1 +1,20 @@
-<h1>Edit your profile here!</h1>
+<main><h1>Edit your profile here!</h1>
+
+<form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
+<input type="text" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
+
+<input type="text" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
+
+<input type="text" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
+
+<textarea type="text" name="profile" <%if(dreamer.profile) %>value=" <%=dreamer.profile%>" placeholder="Tell us a little bit about yourself so we can help you achieve your dreams!"></textarea>
+
+<textarea type="text" name="activeDream" <%if(dreamer.activeDream) %>value=" <%=dreamer.activeDream%>" placeholder="What is your dream?! Enter if here so we can help you achieve it!"></textarea>
+
+<textarea type="text" name="inactiveDream" <%if(dreamer.inactiveDream) %>value=" <%=dreamer.inactiveDream%>" placeholder="Do you have a dream that you'd like to put on the back burner? Put it here! You can only have one backup dream, as it can become overwhelming to have more than one."></textarea>
+
+
+
+</form>
+
+</main>
