@@ -21,7 +21,7 @@ const activeDreamSchema = new Schema ({
         ref: "Comment"
     }],
     published: {
-        type: Boolean,
+        type: String,
         // require: true
     },
     isComplete: Boolean,

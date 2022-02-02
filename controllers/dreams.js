@@ -14,7 +14,7 @@ const db=require('../models')
 
 //new
 const newDream = (req, res) => {
-    console.log("line 17: " + req.params.id)
+    // console.log("line 17: " + req.params.id)
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
         if(err) res.send(err);
         const context = {dreamer: foundDreamer};
@@ -25,18 +25,21 @@ const newDream = (req, res) => {
 
 //create
 const create = (req, res) => {
+
     db.ActiveDream.create(req.body, (err, createdDream) => {
+
         if(err) res.send(err);
         //links activeDream to Dreamer
-        console.log("line 30: " + createdDream._id)
-        console.log("line 31: " + createdDream.Dreamer)
-        console.log("line 32: " + createdDream)
+        // console.log("line 30: " + createdDream._id)
+        // console.log("line 31: " + createdDream.Dreamer)
+        // console.log("line 32: " + createdDream)
+        console.log("line 34: " + req.body)
         db.Dreamer.findById(createdDream.Dreamer) 
             .exec(function (err, foundDreamer) {
             if (err) res.send(err);
             //add created Dream to dreamer's activeDream
-            console.log("line 34: " + createdDream);
-            console.log("line 36: " + foundDreamer)
+            // console.log("line 34: " + createdDream);
+            // console.log("line 36: " + foundDreamer)
             foundDreamer.inactiveDreams.push(createdDream);
             //save dreamer changes
             createdDream.save();
