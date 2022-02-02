@@ -5,6 +5,6 @@ const ctrl = require('../controllers');
 // router.get('/profile', ctrl.dreams.profile);
 // router.get('/about', ctrl.dreams.about)
 // router.get('/dreams', ctrl.dreams.dreams)
-router.get('/how-to', ctrl.dreams.howTo)
+// router.get('/how-to', ctrl.dreams.howTo)
 
 module.exports = router

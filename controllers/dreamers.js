@@ -34,6 +34,10 @@ function about (req, res) {
     res.render('about')
 };
 
+function howTo (req, res) {
+    res.render('dreamer/how-to')
+};
+
 //show
 // function showDreamer (req, res) {
 //     db.Dreamer.find({}, function(err, foundDreamer){
@@ -79,4 +83,5 @@ module.exports = {
     update,
     dreams,
     about,
+    howTo
 }
