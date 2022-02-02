@@ -11,6 +11,7 @@ const db = require("../models");
  * Delete - DELETE - /dreams/:id  - Functional - Deletes dream by id from request
  */
 
+
 // function index (req, res, next){
 //     db.Dreamer.find({}, function(err, dreamers){
 //         res.render('index', {
@@ -19,6 +20,7 @@ const db = require("../models");
 //             });
 //         });
 // };
+
 
 function profile (req, res) {
     db.Dreamer.find({}, function(err, foundDreamer){
@@ -40,9 +42,14 @@ function dreams (req, res) {
     })
 }
 
+function howTo (req, res) {
+    res.render('dreamer/how-to')
+};
+
 module.exports = {
     // index,
     profile, 
     about,
     dreams,
+    howTo,
 }
