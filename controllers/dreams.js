@@ -62,7 +62,7 @@ const create = (req, res) => {
         })
     })
 }
-
+//edit
 const edit = (req, res) => {
     db.ActiveDream.findById(req.params.id), (err, foundDream) => {
         if(err) res.send(err);
@@ -73,10 +73,27 @@ const edit = (req, res) => {
     }
 }
 
+//update
+const update = (req, res) => {
+    db.ActiveDream.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body
+            },
+        },
+        {new: true},
+        (err, updatedDream) => {
+            if(err) res.send(err);
+            res.redirect(`/dreams/${updatedDream._id}`);
+        }
+    )
+}
 
 module.exports = {
     showDream,
     newDream,
     create,
     edit,
+    update,
 }
