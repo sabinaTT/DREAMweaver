@@ -10,6 +10,7 @@ function index (req, res, next){
 };
 
 function profile (req, res) {
+    console.log(req.params)
     db.Dreamer.find({}, function(err, foundDreamer){
         res.render('dreamer/profile', { 
             user: req.user
