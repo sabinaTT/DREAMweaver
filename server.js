@@ -30,6 +30,7 @@ app.use(passport.session());
 
 app.use('/', routes.dreams);
 app.use('/', routes.oauth);
+app.use('/dreamers', routes.dreamers)
 
 
 const PORT = process.env.PORT || 3000;
