@@ -8,4 +8,10 @@
     <li><%= context.dream.obstacle[2] %></li>
 </ol>
 
+<a href="/dreams/<%= dream._id %>/edit">Edit</a>
+<form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+    <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+    <input type="submit" value="Delete" />
+</form>
+
 <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
