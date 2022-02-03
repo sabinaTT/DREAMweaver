@@ -14,4 +14,11 @@
     <input type="submit" value="Delete" />
 </form>
 
+<h3>Comments</h3>
+<% dreams.forEach(dream => { %>
+    <li>
+        <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
+    </li>
+<% }) %>
+
 <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>

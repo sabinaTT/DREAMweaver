@@ -51,7 +51,7 @@ const newDream = (req, res) => {
 
 //create
 const create = (req, res) => {
-
+    console.log(req.body);
     db.ActiveDream.create(req.body, (err, createdDream) => {
 
         if(err) res.send(err);
