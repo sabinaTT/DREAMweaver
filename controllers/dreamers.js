@@ -78,6 +78,17 @@ const update = (req, res) => {
     )
 }
 
+//delete
+const destroy = (req, res) => {
+    db.Dreamer.findByIdAndDelete(req.body.Dreamer, (err, deletedDreamer) => {
+        console.log("req.body.Dreamer: " + req.body.Dreamer)
+        if (err) res.send(err);
+        res.redirect("/")
+            }
+        )
+};
+
+
 module.exports = {
     index,
     showDreamer,
@@ -85,5 +96,6 @@ module.exports = {
     update,
     dreams,
     about,
-    howTo
+    howTo,
+    destroy
 }

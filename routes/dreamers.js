@@ -16,7 +16,7 @@ router.get('/dreamers/:id', ctrl.dreamers.showDreamer);
 //router.post('/', ctrl.dreamers.createDreamer);
 router.get('/dreamers/:id/edit', ctrl.dreamers.edit);
 router.put('/dreamers/:id', ctrl.dreamers.update);
-//router.delete('/:id', ctrl.dreamers.destroy);
+router.delete('/:id', ctrl.dreamers.destroy);
 
 //export routes
 module.exports = router
