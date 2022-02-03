@@ -22,6 +22,7 @@ const index = (req, res) => {
 
 //show
 const showDream = (req, res) => {
+    console.log(req.params)
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
