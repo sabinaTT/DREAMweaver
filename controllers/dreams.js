@@ -64,8 +64,8 @@ const create = (req, res) => {
             //save dreamer changes
             createdDream.save();
             foundDreamer.save();
-            console.log("foundDreamer post update: " + foundDreamer)
-            console.log("createdDream: " + createdDream);
+            // console.log("foundDreamer post update: " + foundDreamer)
+            // console.log("createdDream: " + createdDream);
             res.redirect('/dreams')
         })
     })
