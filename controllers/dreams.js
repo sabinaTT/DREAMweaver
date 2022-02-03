@@ -64,8 +64,8 @@ const create = (req, res) => {
             //save dreamer changes
             createdDream.save();
             foundDreamer.save();
-            console.log("foundDreamer post update: " + foundDreamer)
-            console.log("createdDream: " + createdDream);
+            // console.log("foundDreamer post update: " + foundDreamer)
+            // console.log("createdDream: " + createdDream);
             res.redirect('/dreams')
         })
     })
@@ -98,6 +98,19 @@ const update = (req, res) => {
     )
 }
 
+//destroy
+const destroy = (req, res) => {
+    db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
+        if(err) res.send(err);
+        db.Dreamer.findById(deletedActiveDream.dreamer, (err, foundDreamer) => {
+            foundDreamer.dreams.remove(deletedActiveDream);
+            foundDreamer.save();
+            
+            res.redirect('/dreams')
+        })
+    })
+}
+
 module.exports = {
     showDream,
     index,
@@ -105,4 +118,5 @@ module.exports = {
     create,
     edit,
     update,
+    destroy,
 }
