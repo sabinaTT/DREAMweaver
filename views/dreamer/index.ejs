@@ -1,0 +1,19 @@
+<body>
+    <h1>index.ejs</h1>
+    <h1>Show all of one dreamer's dreams</h1>
+    
+    <% dreamer.activeDreams.forEach(dream => { %>
+        <li>
+        <h2> Your dream: <%= dream.dream %> </h2>
+        <h3> obstacles: <% dream.obstacle.forEach( obstacle => { %>
+            <li>
+                <%= obstacle %>
+            </li>
+        <% }) %> </h3>
+        <h4> Comments: <%= dream.comments %> </h4>
+        </li>
+    <% }) %>
+
+    <a href="/dreamers/<%= dreamer._id %>">Profile</a>
+ 
+</body>

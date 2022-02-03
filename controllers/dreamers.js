@@ -50,6 +50,17 @@ function showDreamer (req, res) {
         });
 };
 
+function showDreamersDreams (req, res) {
+    db.Dreamer.findById(req.params.id)
+    .populate("activeDreams")
+    .exec((err, foundDreamer) => {
+        if (err) res.send(err);
+
+        const context = {dreamer: foundDreamer};
+        res.render("dreamer/index", context)
+    })
+}
+
 //edit
 const edit = (req, res) => {
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
@@ -92,6 +103,7 @@ const destroy = (req, res) => {
 module.exports = {
     index,
     showDreamer,
+    showDreamersDreams,
     edit,
     update,
     dreams,
