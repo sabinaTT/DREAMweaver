@@ -20,6 +20,9 @@
     <li>
         <p><%= comment['comment'] %></p>
         <a href="/comments/<%= comment._id %>/edit">Edit</a>
+        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+        </form>
     </li>
 <% })} else {%>
     <li>Leave the first comment!</li>
