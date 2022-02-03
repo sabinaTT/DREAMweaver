@@ -26,12 +26,16 @@ const showDream = (req, res) => {
         .populate("Dreamer")
         .exec((err, foundDream) => {
             if(err) res.send(err);
-
-            const context = {dream: foundDream};
-            console.log(context.dream);
-            res.render("dreams/show", {
-                context, 
-                user: req.user
+            //console.log('found Dream: '+foundDream);
+           
+            db.Comment.find({ActiveDream: foundDream._id}, function (err, foundComments){
+                const context = {dream: foundDream};
+            //console.log(context.dream);
+                res.render("dreams/show", {
+                    context, 
+                    comments: foundComments,
+                    user: req.user
+                })
             })
         })
 }
@@ -51,7 +55,7 @@ const newDream = (req, res) => {
 
 //create
 const create = (req, res) => {
-
+    console.log(req.body);
     db.ActiveDream.create(req.body, (err, createdDream) => {
 
         if(err) res.send(err);

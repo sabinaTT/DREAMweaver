@@ -1,7 +1,9 @@
 <h1>Create comment</h1>
 
-<form id="add-comment-form" method="POST" action="/dreams/:id/comment">
+<form id="add-comment-form" method="POST" action="/comments/:id/create">
+    <input type="hidden" name="Dreamer" value="<%= dreamerId %>"/>
+    <input type="hidden" name="ActiveDream" value="<%= dreamId %>"/>
     <label>Comment:</label>
-    <textarea name="content"></textarea>
+    <textarea name="comment"></textarea>
     <input type="submit" value="Add comment">
   </form>
