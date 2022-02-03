@@ -28,7 +28,11 @@ const showDream = (req, res) => {
             if(err) res.send(err);
 
             const context = {dream: foundDream};
-            res.render("dreams/show", context)
+            console.log(context.dream);
+            res.render("dreams/show", {
+                context, 
+                user: req.user
+            })
         })
 }
 
