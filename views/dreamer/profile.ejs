@@ -13,6 +13,11 @@
     <p><%= user.zipCode %></p>
     <a href="/dreamers/<%=user._id%>/edit">Edit</a>
     <a href="/dreams/<%=user._id%>/new">Add a new Dream</a>
+    <%= console.log(user._id)%>
+    <form action="/dreamers/<%+ user._id %>?_method=DELETE" method="POST">
+    <input type="hidden" name="Dreamer" value="<%=user._id%>"/>
+    <input type="submit" value="Delete my profile" />
+    </form>
 </body>
 
 <%- include ('../partials/footer') %>

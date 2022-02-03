@@ -50,6 +50,17 @@ function showDreamer (req, res) {
         });
 };
 
+function showDreamersDreams (req, res) {
+    db.Dreamer.findById(req.params.id)
+    .populate("activeDreams")
+    .exec((err, foundDreamer) => {
+        if (err) res.send(err);
+
+        const context = {dreamer: foundDreamer};
+        res.render("dreamer/index", context)
+    })
+}
+
 //edit
 const edit = (req, res) => {
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
@@ -78,12 +89,25 @@ const update = (req, res) => {
     )
 }
 
+//delete
+const destroy = (req, res) => {
+    db.Dreamer.findByIdAndDelete(req.body.Dreamer, (err, deletedDreamer) => {
+        console.log("req.body.Dreamer: " + req.body.Dreamer)
+        if (err) res.send(err);
+        res.redirect("/")
+            }
+        )
+};
+
+
 module.exports = {
     index,
     showDreamer,
+    showDreamersDreams,
     edit,
     update,
     dreams,
     about,
-    howTo
+    howTo,
+    destroy
 }

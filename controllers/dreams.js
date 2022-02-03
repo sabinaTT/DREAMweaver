@@ -15,7 +15,7 @@ const index = (req, res) => {
     db.ActiveDream.find({}, (err, foundDreams) => {
         if(err) res.send(err);
         const context = { dreams: foundDreams };
-        console.log("line 18: " + foundDreams)
+        // console.log("line 18: " + foundDreams)
         res.render("dreams/index", context)
     })
 }
@@ -31,6 +31,8 @@ const showDream = (req, res) => {
             res.render("dreams/show", context)
         })
 }
+
+
 
 //new
 const newDream = (req, res) => {
@@ -53,7 +55,7 @@ const create = (req, res) => {
         // console.log("line 30: " + createdDream._id)
         // console.log("line 31: " + createdDream.Dreamer)
         // console.log("line 32: " + createdDream)
-        console.log("line 34: " + req.body)
+        // console.log("line 34: " + req.body)
         db.Dreamer.findById(createdDream.Dreamer) 
             .exec(function (err, foundDreamer) {
             if (err) res.send(err);

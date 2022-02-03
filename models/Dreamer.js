@@ -13,8 +13,7 @@ const dreamerSchema = new Schema({
         ref: 'ActiveDream'
     }],
     inactiveDreams: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'InactiveDream'
+        type: String,
     }],
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
