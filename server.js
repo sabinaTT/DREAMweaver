@@ -28,7 +28,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes.dreamers)
-// app.use('/', routes.dreams);
 app.use('/', routes.oauth);
 app.use('/dreams/', routes.dreams)
 

@@ -102,10 +102,13 @@ const update = (req, res) => {
 const destroy = (req, res) => {
     db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
         if(err) res.send(err);
-        db.Dreamer.findById(deletedActiveDream.dreamer, (err, foundDreamer) => {
-            foundDreamer.dreams.remove(deletedActiveDream);
+        console.log("line 105: " + deletedActiveDream)
+        console.log(".dreamer line: " + deletedActiveDream.Dreamer)
+        db.Dreamer.findById(deletedActiveDream.Dreamer, (err, foundDreamer) => {
+            console.log("line 106: " + foundDreamer)
+            foundDreamer.activeDreams.remove(deletedActiveDream);
             foundDreamer.save();
-            
+
             res.redirect('/dreams')
         })
     })

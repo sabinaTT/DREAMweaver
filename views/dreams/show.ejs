@@ -1,1 +1,9 @@
-<h1>Show.ejs</h1>
+<h1>(Show.ejs) You will see details about one active dream here</h1>
+<h2>I dream of:</h2>
+
+
+<a href="/dreams/<%= dream._id %>/edit">Edit</a>
+<form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+    <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+    <input type="submit" value="Delete" />
+</form>
