@@ -29,8 +29,8 @@ app.use(passport.session());
 
 app.use('/', routes.dreamers)
 app.use('/', routes.oauth);
-app.use('/dreams/', routes.dreams)
-
+app.use('/dreams/', routes.dreams);
+app.use('/comments', routes.comments);
 
 
 const PORT = process.env.PORT || 3000;

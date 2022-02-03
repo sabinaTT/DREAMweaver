@@ -1,9 +1,17 @@
-<h1>(Show.ejs) You will see details about one active dream here</h1>
-<h2>I dream of:</h2>
-
+<h1>Show.ejs</h1>
+<h3>Dream</h3>
+<p><%= context.dream.dream %> </p>
+<h3>Obstacles</h3>
+<ol>
+    <li><%= context.dream.obstacle[0] %></li>
+    <li><%= context.dream.obstacle[1] %></li>
+    <li><%= context.dream.obstacle[2] %></li>
+</ol>
 
 <a href="/dreams/<%= dream._id %>/edit">Edit</a>
 <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
     <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
     <input type="submit" value="Delete" />
 </form>
+
+<a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
