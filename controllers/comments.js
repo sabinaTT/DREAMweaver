@@ -1,5 +1,9 @@
 const db = require('../models');
 
+const newComment = (req, res) => {
+    res.render('comments/new');
+};
+
 // create a comment
 const create = (req, res) => {
 
@@ -29,6 +33,7 @@ const destroy = (req, res) => {
 
 
 module.exports = {
+    newComment,
     create,
     // show,
     // edit,
