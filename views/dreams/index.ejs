@@ -1,11 +1,33 @@
 <body>
 <h1>Dreams folder, Index.ejs</h1>
 
-<% dreams.forEach(dream => { %>
+<!-- <%// dreams.forEach(dream => { %>
     <li>
-        <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
+        <a href="/dreams/<%=// dream._id %>"><%=// dream.dream[randomNumber] %></a>
     </li>
-<% }) %>
+<% //}) %> -->
+
+
+<% function dreamPicker() { %>
+    <% let randomNumber = Math.floor(Math.random() * (dreams.length)); %>
+    <li>
+        <a href="/dreams/<%= dreams[randomNumber]._id %>">
+            <%= dreams[randomNumber].dream %></a>
+    </li>
+<% } %>
+
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+<%= dreamPicker() %>
+
+
 
 <a href="/home">Home</a>
 <a href="/dreamers/:id">My Profile</a>
