@@ -11,15 +11,17 @@
     <textarea type="type" name="obstacle[]"> <%=dream.obstacle[2]%></textarea>
 
     <p>Check this box when your dream is complete!
-
+    <%- dream.isComplete === "on" ? `<input type="hidden" name="isComplete" value=0>` : "" %>
     <input type="checkbox" name="isComplete" 
     <%= dream.isComplete === "on" ? "checked" : "" %>
        
     > </p>
  
     <p>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</p>
+    <%- dream.published === "on" ? `<input type="hidden" name="published" value=0>` : "" %>
+    
     <input type="checkbox" name="published"
-    <%dream.published =="on" ? "checked" : "" %>
+    <%= dream.published === "on" ? "checked" : "" %>
     > 
     <input type="submit" value="Update dream" />
     
