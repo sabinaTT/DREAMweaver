@@ -8,6 +8,8 @@
     <li><%= context.dream.obstacle[2] %></li>
 </ol>
 
+<p>Check this box when your dream is complete!<input type="checkbox" name="isComplete"> </p>
+
 <a href="/dreams/<%= context.dream._id %>/edit">Edit</a>
 <form action="/dreams/<%= context.dream._id %>?_method=DELETE" method="POST">
     <input type="hidden" name="Dreamer" value="<%= context.dream.Dreamer %>" />
