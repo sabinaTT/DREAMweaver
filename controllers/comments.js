@@ -43,9 +43,16 @@ const edit = (req, res) => {
 };
 
 // update a comment
-const update = (req, res) => {
-
-};
+// const update = (req, res) => {
+//     db.Comment.findByIdAndUpdate(req.params.id, {
+//         $set: {
+//             ...req.body,
+//         },
+//     },
+//     {new: true},
+//     (err, updatedComment) => 
+//     )
+// };
 
 // delete a comment
 const destroy = (req, res) => {
