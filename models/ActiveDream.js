@@ -5,7 +5,6 @@ const Schema = mongoose.Schema;
 const activeDreamSchema = new Schema ({
     Dreamer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Dreamer"
     },
     dream: [{
         type: String,

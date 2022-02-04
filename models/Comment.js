@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 const commentSchema = new Schema ({
     Dreamer: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Dreamer"
+        require: true
     },
     ActiveDream: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "ActiveDream"
+        require: true
     },
     comment: {
         type: String,
-        require: true
+        require: true,
     }
 },
     {timestamps: true}

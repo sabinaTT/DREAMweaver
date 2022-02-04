@@ -22,16 +22,21 @@ const index = (req, res) => {
 
 //show
 const showDream = (req, res) => {
+    console.log(req.params)
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
             if(err) res.send(err);
-
-            const context = {dream: foundDream};
-            console.log(context.dream);
-            res.render("dreams/show", {
-                context, 
-                user: req.user
+            //console.log('found Dream: '+foundDream);
+           
+            db.Comment.find({ActiveDream: foundDream._id}, function (err, foundComments){
+                const context = {dream: foundDream};
+            //console.log(context.dream);
+                res.render("dreams/show", {
+                    context, 
+                    comments: foundComments,
+                    user: req.user
+                })
             })
         })
 }
@@ -51,7 +56,7 @@ const newDream = (req, res) => {
 
 //create
 const create = (req, res) => {
-
+    console.log(req.body);
     db.ActiveDream.create(req.body, (err, createdDream) => {
 
         if(err) res.send(err);
@@ -78,14 +83,14 @@ const create = (req, res) => {
 }
 //edit
 const edit = (req, res) => {
-    db.ActiveDream.findById(req.params.id), (err, foundDream) => {
+    db.ActiveDream.findById(req.params.id, (err, foundDream) => {
         if(err) res.send(err);
 
         const context = {dream: foundDream}
 
         res.render("dreams/edit", context)
     }
-}
+    )}
 
 //update
 const update = (req, res) => {
@@ -108,8 +113,8 @@ const update = (req, res) => {
 const destroy = (req, res) => {
     db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
         if(err) res.send(err);
-        console.log("line 105: " + deletedActiveDream)
-        console.log(".dreamer line: " + deletedActiveDream.Dreamer)
+        // console.log("line 105: " + deletedActiveDream)
+        // console.log(".dreamer line: " + deletedActiveDream.Dreamer)
         db.Dreamer.findById(deletedActiveDream.Dreamer, (err, foundDreamer) => {
             console.log("line 106: " + foundDreamer)
             foundDreamer.activeDreams.remove(deletedActiveDream);
