@@ -12,7 +12,7 @@ const commentSchema = new Schema ({
     },
     comment: {
         type: String,
-        require: true
+        require: true,
     }
 },
     {timestamps: true}

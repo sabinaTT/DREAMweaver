@@ -22,6 +22,7 @@ const index = (req, res) => {
 
 //show
 const showDream = (req, res) => {
+    console.log(req.params)
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
@@ -112,8 +113,8 @@ const update = (req, res) => {
 const destroy = (req, res) => {
     db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
         if(err) res.send(err);
-        console.log("line 105: " + deletedActiveDream)
-        console.log(".dreamer line: " + deletedActiveDream.Dreamer)
+        // console.log("line 105: " + deletedActiveDream)
+        // console.log(".dreamer line: " + deletedActiveDream.Dreamer)
         db.Dreamer.findById(deletedActiveDream.Dreamer, (err, foundDreamer) => {
             console.log("line 106: " + foundDreamer)
             foundDreamer.activeDreams.remove(deletedActiveDream);

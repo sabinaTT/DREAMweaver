@@ -49,7 +49,17 @@ const update = (req, res) => {
 
 // delete a comment
 const destroy = (req, res) => {
+    db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
+        if(err) res.send(err);
+        db.Dreamer.findById(deletedComment.Dreamer, (err, foundDreamer) => {
+            console.log(deletedComment)
+            foundDreamer.comments.remove(deletedComment);
+            console.log("foundddddddddddddDreamer is: " + foundDreamer);
+            foundDreamer.save();
 
+            res.redirect(`/dreams/${deletedComment.ActiveDream}`)
+        })
+    })
 };
 
 
@@ -60,5 +70,5 @@ module.exports = {
     // show,
     // edit,
     // update,
-    // delete: destroy
+    destroy
 }
