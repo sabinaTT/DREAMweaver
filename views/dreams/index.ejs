@@ -6,15 +6,21 @@
         <a href="/dreams/<%=// dream._id %>"><%=// dream.dream[randomNumber] %></a>
     </li>
 <% //}) %> -->
+<% let publishedDreams = []; %>
+
+<% dreams.forEach(dream => { %>
+    <% if (dream.published == "on") { %>
+        <% publishedDreams.push(dream) %>
+    <% }}); %>
 
 
 <% function dreamPicker() { %>
-    <% let randomNumber = Math.floor(Math.random() * (dreams.length)); %>
+    <% let randomNumber = Math.floor(Math.random() * (publishedDreams.length)); %>
     <li>
-        <a href="/dreams/<%= dreams[randomNumber]._id %>">
-            <%= dreams[randomNumber].dream %></a>
+        <a href="/dreams/<%= publishedDreams[randomNumber]._id %>">
+            <%= publishedDreams[randomNumber].dream %></a>
     </li>
-<% } %>
+<% }; %>
 
 <%= dreamPicker() %>
 <%= dreamPicker() %>
