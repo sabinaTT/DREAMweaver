@@ -83,14 +83,14 @@ const create = (req, res) => {
 }
 //edit
 const edit = (req, res) => {
-    db.ActiveDream.findById(req.params.id), (err, foundDream) => {
+    db.ActiveDream.findById(req.params.id, (err, foundDream) => {
         if(err) res.send(err);
 
         const context = {dream: foundDream}
 
         res.render("dreams/edit", context)
     }
-}
+    )}
 
 //update
 const update = (req, res) => {
