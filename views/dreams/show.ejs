@@ -1,30 +1,21 @@
-<h1>Show.ejs</h1>
 <h3>Dream</h3>
-<p><%= context.dream.dream %> </p>
-<h3>Obstacles</h3>
-<ol>
+<% if(user.id === context.dream.Dreamer.toString()) { %> 
+
+    <p><%= context.dream.dream %> </p>
+    <h3>Obstacles</h3>
+    <ol>
     <li><%= context.dream.obstacle[0] %></li>
     <li><%= context.dream.obstacle[1] %></li>
     <li><%= context.dream.obstacle[2] %></li>
-</ol>
-<h3>Comments</h3>
-<ul>
-    <% context.dream.Comments.forEach(comment => { %>
-        <li>
-            <%= comment %>
-        </li>
-    <% }) %>
-</ul>
-
-<a href="/dreams/edit/<%= context.dream._id %>">Edit</a>
-<form action="/dreams/<%= context.dream._id %>?_method=DELETE" method="POST">
+    </ol>
+    <a href="/dreams/edit/<%= context.dream._id %>">Edit</a>
+    <form action="/dreams/<%= context.dream._id %>?_method=DELETE" method="POST">
     <input type="hidden" name="Dreamer" value="<%= context.dream.Dreamer %>" />
     <input type="submit" value="Delete" />
-</form>
-
-<h3>Comments</h3>
-<ul>
-<% if(comments.length !== 0) {comments.forEach(comment => { %>
+    </form>
+    <h3>Comments</h3>
+    <ul>
+    <% if(comments.length !== 0) {comments.forEach(comment => { %>
     <li>
         <p><%= comment['comment'] %></p>
         <a href="/comments/<%= comment._id %>/edit">Edit</a>
@@ -32,9 +23,39 @@
             <input type="submit" value="Delete" />
         </form>
     </li>
-<% })} else {%>
+    <% })} else {%>
     <li>Leave the first comment!</li>
-<% }%>
-</ul>
+    <% }%>
+    </ul>
 
-<a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
+    <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
+
+<% } else {%> 
+    <p><%= context.dream.dream %> </p>
+    <h3>Obstacles</h3>
+    <ol>
+        <li><%= context.dream.obstacle[0] %></li>
+        <li><%= context.dream.obstacle[1] %></li>
+        <li><%= context.dream.obstacle[2] %></li>
+    </ol>
+    <h3>Comments</h3>
+    <ul>
+    <% if(comments.length !== 0) {comments.forEach(comment => { %>
+        <li>
+            <p><%= comment['comment'] %></p>
+            <% if(comment.Dreamer.toString() === user.id) { %>
+            <a href="/comments/<%= comment._id %>/edit">Edit</a>
+            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" />
+            </form>
+            <% } %>
+        </li>
+    <% })} else {%>
+        <li>Leave the first comment!</li>
+    <% }%>
+    </ul>
+
+    <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
+
+<% }%>
+
