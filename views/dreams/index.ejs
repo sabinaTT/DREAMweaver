@@ -5,7 +5,7 @@
 </head>
 <body>
     <% if(user) { %> 
-        <h1>Dreams folder, Index.ejs</h1>
+        
 
 <% let publishedDreams = []; %>
 
@@ -17,23 +17,21 @@
 
 <% function dreamPicker() { %>
     <% let randomNumber = Math.floor(Math.random() * (publishedDreams.length)); %>
-    <li>
         <a href="/dreams/<%= publishedDreams[randomNumber]._id %>">
             <%= publishedDreams[randomNumber].dream %></a>
-    </li>
 <% }; %>
-
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-<%= dreamPicker() %>
-
+<div class="container">
+    <div class="one dreams-medium"><%= dreamPicker() %></div>
+    <div class="two dreams-small"><%= dreamPicker() %></div>
+    <div class="three dreams-medium"><%= dreamPicker() %></div>
+    <div class="four dreams-small"><%= dreamPicker() %></div>
+    <div class="five dreams-large"><%= dreamPicker() %></div>
+    <div class="six dreams-medium"><%= dreamPicker() %></div>
+    <div class="seven dreams-small"><%= dreamPicker() %></div>
+    <div class="eight dreams-medium"><%= dreamPicker() %></div>
+    <div class="nine dreams-medium"><%= dreamPicker() %></div>
+    <div class="ten dreams-small"><%= dreamPicker() %></div>
+</div>
 
 
     <% } else { %>
