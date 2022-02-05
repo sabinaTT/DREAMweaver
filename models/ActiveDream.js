@@ -23,7 +23,7 @@ const activeDreamSchema = new Schema ({
         type: String,
         // require: true
     },
-    isComplete: Boolean,
+    isComplete: String,
 },
     {timestamps: true}   
 )
