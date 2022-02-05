@@ -1,10 +1,10 @@
+<%- include ('./partials/header') %>
+
+<body>
 <main><h1>Edit your dream here!</h1>
 
 <% if(user) { %>
     <form action="/dreams/<%= context.dream._id %>?_method=PUT" method="POST">
-
-    
-    
     
     <textarea type="type" name="dream"><%=context.dream.dream%></textarea>
     
@@ -35,3 +35,7 @@
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
 </main>
+
+</body>
+
+<%- include ('./partials/footer') %>
