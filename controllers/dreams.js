@@ -77,7 +77,7 @@ const create = (req, res) => {
             const context = {
                 title: "Dreams"
             };
-            res.redirect('/dreams', context)
+            res.redirect('/dreams')
         })
     })
 }
@@ -90,7 +90,7 @@ const edit = (req, res) => {
             dream: foundDream,
             user: req.user,
             title: "Edit Dream"
-        }
+        };
         res.render("dreams/edit", context)
     }
     )}
@@ -101,16 +101,15 @@ const update = (req, res) => {
         req.params.id,
         {
             $set: {
-                ...req.body
+                ...req.body,
             },
         },
-        {new: true},
-        (err, updatedDream) => {
+        {new: true,
+        returnOriginal: false},
+        function (err, updatedDream){
             if(err) res.send(err);
-            const context = {
-                title: "Dream"
-            };
-            res.redirect(`/dreams/${updatedDream._id}`, context);
+            
+            res.redirect(`/dreams/${updatedDream._id}`);
         }
     )
 }
@@ -124,10 +123,7 @@ const destroy = (req, res) => {
 
             foundDreamer.activeDreams.remove(deletedActiveDream);
             foundDreamer.save();
-            const context = {
-                title: "Dreams"
-            };
-            res.redirect('/dreams', context)
+            res.redirect('/dreams')
         })
     })
 }

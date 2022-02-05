@@ -1,20 +1,19 @@
+<% if(user) { %>
+
 <%- include ('../partials/header') %>
 
 <main><h1>Edit your dream here!</h1>
 
-<% if(user) { %>
+
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
 
-    
-    
-    
     <textarea type="type" name="dream"><%=dream.dream%></textarea>
     
-    <textarea type="type" name="obstacle[]"> <%=dream.obstacle[0]%></textarea>
+    <textarea type="type" name="obstacle"> <%=dream.obstacle[0]%></textarea>
 
-    <textarea type="type" name="obstacle[]"> <%=dream.obstacle[1]%></textarea>
+    <textarea type="type" name="obstacle"> <%=dream.obstacle[1]%></textarea>
 
-    <textarea type="type" name="obstacle[]"> <%=dream.obstacle[2]%></textarea>
+    <textarea type="type" name="obstacle"> <%=dream.obstacle[2]%></textarea>
 
     <p>Check this box when your dream is complete!
     <%- dream.isComplete === "on" ? `<input type="hidden" name="isComplete" value=0>` : "" %>

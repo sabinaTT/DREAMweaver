@@ -90,7 +90,7 @@ const edit = (req, res) => {
             title: "Edit Profile",
             user: req.user};
 
-        res.render('dreamer/edit',context)
+        res.render('dreamer/edit', context)
     });
 };
 
@@ -110,7 +110,7 @@ const update = (req, res) => {
             const context = {
                 title: "Profile"
             }
-            res.redirect(`/dreamers/${updatedDreamer._id}`, context)
+            res.redirect(`/dreamers/${updatedDreamer._id}`)
         }
     )
 }
