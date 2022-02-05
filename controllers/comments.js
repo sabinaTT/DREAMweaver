@@ -5,7 +5,7 @@ const newComment = (req, res) => {
         //console.log(foundDream.Dreamer)
         if(err) res.send(err);
         res.render('comments/new', {
-            dreamerId: req.user.id, 
+            user: req.user, 
             dreamId: req.params.id
         });
     })
