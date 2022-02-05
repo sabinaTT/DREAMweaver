@@ -20,7 +20,7 @@
         <ul>
         <% dreamer.activeDreams.forEach(dream => { %>
           <li>
-          <h2><a href="/dreams/<%= dream._id %> " ><%= dream.dream %> </a></h2>
+          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2>
           <h3> obstacles: <% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
             <ul>
               <li>
