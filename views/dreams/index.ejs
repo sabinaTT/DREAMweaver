@@ -1,21 +1,12 @@
+<%- include ('../partials/header') %>
+
 <body>
     <% if(user) { %> 
         <h1>Dreams folder, Index.ejs</h1>
 
-        <% context.dreams.forEach(dream => { %>
-            <li>
-                <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
-            </li>
-        <% }) %>
-
-<!-- <%// context.dreams.forEach(dream => { %>
-    <li>
-        <a href="/dreams/<%=// dream._id %>"><%=// dream.dream[randomNumber] %></a>
-    </li>
-<% //}) %> -->
 <% let publishedDreams = []; %>
 
-<% context.dreams.forEach(dream => { %>
+<% dreams.forEach(dream => { %>
     <% if (dream.published == "on") { %>
         <% publishedDreams.push(dream) %>
     <% }}); %>
