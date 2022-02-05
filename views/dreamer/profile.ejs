@@ -1,6 +1,6 @@
 <%- include ('../partials/header') %>
 <body>
-    <% if (user && dreamer.id === user.id) { %>
+    <% if (user && (dreamer.id === user.id)) { %>
 		<a href="/home">Home</a>
         <h1>Dreamer Profile</h1>
         <h3>Name</h3>
@@ -19,7 +19,7 @@
         <input type="submit" value="Delete my profile" />
         </form>
 	<% } else { %>
-		<a href="/auth/google">Login with Google</a>
+		<p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 	<% } %>
 </body>
 

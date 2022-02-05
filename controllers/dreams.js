@@ -52,7 +52,10 @@ const newDream = (req, res) => {
         if(err) res.send(err);
         const context = {dreamer: foundDreamer};
         // console.log("line 21: " + foundDreamer)
-        res.render("dreams/new", context)
+        res.render("dreams/new", {
+            context, 
+            user: req.user
+        })
     })
 }
 
