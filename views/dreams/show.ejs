@@ -30,7 +30,7 @@
 
     <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
 
-<% } else {%> 
+<% } else if (user) {%> 
     <p><%= context.dream.dream %> </p>
     <h3>Obstacles</h3>
     <ol>
@@ -57,5 +57,7 @@
 
     <a href="/comments/<%= context.dream._id %>/new">Leave a comment</a>
 
-<% }%>
+<% } else { %>
+    <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
+<% } %> 
 

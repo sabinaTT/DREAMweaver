@@ -68,7 +68,10 @@ const edit = (req, res) => {
         if(err) res.send(err);
 
         const context = {dreamer: foundDreamer};
-        res.render('dreamer/edit', context)
+        res.render('dreamer/edit', {
+            context, 
+            user: req.user
+        })
     });
 };
 
