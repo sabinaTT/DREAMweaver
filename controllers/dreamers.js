@@ -13,22 +13,24 @@ const db = require('../models');
  */
 
 
-function dreams (req, res) {
-        db.Dreamer.find({}, function(err, dreamers) {
-            const context = {
-                dreamers
-            };
+// function dreams (req, res) {
+//         db.Dreamer.find({}, function(err, dreamers) {
+//             const context = {
+//                 dreamers,
+//                 title: "Dreamers"
+//             };
             
-            res.render('dreamer/dreamers', context)
-        })
-    }
+//             res.render('dreamer/dreamers', context)
+//         })
+//     }
 
 //index: home page, show login etc
 function index (req, res, next){
         db.Dreamer.find({}, function(err, dreamers){
             const context = {
                 dreamers, // I don't think we need this 'dreamers'
-                user: req.user
+                user: req.user,
+                title: "Home"
             };
             
             res.render('index', context);
@@ -129,7 +131,7 @@ module.exports = {
     showDreamersDreams,
     edit,
     update,
-    dreams,
+  //  dreams,
     about,
     howTo,
     destroy
