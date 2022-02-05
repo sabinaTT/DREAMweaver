@@ -13,21 +13,27 @@ const db = require('../models');
  */
 
 
-function dreams (req, res) {
-        db.Dreamer.find({}, function(err, dreamers) {
-            res.render('dreamer/dreamers', {
-                dreamers
-            })
-        })
-    }
+// function dreams (req, res) {
+//         db.Dreamer.find({}, function(err, dreamers) {
+//             const context = {
+//                 dreamers,
+//                 title: "Dreamers"
+//             };
+            
+//             res.render('dreamer/dreamers', context)
+//         })
+//     }
 
 //index: home page, show login etc
 function index (req, res, next){
         db.Dreamer.find({}, function(err, dreamers){
-            res.render('index', {
+            const context = {
                 dreamers, // I don't think we need this 'dreamers'
-                user: req.user
-                });
+                user: req.user,
+                title: "Home"
+            };
+            
+            res.render('index', context);
             });
     };
 
@@ -39,7 +45,11 @@ function about (req, res) {
 // Show: How-To page after user is logged in
 function howTo (req, res) {
     // will need to add function to see if user if indeed logged in in order to make this visible
-    res.render('dreamer/how-to', {user: req.user})
+    const context = {
+        user: req.user
+    };
+
+    res.render('dreamer/how-to', context)
 };
 
 //show
@@ -47,10 +57,12 @@ function showDreamer (req, res) {
     db.Dreamer.findById(req.params.id)
     .populate('activeDreams')
     .exec(function(err, foundDreamer){
-        res.render('dreamer/index', { 
+        const context = {
             dreamer: foundDreamer, 
             user: req.user,
-            });
+            title: "Profile"
+        }
+        res.render('dreamer/index', context);
         });
 };
 
@@ -60,7 +72,10 @@ function showDreamersDreams (req, res) {
     .exec((err, foundDreamer) => {
         if (err) res.send(err);
 
-        const context = {dreamer: foundDreamer};
+        const context = {
+            dreamer: foundDreamer,
+            title: "Dreams"};
+
         res.render("dreamer/index", context)
     })
 }
@@ -70,11 +85,12 @@ const edit = (req, res) => {
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
         if(err) res.send(err);
 
-        const context = {dreamer: foundDreamer};
-        res.render('dreamer/edit', {
-            context, 
-            user: req.user
-        })
+        const context = {
+            dreamer: foundDreamer,
+            title: "Edit Profile",
+            user: req.user};
+
+        res.render('dreamer/edit', context)
     });
 };
 
@@ -91,6 +107,9 @@ const update = (req, res) => {
         returnOriginal: false},
         function(err, updatedDreamer) {
             if(err) res.send(err);
+            const context = {
+                title: "Profile"
+            }
             res.redirect(`/dreamers/${updatedDreamer._id}`)
         }
     )
@@ -99,7 +118,6 @@ const update = (req, res) => {
 //delete
 const destroy = (req, res) => {
     db.Dreamer.findByIdAndDelete(req.body.Dreamer, (err, deletedDreamer) => {
-        console.log("req.body.Dreamer: " + req.body.Dreamer)
         if (err) res.send(err);
         res.redirect("/")
             }
@@ -113,7 +131,7 @@ module.exports = {
     showDreamersDreams,
     edit,
     update,
-    dreams,
+  //  dreams,
     about,
     howTo,
     destroy

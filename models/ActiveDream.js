@@ -14,7 +14,6 @@ const activeDreamSchema = new Schema ({
         type: String,
         // require: true
     }],
-    updates: [String],
     Comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
