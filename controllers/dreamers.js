@@ -38,7 +38,7 @@ function about (req, res) {
 // Show: How-To page after user is logged in
 function howTo (req, res) {
     // will need to add function to see if user if indeed logged in in order to make this visible
-    res.render('dreamer/how-to')
+    res.render('dreamer/how-to', {user: req.user})
 };
 
 //show
