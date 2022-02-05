@@ -26,33 +26,40 @@ const create = (req, res) => {
             createdComment.save();
             foundActiveDream.save();
 
-            res.redirect(`/dreams/${createdComment.ActiveDream}`)
+            res.redirect(`/comments/${createdComment.ActiveDream}`)
         })
     })
 };
 
-// show individual comment
-const show = (req, res) => {
-
-};
-
-
 // edit a comment
 const edit = (req, res) => {
+    db.Comment.findById(req.params.id, (err, foundComment) => {
+        if(err) res.send(err);
 
+        const context = { comment: foundComment }
+
+        res.render("comments/edit", context)
+    });
 };
 
 // update a comment
-// const update = (req, res) => {
-//     db.Comment.findByIdAndUpdate(req.params.id, {
-//         $set: {
-//             ...req.body,
-//         },
-//     },
-//     {new: true},
-//     (err, updatedComment) => 
-//     )
-// };
+const update = (req, res) => {
+    db.Comment.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: {
+                ...req.body,    
+            },
+        },
+        { new: true },
+        (err, updatedComment) => {
+            console.log("line 56 is: " + updatedComment)
+            if(err) res.send(err);
+
+            res.redirect(`/comments/${updatedComment._id}`);
+        }
+    );
+};
 
 // delete a comment
 const destroy = (req, res) => {
@@ -64,8 +71,8 @@ const destroy = (req, res) => {
 module.exports = {
     newComment,
     create,
+    edit,
+    update,
     // show,
-    // edit,
-    // update,
     // delete: destroy
 }
