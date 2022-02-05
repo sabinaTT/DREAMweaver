@@ -33,7 +33,7 @@ function index (req, res, next){
 
 // Show: About Page
 function about (req, res) {
-    res.render('about')
+    res.render('about', {user: req.user})
 };
 
 // Show: How-To page after user is logged in

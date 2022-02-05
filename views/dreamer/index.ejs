@@ -1,7 +1,6 @@
 <%- include ('../partials/header') %>
 <body>
     <% if (user && (dreamer.id === user.id)) { %>
-		<a href="/home">Home</a>
         <h1>Dreamer Profile</h1>
         <h3>Name</h3>
         <p><%= dreamer.name %></p>
@@ -14,7 +13,7 @@
         <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
         <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST">
         <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
-        <input type="submit" value="Delete my profile" />
+        <input type="submit" value="Delete My Profile" />
         </form>
 
         <h3>Dreams</h3>
