@@ -28,7 +28,7 @@ const create = (req, res) => {
             createdComment.save();
             foundActiveDream.save();
 
-            res.redirect(`/comments/${createdComment.ActiveDream}`)
+            res.redirect(`/dreams/${createdComment.ActiveDream}`)
         })
     })
 };
