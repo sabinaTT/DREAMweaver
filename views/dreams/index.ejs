@@ -1,13 +1,17 @@
 <body>
-<h1>Dreams folder, Index.ejs</h1>
+    <% if(user) { %> 
+        <h1>Dreams folder, Index.ejs</h1>
 
-<% dreams.forEach(dream => { %>
-    <li>
-        <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
-    </li>
-<% }) %>
+        <% context.dreams.forEach(dream => { %>
+            <li>
+                <a href="/dreams/<%= dream._id %>"><%= dream.dream %></a>
+            </li>
+        <% }) %>
 
-<a href="/home">Home</a>
-<a href="/dreamers/:id">My Profile</a>
+        <a href="/home">Home</a>
+        <a href="/dreamers/<%= user.id %>">My Profile</a>
+    <% } else { %>
+        <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
+    <% } %>
 
 </body>

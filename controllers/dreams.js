@@ -16,7 +16,10 @@ const index = (req, res) => {
         if(err) res.send(err);
         const context = { dreams: foundDreams };
         // console.log("line 18: " + foundDreams)
-        res.render("dreams/index", context)
+        res.render("dreams/index", {
+            context, 
+            user: req.user
+        })
     })
 }
 
