@@ -93,7 +93,10 @@ const edit = (req, res) => {
 
         const context = {dream: foundDream}
 
-        res.render("dreams/edit", context)
+        res.render("dreams/edit", {
+            context, 
+            user: req.user
+        })
     }
     )}
 
