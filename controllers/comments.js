@@ -4,10 +4,12 @@ const newComment = (req, res) => {
     db.ActiveDream.findById(req.params.id, (err, foundDream) => {
         //console.log(foundDream.Dreamer)
         if(err) res.send(err);
-        res.render('comments/new', {
+        const context = {
             user: req.user, 
-            dreamId: req.params.id
-        });
+            dreamId: req.params.id,
+            title: "New Comment"
+        }
+        res.render('comments/new', context);
     })
 };
 
@@ -36,7 +38,9 @@ const edit = (req, res) => {
     db.Comment.findById(req.params.id, (err, foundComment) => {
         if(err) res.send(err);
 
-        const context = { comment: foundComment }
+        const context = { 
+            comment: foundComment,
+            title: "Edit Comment"}
 
         res.render("comments/edit", context)
     });
@@ -53,7 +57,6 @@ const update = (req, res) => {
         },
         { new: true },
         (err, updatedComment) => {
-            console.log("line 56 is: " + updatedComment)
             if(err) res.send(err);
 
             res.redirect(`/dreams/${updatedComment.ActiveDream}`);
@@ -66,9 +69,7 @@ const destroy = (req, res) => {
     db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
         if(err) res.send(err);
         db.Dreamer.findById(deletedComment.Dreamer, (err, foundDreamer) => {
-            console.log(deletedComment)
             foundDreamer.comments.remove(deletedComment);
-            console.log("foundddddddddddddDreamer is: " + foundDreamer);
             foundDreamer.save();
 
             res.redirect(`/dreams/${deletedComment.ActiveDream}`)
