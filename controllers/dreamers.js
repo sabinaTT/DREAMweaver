@@ -45,7 +45,8 @@ function howTo (req, res) {
 function showDreamer (req, res) {
     db.Dreamer.findById(req.params.id, function(err, foundDreamer){
         res.render('dreamer/profile', { 
-            user: foundDreamer
+            dreamer: foundDreamer, 
+            user: req.user,
             });
         });
 };

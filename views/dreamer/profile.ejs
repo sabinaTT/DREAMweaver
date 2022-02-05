@@ -1,23 +1,26 @@
 <%- include ('../partials/header') %>
-
 <body>
-    <a href="/home">Home</a>
-    <h1>Dreamer Profile</h1>
-    <h3>Name</h3>
-    <p><%= user.name %></p>
-    <h3>Email</h3>
-    <p><%= user.email %></p>
-    <h3>Bio</h3>
-    <p><%= user.profile %></p>
-    <h3>Zip Code</h3>
-    <p><%= user.zipCode %></p>
-    <a href="/dreamers/<%=user._id%>/edit">Edit</a>
-    <a href="/dreams/<%=user._id%>/new">Add a new Dream</a>
-    <%= console.log(user._id)%>
-    <form action="/dreamers/<%+ user._id %>?_method=DELETE" method="POST">
-    <input type="hidden" name="Dreamer" value="<%=user._id%>"/>
-    <input type="submit" value="Delete my profile" />
-    </form>
+    <% if (user && (dreamer.id === user.id)) { %>
+		<a href="/home">Home</a>
+        <h1>Dreamer Profile</h1>
+        <h3>Name</h3>
+        <p><%= dreamer.name %></p>
+        <h3>Email</h3>
+        <p><%= dreamer.email %></p>
+        <h3>Bio</h3>
+        <p><%= dreamer.profile %></p>
+        <h3>Zip Code</h3>
+        <p><%= dreamer.zipCode %></p>
+        <a href="/dreamers/<%=dreamer._id%>/edit">Edit</a>
+        <a href="/dreams/<%=dreamer._id%>/new">Add a new Dream</a>
+        <%= console.log(dreamer._id)%>
+        <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST">
+        <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
+        <input type="submit" value="Delete my profile" />
+        </form>
+	<% } else { %>
+		<a href="/auth/google">Login with Google</a>
+	<% } %>
 </body>
 
 <%- include ('../partials/footer') %>
