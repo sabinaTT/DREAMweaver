@@ -2,10 +2,10 @@ const db = require('../models');
 
 const newComment = (req, res) => {
     db.ActiveDream.findById(req.params.id, (err, foundDream) => {
-        console.log(foundDream.Dreamer)
+        //console.log(foundDream.Dreamer)
         if(err) res.send(err);
         res.render('comments/new', {
-            dreamerId: foundDream.Dreamer, 
+            user: req.user, 
             dreamId: req.params.id
         });
     })

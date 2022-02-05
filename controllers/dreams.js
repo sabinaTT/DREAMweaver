@@ -16,13 +16,15 @@ const index = (req, res) => {
         if(err) res.send(err);
         const context = { dreams: foundDreams };
         // console.log("line 18: " + foundDreams)
-        res.render("dreams/index", context)
+        res.render("dreams/index", {
+            context, 
+            user: req.user
+        })
     })
 }
 
 //show
 const showDream = (req, res) => {
-    console.log(req.params)
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
@@ -50,7 +52,10 @@ const newDream = (req, res) => {
         if(err) res.send(err);
         const context = {dreamer: foundDreamer};
         // console.log("line 21: " + foundDreamer)
-        res.render("dreams/new", context)
+        res.render("dreams/new", {
+            context, 
+            user: req.user
+        })
     })
 }
 
@@ -88,7 +93,10 @@ const edit = (req, res) => {
 
         const context = {dream: foundDream}
 
-        res.render("dreams/edit", context)
+        res.render("dreams/edit", {
+            context, 
+            user: req.user
+        })
     }
     )}
 

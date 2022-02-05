@@ -1,17 +1,18 @@
-<main><h1>Edit your profile here!</h1>
+<main>
+<%  if(user) { %>
+    <h1>Edit your profile here!</h1>
+    <form action="/dreamers/<%= context.dreamer._id %>?_method=PUT" method="POST">
+    <input type="text" name="name" <% if (context.dreamer.name) %> value="<%=context.dreamer.name%>" placeholder="Name">
 
-<form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
-<input type="text" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
+    <input type="text" name="email" <%if(context.dreamer.email) %> value="<%=context.dreamer.email%>" placeholder="E-mail">
 
-<input type="text" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
+    <input type="text" name="zipCode" <%if(context.dreamer.zipCode) %> value="<%=context.dreamer.zipCode%>" placeholder="Zip code for future location services">
 
-<input type="text" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
+    <textarea type="type" name="profile" <%if(context.dreamer.profile) %> value="<%=context.dreamer.profile%>" placeholder="Tell us a little about yourself so others can best help you achieve your dreams."></textarea>
 
-<textarea type="type" name="profile" <%if(dreamer.profile) %> value="<%=dreamer.profile%>" placeholder="Tell us a little about yourself so others can best help you achieve your dreams."></textarea>
-
-<input type="submit" value="Update profile" />
-
-
-</form>
-
+    <input type="submit" value="Update profile" />
+    </form>
+<% } else { %>
+    <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
+<% } %> 
 </main>
