@@ -1,6 +1,9 @@
 <main><h1>Edit your dream here!</h1>
 
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
+
+    
+    
     
     <textarea type="type" name="dream"><%=dream.dream%></textarea>
     
@@ -23,6 +26,7 @@
     <input type="checkbox" name="published"
     <%= dream.published === "on" ? "checked" : "" %>
     > 
+
     <input type="submit" value="Update dream" />
     
     
