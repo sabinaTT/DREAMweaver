@@ -40,6 +40,7 @@ const edit = (req, res) => {
 
         const context = { 
             comment: foundComment,
+            user: req.user,
             title: "Edit Comment"}
 
         res.render("comments/edit", context)
