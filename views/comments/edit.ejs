@@ -1,7 +1,7 @@
 <Main><h1>Edit Comment</h1>
     <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
     <p>
-        <textarea type="text" name="body" autofocus="true" ><%= comment.comment %>
+        <textarea type="text" name="comment" autofocus="true" ><%= comment.comment %>
         </textarea>
     </p>
     <input type="submit" value="Update Comment" />

@@ -56,7 +56,7 @@ const update = (req, res) => {
             console.log("line 56 is: " + updatedComment)
             if(err) res.send(err);
 
-            res.redirect(`/comments/${updatedComment._id}`);
+            res.redirect(`/dreams/${updatedComment.ActiveDream}`);
         }
     );
 };
