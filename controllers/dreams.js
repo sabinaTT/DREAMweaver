@@ -16,7 +16,10 @@ const index = (req, res) => {
         if(err) res.send(err);
         const context = { dreams: foundDreams };
         // console.log("line 18: " + foundDreams)
-        res.render("dreams/index", context)
+        res.render("dreams/index", {
+            context, 
+            user: req.user
+        })
     })
 }
 
@@ -49,7 +52,10 @@ const newDream = (req, res) => {
         if(err) res.send(err);
         const context = {dreamer: foundDreamer};
         // console.log("line 21: " + foundDreamer)
-        res.render("dreams/new", context)
+        res.render("dreams/new", {
+            context, 
+            user: req.user
+        })
     })
 }
 
@@ -82,14 +88,17 @@ const create = (req, res) => {
 }
 //edit
 const edit = (req, res) => {
-    db.ActiveDream.findById(req.params.id), (err, foundDream) => {
+    db.ActiveDream.findById(req.params.id, (err, foundDream) => {
         if(err) res.send(err);
 
         const context = {dream: foundDream}
 
-        res.render("dreams/edit", context)
+        res.render("dreams/edit", {
+            context, 
+            user: req.user
+        })
     }
-}
+    )}
 
 //update
 const update = (req, res) => {
@@ -103,6 +112,7 @@ const update = (req, res) => {
         {new: true},
         (err, updatedDream) => {
             if(err) res.send(err);
+            console.log("line 106" + updatedDream);
             res.redirect(`/dreams/${updatedDream._id}`);
         }
     )

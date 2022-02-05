@@ -2,10 +2,10 @@ const db = require('../models');
 
 const newComment = (req, res) => {
     db.ActiveDream.findById(req.params.id, (err, foundDream) => {
-        console.log(foundDream.Dreamer)
+        //console.log(foundDream.Dreamer)
         if(err) res.send(err);
         res.render('comments/new', {
-            dreamerId: foundDream.Dreamer, 
+            user: req.user, 
             dreamId: req.params.id
         });
     })
@@ -63,7 +63,17 @@ const update = (req, res) => {
 
 // delete a comment
 const destroy = (req, res) => {
+    db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
+        if(err) res.send(err);
+        db.Dreamer.findById(deletedComment.Dreamer, (err, foundDreamer) => {
+            console.log(deletedComment)
+            foundDreamer.comments.remove(deletedComment);
+            console.log("foundddddddddddddDreamer is: " + foundDreamer);
+            foundDreamer.save();
 
+            res.redirect(`/dreams/${deletedComment.ActiveDream}`)
+        })
+    })
 };
 
 
@@ -74,5 +84,7 @@ module.exports = {
     edit,
     update,
     // show,
-    // delete: destroy
+    // edit,
+    // update,
+    destroy
 }
