@@ -1,3 +1,4 @@
+const { ActiveDream } = require('../models');
 const db = require('../models');
 
 // Rest Routes
@@ -43,8 +44,10 @@ function howTo (req, res) {
 
 //show
 function showDreamer (req, res) {
-    db.Dreamer.findById(req.params.id, function(err, foundDreamer){
-        res.render('dreamer/profile', { 
+    db.Dreamer.findById(req.params.id)
+    .populate('activeDreams')
+    .exec(function(err, foundDreamer){
+        res.render('dreamer/index', { 
             dreamer: foundDreamer, 
             user: req.user,
             });

@@ -1,19 +1,43 @@
+<%- include ('../partials/header') %>
 <body>
-    <h1>index.ejs</h1>
-    <h1>Show all of one dreamer's dreams</h1>
-    
-    <% dreamer.activeDreams.forEach(dream => { %>
-        <li>
-        <h2> Your dream: <%= dream.dream %> </h2>
-        <h3> obstacles: <% dream.obstacle.forEach( obstacle => { %>
-            <li>
-                <%= obstacle %>
-            </li>
-        <% }) %> </h3>
-        <h4> Comments: <%= dream.comments %> </h4>
-        </li>
-    <% }) %>
+    <% if (user && (dreamer.id === user.id)) { %>
+		<a href="/home">Home</a>
+        <h1>Dreamer Profile</h1>
+        <h3>Name</h3>
+        <p><%= dreamer.name %></p>
+        <h3>Email</h3>
+        <p><%= dreamer.email %></p>
+        <h3>Bio</h3>
+        <p><%= dreamer.profile %></p>
+        <h3>Zip Code</h3>
+        <p><%= dreamer.zipCode %></p>
+        <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
+        <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST">
+        <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
+        <input type="submit" value="Delete my profile" />
+        </form>
 
-    <a href="/dreamers/<%= dreamer._id %>">Profile</a>
- 
+        <h3>Dreams</h3>
+        <ul>
+        <% dreamer.activeDreams.forEach(dream => { %>
+          <li>
+          <h2><a href="/dreams/<%= dream._id %> " ><%= dream.dream %> </a></h2>
+          <h3> obstacles: <% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
+            <ul>
+              <li>
+                  <%= obstacle %>
+              </li>
+            </ul>  
+          <% }) } %> </h3>
+          <a href="/dreams/edit/<%= dream._id %>">Edit Dream</a>
+          </li>
+        <% }) %>
+       </ul>
+        <a href="/dreams/<%=dreamer._id%>/new">Add a new Dream</a>
+  
+	<% } else { %>
+		<p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
+	<% } %>
 </body>
+
+<%- include ('../partials/footer') %>
