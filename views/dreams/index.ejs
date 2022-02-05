@@ -33,11 +33,11 @@
 
 
 
-
-        <a href="/home">Home</a>
-        <a href="/dreamers/<%= user.id %>">My Profile</a>
     <% } else { %>
         <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
     <% } %>
 
 </body>
+
+
+<%- include ('../partials/footer') %>

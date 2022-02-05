@@ -1,5 +1,7 @@
 <%- include ('../partials/header') %>
 
+<body>
+
 <% if(user) { %>
   <h1>Create comment</h1>
 
@@ -13,3 +15,6 @@
 <% } else { %> 
   <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
+
+</body>
+<%- include ('../partials/footer') %>

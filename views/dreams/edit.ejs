@@ -1,3 +1,4 @@
+
 <% if(user) { %>
 
 <%- include ('../partials/header') %>
@@ -10,6 +11,7 @@
     <textarea type="type" name="dream"><%=dream.dream%></textarea>
     
     <textarea type="type" name="obstacle"> <%=dream.obstacle[0]%></textarea>
+
 
     <textarea type="type" name="obstacle"> <%=dream.obstacle[1]%></textarea>
 
@@ -36,3 +38,7 @@
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
 </main>
+
+</body>
+
+<%- include ('../partials/footer') %>

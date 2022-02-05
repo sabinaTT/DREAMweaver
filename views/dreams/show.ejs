@@ -1,4 +1,6 @@
- <%- include ('../partials/header') %> 
+
+<%- include ('../partials/header') %>
+<body>
 
 <h3>Dream</h3>
 <% if(user.id === dream.Dreamer.toString()) { %> 
@@ -63,3 +65,5 @@
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %> 
 
+</body>
+<%- include ('../partials/footer') %>
