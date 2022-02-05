@@ -4,11 +4,11 @@
     <% if(user) { %>
         <main><h1>Create your active dream here!</h1>
 
-        <h1> <%=context.dreamer.name%></h1>
-        <% console.log("new.ejs: " + context.dreamer) %>
+        <h1> <%=dreamer.name%></h1>
+        <% console.log("new.ejs: " + dreamer) %>
         <form action="/dreams" method="POST">
         
-        <input type="hidden" name="Dreamer" value="<%=context.dreamer._id%>"/>
+        <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
         
         <textarea type="type" name="dream[]" placeholder="Add your dream here!"></textarea>
 
