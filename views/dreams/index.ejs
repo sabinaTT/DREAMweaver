@@ -17,7 +17,7 @@
 <% let randomNumber; %>
 
 <% function dreamPick() { %>
-    <a href="/dreams/= <%=publishedDreams[randomNumber]._id  %>">
+    <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>">
     <%= publishedDreams[randomNumber].dream  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
