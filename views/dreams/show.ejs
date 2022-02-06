@@ -1,69 +1,90 @@
 
 <%- include ('../partials/header') %>
+<link rel="stylesheet" href="/styles/dreams/show.css">
+
 <body>
 
-<h3>Dream</h3>
 <% if(user.id === dream.Dreamer.toString()) { %> 
+<div class="dream-box">
+    <h3 id="title"><%= dream.dream %> </h3>
+    <div id="obstacles-comments">
+    <div class="obstacles">
+        <h3>Obstacles</h3>
+        <ol>
+            <li class="obstacle-list"><%= dream.obstacle[0] %></li>
+            <li class="obstacle-list"><%= dream.obstacle[1] %></li>
+            <li class="obstacle-list"><%= dream.obstacle[2] %></li>
+        </ol>
+        
+    </div>
+    <div class="comments">
+        <h3>Comments</h3>
+        <ul>
+            <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
+                <h4><%= comment['name'] %></h4>
+                <p><%= comment['comment'] %></p>
+                <% if(comment.Dreamer.toString() === user.id) { %>
+                    <div class="comment-buttons">
+                        <a href="/comments/<%= comment._id %>/edit"><button class="edit" id="edit-comment">Edit comment</button></a>
+                        <% } %>
+                        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <input type="submit" class="delete" id="delete-comment" value="Delete comment" />
+                        </form>
+                    </div>
+                
+            </li>
+        <% })} else {%>
+            <li>Leave the first comment!</li>
+        <% }%>
+        </ul> 
+        <a href="/comments/<%= dream._id %>/new"><button id="leave-comment">Leave a comment</button></a>
+    </div>
+    </div>
 
-    <p><%= dream.dream %> </p>
-    <h3>Obstacles</h3>
-    <ol>
-    <li><%= dream.obstacle[0] %></li>
-    <li><%= dream.obstacle[1] %></li>
-    <li><%= dream.obstacle[2] %></li>
-    </ol>
-    <a href="/dreams/edit/<%= dream._id %>">Edit</a>
-    <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
-    <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
-    <input type="submit" value="Delete" />
-    </form>
-    <h3>Comments</h3>
-    <ul>
-        <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
-            <h3><%= comment['name'] %></h3>
-            <p><%= comment['comment'] %></p>
-            <% if(comment.Dreamer.toString() === user.id) { %>
-            <a href="/comments/<%= comment._id %>/edit">Edit</a>
-            <% } %>
-            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" />
-            </form>
-            
-        </li>
-    <% })} else {%>
-        <li>Leave the first comment!</li>
-    <% }%>
-    </ul>
-
-    <a href="/comments/<%= dream._id %>/new">Leave a comment</a>
+    <div class="buttons">
+        <a  href="/dreams/edit/<%= dream._id %>"><button class="edit">Edit Dream</button></a>
+        <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+                <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+                <input type="submit" class="delete" value="Delete Dream" />
+        </form>
+        
+    </div>
+</div>
 
 <% } else if (user) {%> 
-    <p><%= dream.dream %> </p>
-    <h3>Obstacles</h3>
-    <ol>
-        <li><%= dream.obstacle[0] %></li>
-        <li><%= dream.obstacle[1] %></li>
-        <li><%= dream.obstacle[2] %></li>
-    </ol>
-    <h3>Comments</h3>
-    <ul>
-  
-    <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
-            <h3><%= comment['name'] %></h3>
-            <p><%= comment['comment'] %></p>
-            <% if(comment.Dreamer.toString() === user.id) { %>
-            <a href="/comments/<%= comment._id %>/edit">Edit</a>
-            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" />
-            </form>
-            <% } %>
-        </li>
-    <% })} else {%>
-        <li>Leave the first comment!</li>
-    <% }%>
-    </ul>
+    <div class="dream-box">
+        <h3 id="title"><%= dream.dream %> </h3>
+        <div id="obstacles-comments">
+            <div class="obstacles">
+                <h3>Obstacles</h3>
+                <ol>
+                    <li><%= dream.obstacle[0] %></li>
+                    <li><%= dream.obstacle[1] %></li>
+                    <li><%= dream.obstacle[2] %></li>
+                </ol>
+            </div>
+            <div class="comments">
+                <h3>Comments</h3>
+                    <ul>
+                        <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
+                            <h4><%= comment['name'] %></h4>
+                            <p><%= comment['comment'] %></p>
+                            <% if(comment.Dreamer.toString() === user.id) { %>
+                            <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit Comment</button></a>
+                            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="delete" value="Delete Comment" />
+                            </form>
+                        <% } %>
+                        
+                        <% })} else {%>
+                            <li>Leave the first comment!</li>
+                        <% }%>
+                </ul>
+                <a href="/comments/<%= dream._id %>/new"><button id="leave-comment">Leave a comment</button></a>
+            </div>
+        </div>
+    </div>
 
-    <a href="/comments/<%= dream._id %>/new">Leave a comment</a>
 
 <% } else { %>
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>

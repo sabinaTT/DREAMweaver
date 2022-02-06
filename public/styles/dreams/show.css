@@ -1,0 +1,117 @@
+body {
+
+}
+
+.dream-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 20px;
+}
+
+h3 {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+h4 {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+#obstacles-comments {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.obstacles, .comments {
+    display: flex;
+    border: 2px black solid;
+    box-sizing: border-box;
+    width: 45%;
+    margin: 15px;
+    margin-bottom: 75px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.obstacle-list {
+    margin: 10px;
+    font-size: 20px;
+}
+.comment-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+}
+
+#leave-comment {
+    display: flex;
+    font-size: 15px;
+    margin-right: auto;
+    margin-top: auto;
+    padding: 10px;
+    border: 0px;
+    background-color:white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#edit-comment {
+    box-sizing: border-box;
+    width: 140px;
+}
+
+#delete-comment {
+    box-sizing: border-box;
+    width: 140px;
+
+}
+
+.buttons {
+    display: flex;
+}
+
+.edit {
+    font-size: 15px;
+    /* margin-left: auto; */
+    /* order: 2; */
+    margin-right: 10px;
+    padding: 8px;
+    border: 0px;
+    background-color:white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.delete {
+    font-size: 15px;
+    padding: 8px;
+    border: 0px;
+    background-color:white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin-right: 10px;
+}
+
+
+
+.edit:hover, .delete:hover, .comment:hover {
+    background-color: lightgrey;
+    color: black;
+}
