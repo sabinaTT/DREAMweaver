@@ -28,13 +28,13 @@
                         <a href="/comments/<%= comment._id %>/edit"><button class="edit" id="edit-comment">Edit comment</button></a>
                         <% } %>
                         <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                            <input type="submit" class="delete" id="delete-comment" value="Delete comment" />
+                            <input type="submit" class="delete" onclick="confirm('Are you sure you want to delete your comment?')" id="delete-comment" value="Delete comment" />
                         </form>
                     </div>
                 
             </li>
         <% })} else {%>
-            <li>Leave the first comment!</li>
+            <li>No comments yet.</li>
         <% }%>
         </ul> 
         <a href="/comments/<%= dream._id %>/new"><button id="leave-comment">Leave a comment</button></a>
@@ -45,9 +45,10 @@
         <a  href="/dreams/edit/<%= dream._id %>"><button class="edit">Edit Dream</button></a>
         <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
-                <input type="submit" class="delete" value="Delete Dream" />
+                <input type="submit" onclick="confirm('Are you sure you want to delete your dream? This action cannot be undone.')"class="delete" value="Delete Dream" />
         </form>
         
+
     </div>
 </div>
 
@@ -72,12 +73,12 @@
                             <% if(comment.Dreamer.toString() === user.id) { %>
                             <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit Comment</button></a>
                             <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" class="delete" value="Delete Comment" />
+                                <input type="submit" class="delete" onclick="confirm('Are you sure you want to delete your comment?')" value="Delete Comment" />
                             </form>
                         <% } %>
                         
                         <% })} else {%>
-                            <li>Leave the first comment!</li>
+                            <li>No comments yet.</li>
                         <% }%>
                 </ul>
                 <a href="/comments/<%= dream._id %>/new"><button id="leave-comment">Leave a comment</button></a>
