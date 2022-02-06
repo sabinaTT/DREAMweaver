@@ -1,0 +1,58 @@
+#profile {
+    display: flex;
+    justify-content: center;
+}
+
+#dream-profile {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80vw;
+}
+
+#account-info {
+    display: flex;
+
+}
+
+#account-info ul {
+    list-style-type: none;
+}
+
+#bio { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 2vh 0 2vh 6vh;
+    width: 60vw;
+
+}
+
+#profile-buttons {
+    margin: 5vh 0 0 5vh;
+}
+
+#dreams {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;  
+}
+
+#profile-dreams {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 80vw;
+    border-radius: 5px;
+}
+
+.dream {
+    border: 2px solid purple;
+    width: 20vw; 
+    padding: 1vw;  
+    border-radius: 5px;
+    margin: 1vh;
+}

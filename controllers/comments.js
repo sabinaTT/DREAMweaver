@@ -69,10 +69,9 @@ const update = (req, res) => {
 const destroy = (req, res) => {
     db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
         if(err) res.send(err);
-        db.Dreamer.findById(deletedComment.Dreamer, (err, foundDreamer) => {
-            foundDreamer.comments.remove(deletedComment);
-            foundDreamer.save();
-
+        db.ActiveDream.findById(deletedComment.ActiveDream, (err, foundDream) => {
+            foundDream.Comments.remove(deletedComment);
+            foundDream.save();
             res.redirect(`/dreams/${deletedComment.ActiveDream}`)
         })
     })
