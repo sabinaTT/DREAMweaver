@@ -18,26 +18,31 @@
         <li class="bubble6 bubble"></li> 
 
 <body>
-  <div class = "banner-text">
+
+<div class = "banner-text">
+
     <h1>DREAMWEAVER</h1>
 
 </div>
 <div class="animation-area">
-    <div class="nav">
-        <ul id="nav">
-            <% if (user) { %>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
-                <li><a href="/how-to">How-To</a></li>
-                <li><a href="/dreams">Dreams</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/logout">Log Out</a></li>
-            <% } else { %>
-                <li ><a href="/auth/google">Login with Google</a></li>
-            <% } %>
-        </ul>
-    </div>
-<body>
+
+  <div class="nav">
+      <div id="logo">
+      </div>
+          <ul id="nav">
+              <% if (user) { %>
+                  <li><a href="/home">Home</a></li>
+                  <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                  <li><a href="/how-to">How-To</a></li>
+                  <li><a href="/dreams">Dreams</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/logout">Log Out</a></li>
+              <% } else { %>
+                  <li><a href="/auth/google">Login with Google</a></li>
+              <% } %>
+          </ul>
+  </div>
+
 
 <main>
   <section id='profile'>
@@ -66,7 +71,6 @@
     </div>
   </section>
   <section id='dreams'>
-    <h2>My Dreams</h2>
     <div id='profile-dreams'>
       <% dreamer.activeDreams.forEach((dream, idx )=> { %>
         <div class="dream">
@@ -74,22 +78,30 @@
             <% if(dream.isCompleted) { %>
             <p>Completed!</p>
             <% } else if (dream.published === "on") { %>
-              <p>Published</p>
+              <p>Published Dream</p>
             <% } else { %>
-              <p>Un-Published</p>
+              <p>Un-Published Dream</p>
             <% }; %> 
           </div>
 
-          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2>
+          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
           <h3> Obstacles: </h3><% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
-            <ul>
+            <ul class="obstacles">
+            <% if(!obstacle.replace(/\s/g, '').length) { %> 
+              <% } else { %> 
               <li>
                   <%= obstacle %>
               </li>
             </ul>  
+            <% }; %> 
           <% }) } %> 
-          <p>Number of Comments: <%= dream.Comments.length %></p>
+          <div class='numComments'>
+            <p># of Comments: <%= dream.Comments.length %></p>
+          </div>
+          <br>
+          <div class="edit-dream">
             <a href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+          </div>
         </div>
       <% }) %> 
     </div>
@@ -100,6 +112,7 @@
       <input type="submit" value="Delete My Profile" />
       </form>
 	<% } else { %>
+    <h3>Please Login to view this page.</h3>
 	<% } %>
     
    
@@ -107,3 +120,6 @@
 
 </main>
 </body>
+</div>
+
+

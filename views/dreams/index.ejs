@@ -19,30 +19,32 @@
 
 <body>
 
+
 <div class = "banner-text">
     <h1>DREAMWEAVER</h1>
 
 </div>
 <div class="animation-area">
     <div class="nav">
-        <ul id="nav">
-            <% if (user) { %>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
-                <li><a href="/how-to">How-To</a></li>
-                <li><a href="/dreams">Dreams</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/logout">Log Out</a></li>
-            <% } else { %>
-                <li id="login-with-google"><a href="/auth/google">Login with Google</a></li>
-            <% } %>
-        </ul>
+
+        <div id="logo">
+        </div>
+            <ul id="nav">
+                <% if (user) { %>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                    <li><a href="/how-to">How-To</a></li>
+                    <li><a href="/dreams">Dreams</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google">Login with Google</a></li>
+                <% } %>
+            </ul>
     </div>
 
-
     <% if(user) { %> 
-        
-
+    
 <% let publishedDreams = []; %>
 <% let usedNumbers = [] %>
 
@@ -52,9 +54,9 @@
 <% }}); %>
 <% let randomNumber; %>
 
-<% function dreamPick() { %>
+<% function dreamPick() { %> 
     <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>">
-    <%= publishedDreams[randomNumber].dream  %></a>
+    <%= publishedDreams[randomNumber].dream[0].slice(0,35)  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
 

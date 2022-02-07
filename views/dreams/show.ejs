@@ -24,18 +24,20 @@
     </div>
 <div class="animation-area" style="overflow: scroll">
     <div class="nav">
-        <ul id="nav">
-            <% if (user) { %>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
-                <li><a href="/how-to">How-To</a></li>
-                <li><a href="/dreams">Dreams</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/logout">Log Out</a></li>
-            <% } else { %>
-                <li><a href="/auth/google">Login with Google</a></li>
-            <% } %>
-        </ul>
+        <div id="logo">
+        </div>
+            <ul id="nav">
+                <% if (user) { %>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                    <li><a href="/how-to">How-To</a></li>
+                    <li><a href="/dreams">Dreams</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google">Login with Google</a></li>
+                <% } %>
+            </ul>
     </div>
 
     <!-- Real page starts here -->
@@ -47,10 +49,13 @@
     <div class="obstacles">
         <h3>Obstacles</h3>
         <ol>
-            <li class="obstacle-list"><%= dream.obstacle[0] %></li>
-            <li class="obstacle-list"><%= dream.obstacle[1] %></li>
-            <li class="obstacle-list"><%= dream.obstacle[2] %></li>
-        </ol>
+                    <% dream.obstacle.forEach( (obst) => { %> 
+                        <% if(!obst.replace(/\s/g, '').length) { %>
+                            <% } else { %>
+                                <li class="obstacle-list"><%= obst %></li>
+                            <% } %> 
+                        <% }); %> 
+            </ol>
         
     </div>
     <div class="comments">
@@ -62,7 +67,7 @@
                     <p><span class="name"><%= comment['name'] %><br></span><%= comment['comment'] %></p>
                 <% if(comment.Dreamer.toString() === user.id) { %>
                     <div class="comment-buttons">
-                        <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit</button></a>
+                        <a href="/comments/<%= comment._id %>/edit">Edit</a>
                         <% } %>
                         <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
                             <input type="submit" onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
@@ -103,9 +108,12 @@
             <div class="obstacles">
                 <h3>Obstacles</h3>
                 <ol>
-                    <li class="obstacle-list"><%= dream.obstacle[0] %></li>
-                    <li class="obstacle-list"><%= dream.obstacle[1] %></li>
-                    <li class="obstacle-list"><%= dream.obstacle[2] %></li>
+                    <% dream.obstacle.forEach( (obst) => { %> 
+                        <% if(!obst.replace(/\s/g, '').length) { %>
+                            <% } else { %>
+                                <li class="obstacle-list"><%= obst %></li>
+                            <% } %> 
+                        <% }); %> 
                 </ol>
             </div>
             <div class="comments">
