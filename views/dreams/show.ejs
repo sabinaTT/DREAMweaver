@@ -1,36 +1,35 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/dreams/show.css">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/dreams/show.css">
+    </head>
+    <ul class="box-area">
+        <li class="bubble1 bubble"></li>
+        <li class="bubble2 bubble"></li>
+        <li class="bubble3 bubble"></li>
+        <li class="bubble4 bubble"></li>
+        <li class="bubble5 bubble"></li>
+        <li class="bubble6 bubble"></li> 
 
-    <title><%=title%></title>
- 
-   
-</head>
-<ul class="box-area">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li> 
+
+
+
 <body>
-    
-        <!-- <ul class="box-area">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li> 
-        </ul> -->
 
-    <nav>
+
+<!-- 
+<div class = "banner-text">
+    <h1>DREAMWEAVER</h1>
+
+</div> -->
+<div class="animation-area">
+    <div class="nav">
         <ul id="nav">
             <% if (user) { %>
                 <li><a href="/home">Home</a></li>
@@ -43,9 +42,8 @@
                 <li><a href="/auth/google">Login with Google</a></li>
             <% } %>
         </ul>
-    </nav>
+    </div>
 
-    <div class="animation-area">
 <% if(user.id === dream.Dreamer.toString()) { %> 
 <div class="dream-box">
     <h3 id="title"><%= dream.dream %> </h3>

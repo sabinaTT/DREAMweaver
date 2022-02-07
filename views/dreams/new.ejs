@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/dreams/edit.css">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/dreams/edit.css">
+    </head>
+    <ul class="box-area">
+        <li class="bubble1 bubble"></li>
+        <li class="bubble2 bubble"></li>
+        <li class="bubble3 bubble"></li>
+        <li class="bubble4 bubble"></li>
+        <li class="bubble5 bubble"></li>
+        <li class="bubble6 bubble"></li> 
 
-    <title><%=title%></title>
 
-    <nav>
+
+
+<body>
+
+
+<!-- 
+<div class = "banner-text">
+    <h1>DREAMWEAVER</h1>
+
+</div> -->
+<div class="animation-area">
+    <div class="nav">
         <ul id="nav">
             <% if (user) { %>
                 <li><a href="/home">Home</a></li>
@@ -22,17 +42,9 @@
                 <li><a href="/auth/google">Login with Google</a></li>
             <% } %>
         </ul>
-    </nav>
-</head>
-<ul class="box-area">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li> 
+    </div>
 
-<body>
+
     <% if(user) { %>
         <main>
         <div class="form">    
