@@ -11,6 +11,7 @@
     <label>Comment:</label>
     <textarea name="comment"></textarea>
     <input type="submit" value="Add comment">
+    <input type="hidden" name="name" value="<%= user.name %>"/>
   </form>
 <% } else { %> 
   <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>

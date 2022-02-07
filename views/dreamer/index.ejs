@@ -1,42 +1,96 @@
-<%- include ('../partials/header') %>
-<body>
-    <% if (user && (dreamer.id === user.id)) { %>
-        <h1>Dreamer Profile</h1>
-        <h3>Name</h3>
-        <p><%= dreamer.name %></p>
-        <h3>Email</h3>
-        <p><%= dreamer.email %></p>
-        <h3>Bio</h3>
-        <p><%= dreamer.profile %></p>
-        <h3>Zip Code</h3>
-        <p><%= dreamer.zipCode %></p>
-        <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
-        <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST">
-        <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
-        <input type="submit" value="Delete My Profile" />
-        </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/dreamer/index.css">
 
-        <h3>Dreams</h3>
-        <ul>
-        <% dreamer.activeDreams.forEach(dream => { %>
-          <li>
-          <h2><a href="/dreams/<%= dream._id %> " ><%= dream.dream %> </a></h2>
-          <h3> obstacles: <% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
+    <title><%=title%></title>
+</head>
+<body>
+
+<nav>
+  <ul id="nav">
+      <% if (user) { %>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+          <li><a href="/how-to">How-To</a></li>
+          <li><a href="/dreams">Dreams</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/logout">Log Out</a></li>
+      <% } else { %>
+          <li><a href="/auth/google">Login with Google</a></li>
+      <% } %>
+  </ul>
+</nav>
+<main>
+  <section id='profile'>
+    <div id='dream-profile'>
+      <% if (user && (dreamer.id === user.id)) { %>
+        <div id="account-info">
+          <ul>
+            <li>
+              <p><h3>Name</h3><%= dreamer.name %></p>
+            </li>
+            <li>
+              <p><h3>Email</h3><%= dreamer.email %></p>
+            </li>
+            <li>
+              <p><h3>Zip Code</h3><%= dreamer.zipCode %></p>
+            </li>
+            <li id='profile-buttons'>
+              <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
+            </li>
+          </ul>
+          <div id="bio">
+            <h3>Bio</h3>
+            <p><%= dreamer.profile %></p>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section id='dreams'>
+    <h2>My Dreams</h2>
+    <div id='profile-dreams'>
+      <% dreamer.activeDreams.forEach((dream, idx )=> { %>
+        <div class="dream">
+          <div class="dream-status">
+            <% if(dream.isCompleted) { %>
+            <p>Completed!</p>
+            <% } else if (dream.published === "on") { %>
+              <p>Published</p>
+            <% } else { %>
+              <p>Un-Published</p>
+            <% }; %> 
+          </div>
+
+          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2>
+          <h3> Obstacles: </h3><% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
             <ul>
               <li>
                   <%= obstacle %>
               </li>
             </ul>  
-          <% }) } %> </h3>
-          <a href="/dreams/edit/<%= dream._id %>">Edit Dream</a>
-          </li>
-        <% }) %>
-       </ul>
-        <a href="/dreams/<%=dreamer._id%>/new">Add a new Dream</a>
-  
+          <% }) } %> 
+          <p>Number of Comments: <%= dream.Comments.length %></p>
+            <a href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+        </div>
+      <% }) %> 
+    </div>
+      <a href="/dreams/<%=dreamer._id%>/new" id="create-dream">Add a new Dream</a>
+      <br>
+      <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" id="delete-account">
+      <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
+      <input type="submit" value="Delete My Profile" />
+      </form>
 	<% } else { %>
-		<p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 	<% } %>
-</body>
+    
+   
+  </section>
 
+</main>
+</body>
 <%- include ('../partials/footer') %>

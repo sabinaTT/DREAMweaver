@@ -25,10 +25,11 @@ const db = require('../models');
 //     }
 
 //index: home page, show login etc
-function index (req, res, next){
-        db.Dreamer.find({}, function(err, dreamers){
+function index (req, res){
+        db.ActiveDream.find({}, function(err, foundDreams){
+            if(err) res.send(err);
             const context = {
-                dreamers, // I don't think we need this 'dreamers'
+                dreams: foundDreams, 
                 user: req.user,
                 title: "Home"
             };
@@ -39,14 +40,20 @@ function index (req, res, next){
 
 // Show: About Page
 function about (req, res) {
-    res.render('about', {user: req.user})
+    const context = {
+        user: req.user,
+        title: "Aout"
+    }
+
+    res.render('about', context)
 };
 
 // Show: How-To page after user is logged in
 function howTo (req, res) {
     // will need to add function to see if user if indeed logged in in order to make this visible
     const context = {
-        user: req.user
+        user: req.user,
+        title: "How-to"
     };
 
     res.render('dreamer/how-to', context)
@@ -61,9 +68,9 @@ function showDreamer (req, res) {
             dreamer: foundDreamer, 
             user: req.user,
             title: "Profile"
-        }
+            }
         res.render('dreamer/index', context);
-        });
+    });
 };
 
 function showDreamersDreams (req, res) {

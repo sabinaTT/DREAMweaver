@@ -23,15 +23,18 @@ const index = (req, res) => {
     })
 }
 
+
+
 //show
 const showDream = (req, res) => {
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
             if(err) res.send(err);
-           
-            db.Comment.find({ActiveDream: foundDream._id}, function (err, foundComments){
-
+            db.Comment.find({
+                ActiveDream: foundDream._id
+            }, function (err, foundComments){
+                
                 const context = {
                     dream: foundDream,
                     comments: foundComments,
@@ -47,7 +50,6 @@ const showDream = (req, res) => {
 
 //new
 const newDream = (req, res) => {
-    // console.log("line 17: " + req.params.id)
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
         if(err) res.send(err);
 
