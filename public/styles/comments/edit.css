@@ -1,11 +1,14 @@
-* {
+/* * {
     overflow: hidden;
-}
+} */
 /* .edit-comments{
     margin: auto;
     padding-top: 10px;
     font-family: 'Cardo', serif;
 } */
+  
+
+
 #edit-comment {
     text-align: center;
     padding-top: 40px;

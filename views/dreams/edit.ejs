@@ -18,7 +18,8 @@
         <li class="bubble6 bubble"></li> 
 
 <body>
-
+    <div class = "banner-text">
+        <h1>DREAMWEAVER</h1>
 
 
     <div class="animation-area">
@@ -39,14 +40,11 @@
         </div>
 
 
-
-<main>
-
-<% if(user) { %>
+<%// if(user) { %>
 <div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
         <h1>Dream</h1>
-    
+    <input type="hidden" name="_id" value="<%dream._id%>"/>
 
     <textarea type="type" maxlength="140" class="dream" name="dream"><%=dream.dream%></textarea>
         <h2>Obstacles</h2>
@@ -70,9 +68,9 @@
     </form>
 
 </div>
-<% } else { %>
+<%// } else { %>
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
-<% } %>
+<%// } %>
 </main>
 
 </body>

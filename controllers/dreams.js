@@ -95,28 +95,26 @@ const edit = (req, res) => {
             title: "Edit Dream"
         };
         res.render("dreams/edit", context)
-    }
-    )}
+    });
+};
 
 //update
 const update = (req, res) => {
     db.ActiveDream.findByIdAndUpdate(
         req.params.id,
         {
-            $set: {
-                ...req.body,
-            },
+            dream: req.body.dream,
+            obstacle: req.body.obstacle
         },
-        { new: true },
-        function (err, updatedDream) {
-            console.log("updateds dream: " + updatedDream)
+        {new: true},
+        function (err, updatedDream){
+            console.log(req.body);
             if(err) res.send(err);
             
             res.redirect(`/dreams/${updatedDream._id}`);
         }
-    );
-}; 
-
+    )
+}
 //destroy
 const destroy = (req, res) => {
     db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
