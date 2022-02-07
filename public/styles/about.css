@@ -1,8 +1,25 @@
 .login-with-google {
     margin: auto;
     padding-top: 10px;
+    font-family: 'Cardo', serif;
 }
 #about {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 70px;
+    font-family: 'Cardo', serif;
+    color: white;
+    font-size: 20px;
+}
+.about-form {
+    text-align: center;
+    padding: 50px 50px 50px 50px;
+    font-family: 'Cardo', serif;
+    color: white;
+    display: flex;
+    border: 2px black solid;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 200px;
+    border-radius: 30px;
+    flex-direction: column;
 }
