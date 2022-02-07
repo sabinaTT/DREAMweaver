@@ -7,7 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/dreamer/edit.css">
+        <!-- <link rel="stylesheet" href="/styles/dreamer/edit.css"> -->
+        <link rel="stylesheet" href="/styles/dreams/edit.css">
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -20,7 +21,6 @@
 <body>
 
     <div class= "banner-text">
-        <h1>DREAMWEAVER</h1>
     
     </div>
 
@@ -44,29 +44,31 @@
     </div>
 
 <%  if(user) { %>
-<main>
-    <div id="title">
-        <h1>Edit Profile</h1>
-    </div>
+    <h1>Edit Profile</h1>
+<div id="edit-profile">
+
+    <div class="form">
     <div id='input'>
         <form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
-        <h4>Name</h4>
-        <input type="text" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
-        <h4>Email</h4>
-        <input type="text" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
-        <h4>Zip Code</h4>
-        <input type="text" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
-        <h4>Bio</h4>
-        <textarea type="type" name="profile" <%if(dreamer.profile) %> 
+        <h2>Name</h2>
+        <input type="text" class="dream" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
+        <h2>Email</h2>
+        <input type="text"  class="dream" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
+        <h2>Zip Code</h2>
+        <input type="text"  class="dream" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
+        <h2>Bio</h2>
+        <textarea type="type"  class="dream" id="bio" name="profile" <%if(dreamer.profile) %> 
             value="<%=dreamer.profile%>" placeholder="Tell us a little about yourself so others can best help you achieve your dreams."><%= dreamer.profile %></textarea>
             <br>
-        <input type="submit" value="Update profile" id="updateBtn"/>
+        <input type="submit" value="Update profile" class="update"/>
         </form>
+    </div>
     </div>  
 <% } else { %>
     <p>You must be logged in to view this page.</p>
 <% } %> 
 
-</main>
-</body>
 </div>
+</div>
+</body>
+

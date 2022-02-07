@@ -42,7 +42,7 @@
 
 <% if(user) { %>
 <div id="edit-dream">
-<h1>Edit your Dream</h1>
+<h1>Edit Dream</h1>
 <div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
         
@@ -61,9 +61,9 @@
     
     <%- dream.published === "on" ? `<input type="hidden" name="published" value=0>` : "" %>
     
-    <input type="checkbox" name="published"
+    <input type="checkbox" name="published" 
     <%= dream.published === "on" ? "checked" : "" %>
-    ><span>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</h2></span></label>
+    ><span id="publish-text">Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</h2></span></label>
 
 
     <input type="submit" class="update" value="Update Dream" style="padding-right: 5px" />
