@@ -12,7 +12,7 @@ const activeDreamSchema = new Schema ({
     }],
     obstacle: [{
         type: String,
-        // require: true
+        //require: true
     }],
     Comments: [{
         type: mongoose.Schema.Types.ObjectId,
