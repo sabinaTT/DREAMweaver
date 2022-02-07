@@ -68,9 +68,9 @@ function showDreamer (req, res) {
             dreamer: foundDreamer, 
             user: req.user,
             title: "Profile"
-        }
+            }
         res.render('dreamer/index', context);
-        });
+    });
 };
 
 function showDreamersDreams (req, res) {

@@ -1,6 +1,6 @@
 <%- include ('../partials/header') %>
+
 <body>
-<main>
 <%  if(user) { %>
     <h1>Edit your profile here!</h1>
     <form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
@@ -17,6 +17,6 @@
 <% } else { %>
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %> 
-</main>
+
 </body>
 <%- include ('../partials/footer') %>
