@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/style.css">
         <link rel="stylesheet" href="/styles/dreams/show.css">
+        <link rel="stylesheet" href="/styles/about.css">
+
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -22,7 +24,11 @@
         <h1>DREAMWEAVER</h1>
 
     </div>
+
+
+ 
 <div class="animation-area">
+    <h1 id="about">About</h1>
     <div class="nav">
         <ul id="nav">
             <% if (user) { %>
@@ -33,7 +39,8 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/logout">Log Out</a></li>
             <% } else { %>
-                <li><a href="/auth/google">Login with Google</a></li>
+
+                <li class="login-with-google"><a href="/auth/google">Login with Google</a></li>
             <% } %>
         </ul>
     </div>
@@ -41,7 +48,7 @@
 
 
 
-<h1>About</h1>
+
 <!-- the description of the app will go in here (e.g. p tag) -->
 
 </body>
