@@ -1,5 +1,6 @@
-* {
-    overflow: scroll;
+.box-area {
+    height:fit-content;
+    overflow: hidden;
 }
 .animation-area {
     height: 100%;
