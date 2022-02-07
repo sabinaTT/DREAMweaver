@@ -2,7 +2,18 @@
 /* font-family: 'Stardos Stencil', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 /* font-family: 'Cardo', serif; */
-
+.dreamweaver-index-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -200px;
+    text-align: center;
+    font-family: 'Stardos Stencil', cursive;
+    color: white;
+}
 * {
     margin: 0;
     padding: 0;
