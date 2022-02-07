@@ -20,24 +20,24 @@
     <div class="comments">
         <h3>Comments</h3>
         <ul>
-            <div class="one-comment">
-                <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
-                    
-                        <p><span class="name"><%= comment['name'] %><br></span><%= comment['comment'] %></p>
-                    <% if(comment.Dreamer.toString() === user.id) { %>
-                        <div class="comment-buttons">
-                            <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit</button></a>
-                            <% } %>
-                            <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                <input type="submit" onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
-                            </form>
-                        </div>
-                    
-                    
-                        </li>
-                    <% })} else {%>
-                        <li> Be the first to support this dream.</li>
-                    <% }%>
+            
+            <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
+                <li class="one-comment">
+                    <p><span class="name"><%= comment['name'] %><br></span><%= comment['comment'] %></p>
+                <% if(comment.Dreamer.toString() === user.id) { %>
+                    <div class="comment-buttons">
+                        <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit</button></a>
+                        <% } %>
+                        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <input type="submit" onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
+                        </form>
+                    </div>
+                
+                
+                    </li>
+                <% })} else {%>
+                    <li> Be the first to support this dream.</li>
+                <% }%>
             </div>
         </ul> 
         <div class="leave-comment">
@@ -72,10 +72,10 @@
             </div>
             <div class="comments">
                 <h3>Comments</h3>
-                <div class="one-comment">
+                
                     <ul>
                         <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
-                            
+                            <li class="one-comment">
                             <p><span class="name"><%= comment['name'] %></span><br><%= comment['comment'] %></p>
                             <% if(comment.Dreamer.toString() === user.id) { %>
                                 <div class="comment-buttons">
@@ -84,17 +84,18 @@
                                         <input type="submit"  onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
                                     </form>
                                 </div>
-                            
+                            </li>
                         <% } %>
                         
                         <% })} else {%>
                             <li> Be the first to support this dream.</li>
                         <% }%>
                 </ul>
-            </div>
                 <div class="leave-comment">
                     <a href="/comments/<%= dream._id %>/new"><button class="leave-comments">Leave a comment</button></a>
                 </div>
+            </div>
+               
             </div>
         </div>
     </div>

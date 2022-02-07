@@ -36,6 +36,7 @@ h4 {
     border-radius: 20px;
     width: 350px;
     margin: 10px;
+    margin-bottom: 5px;
 }
 .name {
     font-weight:bold;
