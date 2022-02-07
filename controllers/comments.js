@@ -42,17 +42,30 @@ const create = (req, res) => {
 
 // edit a comment
 const edit = (req, res) => {
-    db.Comment.findById(req.params.id, (err, foundComment) => {
+    db.Comment.findById(req.params.id)
+    .exec((err, foundComment) => {
         if(err) res.send(err);
+        db.ActiveDream.findById(foundComment.ActiveDream)
+            .populate("Dreamer")
+            .exec((err, foundDream) => {
+                if(err) res.send(err);
+                db.Comment.find({
+                    ActiveDream: foundDream._id
+                }, function(err, foundComments) {
+                    const context = { 
+                        comment: foundComment,
+                        comments: foundComments,
+                        dream: foundDream,
+                        user: req.user,
+                        title: "Edit Comment"
+                    };
+                    res.render("comments/edit", context)
 
-        const context = { 
-            comment: foundComment,
-            user: req.user,
-            title: "Edit Comment"}
-
-        res.render("comments/edit", context)
+                })
+                
+            });
     });
-};
+}
 
 // update a comment
 const update = (req, res) => {

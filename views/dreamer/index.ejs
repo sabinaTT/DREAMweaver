@@ -53,8 +53,8 @@
             <li>
               <p><h3>Zip Code</h3><%= dreamer.zipCode %></p>
             </li>
-            <li id='profile-buttons'>
-              <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
+            <li >
+              <a id='profile-buttons' href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
             </li>
           </ul>
           <div id="bio">
@@ -78,7 +78,7 @@
             <% }; %> 
           </div>
 
-          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
+          <h2><a id='profile-buttons' href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
           <h3> Obstacles: </h3><% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
             <ul class="obstacles">
             <% if(!obstacle.replace(/\s/g, '').length) { %> 
@@ -94,20 +94,25 @@
           </div>
           <br>
           <div class="edit-dream">
-            <a href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+            <a id='profile-buttons' href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
           </div>
         </div>
       <% }) %> 
     </div>
-      <a href="/dreams/<%=dreamer._id%>/new" id="create-dream">Add a new Dream</a>
+      <a href="/dreams/<%=dreamer._id%>/new" ><button id="create-dream">Add a new Dream</button></a>
       <br>
       <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" >
       <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
       <input type="submit" id="delete-account" value="Delete My Profile" />
       </form>
-	<% } else { %>
-    <h3>Please Login to view this page.</h3>
-	<% } %>
+	    <% } else { %>
+        <h1 id="logged-in">You must be logged in to view this page.</h1>
+
+        <div id="dreamweaver-index-title">
+            <h1>DREAMWEAVER<div id="subtitle" style="font-size: 40px; color: rgb(211, 209, 209); margin-top: -10px; margin-bottom: 10px; width: 1000px; text-shadow:-2px 0 rgb(107, 11, 91), 0 2px rgb(107, 11, 91), 2px 0 rgb(107, 11, 91), 0 -2px rgb(107, 11, 91);">Crowdsource your dreams</div></h1>
+        <div class="buttons" style="margin-left: 40%">
+            <h3><a href="/auth/google"><button id="login" style="font-size:20px; height: 45px; width: 110px; margin-left: 115%; padding: 10px 0 20px 0">Login</button></h3></a>
+    <% } %>
     
    
   </section>

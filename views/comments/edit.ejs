@@ -7,7 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/dreamer/edit.css">
+        <link rel="stylesheet" href="/styles/dreams/edit.css">
+        <link rel="stylesheet" href="/styles/dreams/show.css">
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -35,16 +36,150 @@
                 <% } %>
             </ul>
     </div>
-
-<Main><h1>Edit Comment</h1>
+    <% if(user.id === dream.Dreamer.toString()) { %> 
+        <div class="dream-box">
+            <h3 id="title"><%= dream.dream %> </h3>
+            <div id="obstacles-comments">
+            <div class="obstacles">
+                <h3>Obstacles</h3>
+                <ol>
+                            <% dream.obstacle.forEach( (obst) => { %> 
+                                <% if(!obst.replace(/\s/g, '').length) { %>
+                                    <% } else { %>
+                                        <li class="obstacle-list"><%= obst %></li>
+                                    <% } %> 
+                                <% }); %> 
+                    </ol>
+                
+            </div>
+            <div class="comments">
+                <h3>Comments</h3>
+                <ul>
+                    
+                    <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
+                        <li class="one-comment">
+                            <p><span class="name"><%= comment['name'] %><br></span><%= comment['comment'] %></p>
+                        <% if(comment.Dreamer.toString() === user.id) { %>
+                            <div class="comment-buttons">
+                                <a href="/comments/<%= comment._id %>/edit">Edit</a>
+                                <% } %>
+                                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                    <input type="submit" onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
+                                </form>
+                            </div>
+                        
+                        
+                            </li>
+                        <% })} else {%>
+                            <li> Be the first to support this dream.</li>
+                        <% }%>
+                    </ul> 
+                </div>
+<div class="form" id="comment-form">
     <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
     <p>
-        <textarea type="text" name="comment" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
+        <textarea type="text" name="comment" class="dream" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
         </textarea>
     </p>
-    <input type="submit" value="Update Comment" />
+    <input type="submit" class="update" value="Update Comment" />
     </form>
+</div>
 
-</main>
+
+</div>
+</div>
+
+<div class="buttons">
+    <a  href="/dreams/edit/<%= dream._id %>"><button id="edit-dream">Edit Dream</button></a>
+    <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+            <input type="submit" onclick="confirm('Are you sure you want to delete your dream? This action cannot be undone.')" id="delete-dream" value="Delete Dream" />
+    </form>
+    
+
+</div>
+
+
+<% } else if (user) {%> 
+<div class="dream-box">
+<h3 id="title"><%= dream.dream %> </h3>
+<div id="obstacles-comments">
+<div class="obstacles">
+    <h3>Obstacles</h3>
+    <ol>
+        <% dream.obstacle.forEach( (obst) => { %> 
+            <% if(!obst.replace(/\s/g, '').length) { %>
+                <% } else { %>
+                    <li class="obstacle-list"><%= obst %></li>
+                <% } %> 
+            <% }); %> 
+    </ol>
+</div>
+<div class="comments">
+    <h3>Comments</h3>
+    
+        <ul>
+            <% if(comments.length !== 0) {comments.forEach((comment, idx) => { %>
+                <li class="one-comment">
+                <p><span class="name"><%= comment['name'] %></span><br><%= comment['comment'] %></p>
+                <% if(comment.Dreamer.toString() === user.id) { %>
+                    <div class="comment-buttons">
+                        <a href="/comments/<%= comment._id %>/edit"><button class="edit">Edit</button></a>
+                        <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <input type="submit"  onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
+                        </form>
+                    </div>
+                </li>
+            <% } %>
+            
+            <% })} else {%>
+                <li> Be the first to support this dream.</li>
+            <% }%>
+    </ul>
+    
+</div>
+
+
+
+<div class="form"  id="comment-form">
+    <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
+    <h1>
+        <textarea type="text" name="comment" class="dream" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
+        </textarea>
+    </h1>
+    <input type="submit" class="update" value="Update Comment" />
+    </form>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="form" id="comment-form">
+<form action="/comments/:id/create" method="POST" >
+<!-- action="/comments/:id/create" -->
+<input type="hidden" name="Dreamer" value="<%= user.id %>"/>
+
+<input type="hidden" name="ActiveDream" value="<%= dream.id %>"/>
+
+<h1>
+<textarea type="type" class="dream" name="comment" placeholder="Leave your comment here!"></textarea>
+</h1>
+<input type="hidden" name="name" value="<%= user.name %>"/>
+
+<input type="submit" class="update" value="Add comment"/>
+
+</form>
+</div>
+</div>
+<% } else { %>
+    <h1 id="logged-in">You must be logged in to view this page.</h1>
+
+    <div id="dreamweaver-index-title">
+        <h1>DREAMWEAVER<div id="subtitle" style="font-size: 40px; color: rgb(211, 209, 209); margin-top: -10px; margin-bottom: 10px; width: 1000px; text-shadow:-2px 0 rgb(107, 11, 91), 0 2px rgb(107, 11, 91), 2px 0 rgb(107, 11, 91), 0 -2px rgb(107, 11, 91);">Crowdsource your dreams</div></h1>
+    <div class="buttons" style="margin-left: 40%">
+        <h3><a href="/auth/google"><button id="login" style="font-size:20px; height: 45px; width: 110px; margin-left: 115%; padding: 10px 0 20px 0">Login</button></h3></a>
+<% } %>
+</div>
 </body>
-<%- include ('../partials/footer') %>

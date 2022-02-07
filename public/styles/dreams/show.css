@@ -101,17 +101,19 @@ a {
 
 .leave-comments {
     display:flex;
-    font-size: 15px;
+    font-size: 20px;
     margin-top: auto;
     padding: 10px;
-    border: 0px;
-    background-color:white;
+    background-color:#ffffff80;
     justify-content: end;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     border: 1px black solid;
     float:right;
 }
 
+.leave-comments:hover {
+    background-color: #ffffff;
+}
 
 .buttons {
     display: flex;
@@ -149,14 +151,14 @@ a {
     margin-right: auto;
     margin-top: auto;
     padding: 10px;
-    border: 0px;
-    background-color:white;
+    background-color: #ffffff80;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     margin-left: 10px;
+    border: 1px black solid;
 }
 
 #edit-dream:hover, #delete-dream:hover,  .leave-comments:hover {
-    font-weight: bold;
+    background-color: #ffffff
 }
 
 .edit:hover, .delete:hover, .comment:hover {

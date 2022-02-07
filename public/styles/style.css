@@ -20,6 +20,11 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-family: "Cardo, serif";
+    color: white;
+}
+
 .nav {
     display: flex;
     justify-content: center;
@@ -172,5 +177,41 @@ body {
 
 
 /* Main Styles */
+#logged-in{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 15vh;
+}
 
+#dreamweaver-index-title {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    width: 400px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -200px;
+    text-align: center;
+    font-family: 'Stardos Stencil', cursive;
+    color: white;
+    font-size: 60px;
+}
 
+#about, #login {
+    /* padding: 8px 14px; */
+    border: 1px black solid;
+    padding: 10px 14px;
+    background-color: #ffffff90;
+    font-size: 20px;
+    /* border-radius: 8px; */
+    /* border: 0px; */
+    /* background-color:white; */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    margin: 0px 10px;
+}
+
+#about:hover, #login:hover{
+    background-color: #ffffff;
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}

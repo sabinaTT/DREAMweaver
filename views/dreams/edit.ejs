@@ -19,7 +19,7 @@
 
 <body>
     <div class = "banner-text">
-        <h1>DREAMWEAVER</h1>
+        
 
 
     <div class="animation-area">
@@ -40,10 +40,12 @@
         </div>
 
 
-<%// if(user) { %>
+<% if(user) { %>
+<div id="edit-dream">
+<h1>Edit Dream</h1>
 <div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
-        <h1>Dream</h1>
+        
     <input type="hidden" name="_id" value="<%dream._id%>"/>
 
     <textarea type="type" maxlength="140" class="dream" name="dream"><%=dream.dream%></textarea>
@@ -59,19 +61,26 @@
     
     <%- dream.published === "on" ? `<input type="hidden" name="published" value=0>` : "" %>
     
-    <input type="checkbox" name="published"
+    <input type="checkbox" name="published" 
     <%= dream.published === "on" ? "checked" : "" %>
-    ><span>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</h2></span></label>
+    ><span id="publish-text">Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</h2></span></label>
 
 
     <input type="submit" class="update" value="Update Dream" style="padding-right: 5px" />
     </form>
 
 </div>
-<%// } else { %>
-    <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
-<%// } %>
-</main>
+</div>
+<% } else { %>
+    <h1 id="logged-in">You must be logged in to view this page.</h1>
 
+    <div id="dreamweaver-index-title">
+        <h1>DREAMWEAVER<div id="subtitle" style="font-size: 40px; color: rgb(211, 209, 209); margin-top: -10px; margin-bottom: 10px; width: 1000px; text-shadow:-2px 0 rgb(107, 11, 91), 0 2px rgb(107, 11, 91), 2px 0 rgb(107, 11, 91), 0 -2px rgb(107, 11, 91);">Crowdsource your dreams</div></h1>
+    <div class="buttons" style="margin-left: 40%">
+        <h3><a href="/auth/google"><button id="login" style="font-size:20px; height: 45px; width: 110px; margin-left: 115%; padding: 10px 0 20px 0">Login</button></h3></a>
+<% } %>
+</main>
+</div>
 </body>
+
 

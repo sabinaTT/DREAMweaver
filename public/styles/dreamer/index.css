@@ -20,10 +20,12 @@
 #dream-profile {
     border: 2px solid black;
     border-radius: 5px;
-    width: 80vw;
+    width: 73vw;
     margin: 2vh;
     padding: 1vw;
-    background-color: #E0745C;
+    /* background-color: #E0745C; */
+    background-color: #ffffff60;
+    /* color: black; */
     color: black;
 }
 
@@ -55,6 +57,10 @@
     margin: 5vh 0 0 5vh;
 }
 
+#profile-buttons:hover {
+    color: #fffefe;
+}
+
 #dreams {
     display: flex;
     flex-direction: column;
@@ -77,7 +83,8 @@
     padding: 1vw;  
     border-radius: 20px;
     margin: 1.5vh;
-    background-color:#FF8469;
+    /* background-color:#FF8469; */
+    background-color: #ffffff40;
     color: black;
 }
 
@@ -108,7 +115,7 @@
     color: black;
 }
 
-#delete-account {
+/* #delete-account {
     position: relative;
     left: 42vw;
     margin: 2vw;
@@ -116,21 +123,41 @@
     border-radius: 10px;
     padding: 1vh;
     color: black; 
-    background-color: #E0745C;
+    /* background-color: #E0745C; */
+    /*background-color: #ffffff40;
     font-family: "Cardo, serif";
-}
+} */
 
-#create-dream {
+/* #create-dream {
     margin: 2vw;
     border: 2px solid black;
     border-radius: 10px;
     padding: .5vh;
     color: black; 
     text-decoration: none;
-    background-color: #E0745C;
+    /* background-color: #E0745C; */
+   /*background-color: #ffffff40;
+} */
+#create-dream, #delete-account {
+    display:flex;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0px;
+    background-color:#ffffff80;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 1px black solid;
+    float:right;
+}
+
+#delete-account {
+    position: relative;
+    left: 42vw;
 }
 
 #create-dream:hover, #delete-account:hover {
     cursor: pointer;
-    background-color: #FF8469;
+    /* background-color: #FF8469; */
+    background-color: #ffffff;
 }

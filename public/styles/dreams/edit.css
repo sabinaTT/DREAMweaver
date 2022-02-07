@@ -1,4 +1,16 @@
+.box-area {
+    min-height: 100vh;
+    min-width: 100vw;
+    /* height: fit-content; */
+    overflow: hidden;
+    width: fit-content;
+    padding-bottom: 20vh;
+}
 
+.animation-area {
+    padding-bottom: 100vh;
+    overflow: hidden;
+}
 body {
     overflow: scroll;
 }
@@ -19,10 +31,18 @@ body {
 }
 
 h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 35px;
+    width: 100%;
+    position: absolute;
+    font-family: 'Stardos Stencil', cursive;
     display: flex;
     text-align: center;
     justify-content: center;
+    margin-top: 1vh;
 }
+
 #publish-text {
     color: black;
 }
@@ -36,6 +56,7 @@ h1 {
     border-radius: 5px;
     resize: none;
     padding: 12px;
+    margin-top: 40px;
 }
 
 .dream:focus {
@@ -134,4 +155,29 @@ h1 {
 
 input:invalid {
     border: 2px solid red;
+}
+
+#edit-dream {
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+}
+
+#edit-profile .dream{
+    width: 80%;
+    margin: 10px;
+    height: 50px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    resize: none;
+    padding: 12px;
+    margin-top: 40px;
+}
+
+#edit-profile {
+    margin-top: 7vh;
+}
+
+#edit-profile #bio {
+    height: 100px;
 }
