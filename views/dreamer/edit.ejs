@@ -36,21 +36,28 @@
             </ul>
     </div>
 <%  if(user) { %>
-    <h1>Edit your profile here!</h1>
-    <form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
-    <input type="text" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
-
-    <input type="text" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
-
-    <input type="text" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
-
-    <textarea type="type" name="profile" <%if(dreamer.profile) %> value="<%=dreamer.profile%>" placeholder="Tell us a little about yourself so others can best help you achieve your dreams."></textarea>
-
-    <input type="submit" value="Update profile" />
-    </form>
+<main>
+    <div id="title">
+        <h1>Edit Profile</h1>
+    </div>
+    <div id='input'>
+        <form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
+        <h4>Name</h4>
+        <input type="text" name="name" <% if (dreamer.name) %> value="<%=dreamer.name%>" placeholder="Name">
+        <h4>Email</h4>
+        <input type="text" name="email" <%if(dreamer.email) %> value="<%=dreamer.email%>" placeholder="E-mail">
+        <h4>Zip Code</h4>
+        <input type="text" name="zipCode" <%if(dreamer.zipCode) %> value="<%=dreamer.zipCode%>" placeholder="Zip code for future location services">
+        <h4>Bio</h4>
+        <textarea type="type" name="profile" <%if(dreamer.profile) %> 
+            value="<%=dreamer.profile%>" placeholder="Tell us a little about yourself so others can best help you achieve your dreams."><%= dreamer.profile %></textarea>
+            <br>
+        <input type="submit" value="Update profile" id="updateBtn"/>
+        </form>
+    </div>  
 <% } else { %>
     <p>You must be logged in to view this page.</p>
 <% } %> 
-
+</main>
 </body>
 </div>

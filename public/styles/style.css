@@ -14,7 +14,7 @@
     justify-content: center;
     height: 5vh;
     padding: 2vw 0 3.5vw 2vw;
-    border: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 .nav a {
