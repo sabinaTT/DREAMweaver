@@ -1,35 +1,37 @@
 <%- include ('../partials/header') %>
+<link rel="stylesheet" href="/styles/dreams/edit.css">
 
 <body>
     <% if(user) { %>
-        <main><h1>Create your active dream here!</h1>
+        <main>
+        <div class="form">    
+        <h1>Log a new dream:</h1>
 
-        <h1> <%=dreamer.name%></h1>
         <% console.log("new.ejs: " + dreamer) %>
         <form action="/dreams" method="POST">
         
         <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
         
-        <textarea type="type" name="dream[]" placeholder="Add your dream here!"></textarea>
+        <textarea type="type" class="dream" name="dream[]" placeholder="Add your dream here!"></textarea>
 
-        <textarea type="type" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the biggest one here"></textarea>
+        <textarea type="type" class="obstacle" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the blargest obstacle here."></textarea>
 
-        <textarea type="type" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the second biggest one here"></textarea>
+        <textarea type="type" class="obstacle" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the second largest obstacle here."></textarea>
 
-        <textarea type="type" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the third biggest one here"></textarea>
-        <p>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</p>
-        <input type="checkbox" name="published"> 
+        <textarea type="type" class="obstacle" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the third largest obstacle here."></textarea>
+
+        <h2><label class="checkbox"><input type="checkbox" name="published"> <span>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</span></label></h2>
         <!-- <input type="checkbox"> -->
         
         
         
         
-        <input type="submit" value="Submit dream" />
+        <input type="submit" class="submit" value="Submit dream" />
         
         
         </form>
-        
-        <a href="/home">Home</a>
+       
+    </div>
         <!-- <a href="dreamers/<%= //dreamer._id %>">Profile</a> -->
         </main>
     <% } else { %>
