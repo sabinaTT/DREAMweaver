@@ -32,9 +32,9 @@ h4 {
 }
 .one-comment {
     background-color: lightgrey;
-    padding: 10px;
+    padding: 1px 8px;
     border-radius: 20px;
-    width: 350px;
+    width: 700px;
     margin: 10px;
     margin-bottom: 5px;
 }
@@ -58,7 +58,7 @@ ul {
     display: flex;
     border: 2px black solid;
     box-sizing: border-box;
-    width: 45%;
+    width: 80%;
     margin: 15px;
     margin-bottom: 40px;
     padding: 15px;
@@ -82,7 +82,7 @@ a {
 }
 .leave-comment {
     display: flex;
-    margin-top: 140px;
+    /* margin-top: 20px; */
 }
 
 .leave-comments {
@@ -121,7 +121,7 @@ a {
 
 .delete {
     font-size: 15px;
-    margin: 0 0 0 auto;
+    margin: 0 5px 0 auto;
     border: 0px;
     background-color: lightgrey;
 }
