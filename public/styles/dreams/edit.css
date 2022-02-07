@@ -10,6 +10,7 @@
     margin: 20px 200px;
     border-radius: 30px;
     flex-direction: column;
+    padding: 20px;
 }
 h1 {
     display: flex;

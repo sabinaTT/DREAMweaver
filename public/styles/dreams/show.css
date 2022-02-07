@@ -1,3 +1,6 @@
+* {
+    overflow: scroll;
+}
 .dream-box {
     display: flex;
     flex-direction: column;
@@ -12,6 +15,7 @@ h3 {
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
+    padding-right: 25px;
 }
 
 h4 {
