@@ -2,38 +2,41 @@
 <% if(user) { %>
 
 <%- include ('../partials/header') %>
+<link rel="stylesheet" href="/styles/dreams/edit.css">
 
-<main><h1>Edit your dream here!</h1>
-
-
+<main>
+<div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
+        <h1>Dream</h1>
+    <textarea type="type" class="dream" name="dream"><%=dream.dream%></textarea>
+        <h2>Obstacles</h2>
+    <textarea type="type" class="obstacle" name="obstacle"> <%=dream.obstacle[0]%></textarea>
 
-    <textarea type="type" name="dream"><%=dream.dream%></textarea>
+
+    <textarea type="type" class="obstacle" name="obstacle"> <%=dream.obstacle[1]%></textarea>
+
+    <textarea type="type" class="obstacle" name="obstacle"> <%=dream.obstacle[2]%></textarea>
     
-    <textarea type="type" name="obstacle"> <%=dream.obstacle[0]%></textarea>
-
-
-    <textarea type="type" name="obstacle"> <%=dream.obstacle[1]%></textarea>
-
-    <textarea type="type" name="obstacle"> <%=dream.obstacle[2]%></textarea>
-
-    <p>Check this box when your dream is complete!
+    <h2><label class="checkbox">
+    
     <%- dream.isComplete === "on" ? `<input type="hidden" name="isComplete" value=0>` : "" %>
     <input type="checkbox" name="isComplete" 
-    <%= dream.isComplete === "on" ? "checked" : "" %>
-       
-    > </p>
+    <%= dream.isComplete === "on" ? "checked" : "" %>     
+    ><span>Check this box when your dream is complete! </span></label></h2>
  
-    <p>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</p>
+    <h2><label class="checkbox">
+    
     <%- dream.published === "on" ? `<input type="hidden" name="published" value=0>` : "" %>
     
     <input type="checkbox" name="published"
     <%= dream.published === "on" ? "checked" : "" %>
-    > 
+    ><span>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</h2></span></label>
 
 
-    <input type="submit" value="Update dream" />
+    <input type="submit" class="update" value="Update dream" />
     </form>
+
+</div>
 <% } else { %>
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
