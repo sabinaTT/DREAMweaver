@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/views/index.css">
+        <link rel="stylesheet" href="styles/dreamer/edit.css">
 	</head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -18,12 +18,27 @@
         <li class="bubble6 bubble"></li> 
 
 <body>
-
-<!-- <div class = "banner-text">
-    <h1>DREAMWEAVER</h1>
-
-</div> -->
-<div class="animation-area">
+    <div class= "banner-text">
+        <h1>DREAMWEAVER</h1>
+    
+    </div>
+    <div class="animation-area">
+        <div class="nav">
+            <ul id="nav">
+                <% if (user) { %>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                    <li><a href="/how-to">How-To</a></li>
+                    <li><a href="/dreams">Dreams</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li ><a href="/auth/google">Login with Google</a></li>
+                <% } %>
+            </ul>
+        </div>
+ 
+<!-- Real page starts here -->
 
 <%  if(user) { %>
     <h1>Edit your profile here!</h1>
@@ -41,5 +56,5 @@
 <% } else { %>
     <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %> 
-
+    </div>
 </body>
