@@ -23,6 +23,8 @@ const index = (req, res) => {
     })
 }
 
+
+
 //show
 const showDream = (req, res) => {
     db.ActiveDream.findById(req.params.id)
