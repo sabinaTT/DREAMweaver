@@ -1,3 +1,9 @@
+* {
+    overflow: scroll;
+}
+.animation-area {
+    height: 100%;
+}
 #profile {
     display: flex;
     justify-content: center;

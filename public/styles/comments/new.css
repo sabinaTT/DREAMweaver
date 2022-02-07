@@ -1,0 +1,24 @@
+* {
+    overflow: hidden;
+}
+.create-comment {
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Cardo', serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+};
+.new-comment-form {
+    text-align: center;
+    padding: 50px 50px 50px 50px;
+    font-family: 'Cardo', serif;
+    color: white;
+    display: flex;
+    border: 2px black solid;
+    justify-content: center;
+    text-align: center;
+    margin: 20px 200px;
+    border-radius: 30px;
+    flex-direction: column;
+}
+

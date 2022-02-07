@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/comments/edit.css">
+        <link rel="stylesheet" href="/styles/comments/new.css">
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -39,8 +39,8 @@
         </div>
         
 <% if(user) { %>
-  <h1>Create comment</h1>
-
+  <h1 class="create-comment">Create comment</h1>
+<div class="new-comment-form">
   <form id="add-comment-form" method="POST" action="/comments/:id/create">
     <input type="hidden" name="Dreamer" value="<%= user.id %>"/>
     <input type="hidden" name="ActiveDream" value="<%= dreamId %>"/>
@@ -49,6 +49,7 @@
     <input type="submit" value="Add comment">
     <input type="hidden" name="name" value="<%= user.name %>"/>
   </form>
+</div>
 <% } else { %> 
   <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>

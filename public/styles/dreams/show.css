@@ -20,9 +20,9 @@ h4 {
     margin-bottom: auto;
 }
 
-.box-area {
-    /* overflow: hidden; */
-}
+/* .box-area {
+    overflow: hidden;
+} */
 
 #title {
     display: flex;
