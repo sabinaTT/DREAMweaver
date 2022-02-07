@@ -4,7 +4,8 @@
 /* font-family: 'Cardo', serif; */
 
 .box-area {
-    height:fit-content;
+    min-height: 100vh;
+    /* height:fit-content; */
     overflow: hidden;
 }
 .animation-area {

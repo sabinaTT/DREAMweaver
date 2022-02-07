@@ -5,6 +5,8 @@
     overflow: hidden;
     width: fit-content;
 }
+
+
 .dream-box {
     display: flex;
     flex-direction: column;

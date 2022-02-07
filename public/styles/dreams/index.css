@@ -4,6 +4,8 @@
     gap: 0px;
     grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
     justify-self: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 
 }
 .box-area {
