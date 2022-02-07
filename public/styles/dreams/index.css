@@ -18,6 +18,7 @@
     padding: 10px;
     background-color: lightgrey;
     text-align: center;
+    font-size: 5px;
 }
 
 .dreams-medium {
@@ -30,6 +31,7 @@
     background-color: lightgrey;
     font-size: 20px;
     text-align: center;
+    font-size: 5px;
 }
 
 .dreams-large {
@@ -52,7 +54,8 @@
 
 .two {
     grid-column: 12/14;
-    grid-row: 2/4
+    grid-row: 2/4;
+    font-size: small;
 }
 
 .three {
