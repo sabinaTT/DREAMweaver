@@ -1,3 +1,6 @@
+* {
+    overflow: hidden;
+}
 .login-with-google {
     margin: auto;
     padding-top: 10px;
@@ -7,7 +10,7 @@
     text-align: center;
     padding-top: 70px;
     font-family: 'Cardo', serif;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
 }
 .about-form {
