@@ -107,9 +107,9 @@
     </div>
       <a href="/dreams/<%=dreamer._id%>/new" id="create-dream">Add a new Dream</a>
       <br>
-      <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" id="delete-account">
+      <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" >
       <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
-      <input type="submit" value="Delete My Profile" />
+      <input type="submit" id="delete-account" value="Delete My Profile" />
       </form>
 	<% } else { %>
     <h3>Please Login to view this page.</h3>
