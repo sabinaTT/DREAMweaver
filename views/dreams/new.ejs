@@ -7,7 +7,6 @@
         <div class="form">    
         <h1>Log a new dream:</h1>
 
-        <% console.log("new.ejs: " + dreamer) %>
         <form action="/dreams" method="POST">
         
         <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
@@ -21,7 +20,7 @@
         <textarea type="type" class="obstacle" name="obstacle[]" placeholder="There are three main obstacles to every dream. Add the third largest obstacle here."></textarea>
 
         <h2><label class="checkbox"><input type="checkbox" name="published"> <span>Are you comfortable publishing this dream? We recommend it, otherwise others will not be able to support you.</span></label></h2>
-        <!-- <input type="checkbox"> -->
+
         
         
         
@@ -32,7 +31,7 @@
         </form>
        
     </div>
-        <!-- <a href="dreamers/<%= //dreamer._id %>">Profile</a> -->
+
         </main>
     <% } else { %>
         <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
