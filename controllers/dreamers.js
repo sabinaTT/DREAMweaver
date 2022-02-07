@@ -42,7 +42,7 @@ function index (req, res){
 function about (req, res) {
     const context = {
         user: req.user,
-        title: "Aout"
+        title: "About"
     }
 
     res.render('about', context)

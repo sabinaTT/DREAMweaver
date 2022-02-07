@@ -18,20 +18,17 @@
         <li class="bubble6 bubble"></li> 
 
 <body>
-    <div class = "banner-text">
-        <h1>DREAMWEAVER</h1>
-    
-    </div>
-<div class="animation-area" style="overflow: scroll">
+    <div class="animation-area" style="overflow: scroll">
+    <div class = "banner-text"> </div>
+        
     <div class="nav">
         <div id="logo">
         </div>
             <ul id="nav">
                 <% if (user) { %>
-                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dreams">Home</a></li>
                     <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
                     <li><a href="/how-to">How-To</a></li>
-                    <li><a href="/dreams">Dreams</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/logout">Log Out</a></li>
                 <% } else { %>
@@ -39,6 +36,7 @@
                 <% } %>
             </ul>
     </div>
+
 
     <!-- Real page starts here -->
 
@@ -85,7 +83,6 @@
         <div class="leave-comment">
             <a href="/comments/<%= dream._id %>/new"><button class="leave-comments">Leave a comment</button></a>
         </div>
-    
    
     </div>
     </div>

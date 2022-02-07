@@ -23,8 +23,8 @@
 .nav {
     display: flex;
     justify-content: center;
-    height: 5vh;
-    padding: 2vw 0 3.5vw 2vw;
+    height: 4vh;
+    padding: 1vh 0 3vw 2vw;
     border-bottom: 2px solid black;
 }
 
@@ -42,6 +42,8 @@
     display: flex;
     justify-content: space-between;
     width: 50vw;
+    position: relative;
+    top: -3vh;
 }
 
 #logo {

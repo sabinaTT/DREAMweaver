@@ -1,5 +1,12 @@
-* {
-    overflow: scroll;
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display=swap');
+/* font-family: 'Stardos Stencil', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+/* font-family: 'Cardo', serif; */
+
+.box-area {
+    min-height: 100vh;
+    /* height:fit-content; */
+    overflow: hidden;
 }
 .animation-area {
     height: 100%;
@@ -104,7 +111,13 @@
 #delete-account {
     position: relative;
     left: 42vw;
-    margin: 5vh;
+    margin: 2vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1vh;
+    color: black; 
+    background-color: #E0745C;
+    font-family: "Cardo, serif";
 }
 
 #create-dream {
@@ -117,7 +130,7 @@
     background-color: #E0745C;
 }
 
-#create-dream:hover {
+#create-dream:hover, #delete-account:hover {
     cursor: pointer;
     background-color: #FF8469;
 }

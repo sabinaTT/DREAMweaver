@@ -1,5 +1,5 @@
 
-* {
+body {
     overflow: scroll;
 }
 .form {
@@ -16,6 +16,9 @@ h1 {
     display: flex;
     text-align: center;
     justify-content: center;
+}
+#publish-text {
+    color: black;
 }
 
 .dream {
@@ -89,8 +92,8 @@ h1 {
     text-align: center;
     color: white;
     position: absolute;
-    left: 0.7rem;
-    top: 0.4rem;
+    left: 0.6rem;
+    top: 0.3rem;
 }
 
 .checkbox > input:active {
@@ -123,3 +126,6 @@ h1 {
     font-weight: bold;
 }
 
+input:invalid {
+    border: 2px solid red;
+}

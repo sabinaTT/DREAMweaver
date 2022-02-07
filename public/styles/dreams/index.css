@@ -4,10 +4,16 @@
     gap: 0px;
     grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
     justify-self: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 
 }
 .box-area {
     overflow: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 .dreams-small {
     border: 2px black solid;
@@ -16,19 +22,22 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: lightgrey;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
     text-align: center;
 }
 
 .dreams-medium {
-    border: 2px black solid;
+    border: 1px black solid;
     border-radius:  50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: lightgrey;
-    font-size: 20px;
+    /* background-color: #ffffff; */
+    /* font-size: 20px; */
+    /* opacity: 0.6; */
     text-align: center;
 }
 
@@ -39,8 +48,8 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
-    background-color: lightgrey;
-    font-size: 30px;
+    background-color: #ffffff;
+    opacity: 0.9;
     text-align: center;
 }
 
@@ -52,7 +61,7 @@
 
 .two {
     grid-column: 12/14;
-    grid-row: 2/4
+    grid-row: 2/4;
 }
 
 .three {
@@ -72,7 +81,9 @@
 
 .six {
     grid-column: 14/17;
-    grid-row: 5/8
+    grid-row: 5/8;
+    background: #ffffff;
+    opacity: 0.6;
 }
 
 .seven {
@@ -82,7 +93,9 @@
 
 .eight {
     grid-column: 2/5;
-    grid-row: 8/11
+    grid-row: 8/11;
+    background: #ffffff;
+    opacity: 0.6;
 }
 
 .nine {

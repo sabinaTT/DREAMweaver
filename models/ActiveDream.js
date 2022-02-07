@@ -12,7 +12,7 @@ const activeDreamSchema = new Schema ({
     }],
     obstacle: [{
         type: String,
-        // require: true
+        //require: true
     }],
     Comments: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -22,7 +22,6 @@ const activeDreamSchema = new Schema ({
         type: String,
         // require: true
     },
-    isComplete: String,
 },
     {timestamps: true}   
 )

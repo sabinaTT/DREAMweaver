@@ -30,6 +30,8 @@ const showDream = (req, res) => {
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
+            console.log("req params id: " + req.params.id)
+            console.log("req user" + req.user)
             if(err) res.send(err);
             db.Comment.find({
                 ActiveDream: foundDream._id
@@ -78,7 +80,7 @@ const create = (req, res) => {
             const context = {
                 title: "Dreams"
             };
-            res.redirect('/dreams')
+            res.redirect(`/dreams/${createdDream._id}`)
         })
     })
 }
@@ -93,28 +95,26 @@ const edit = (req, res) => {
             title: "Edit Dream"
         };
         res.render("dreams/edit", context)
-    }
-    )}
+    });
+};
 
 //update
 const update = (req, res) => {
     db.ActiveDream.findByIdAndUpdate(
         req.params.id,
         {
-            $set: {
-                ...req.body,
-            },
+            dream: req.body.dream,
+            obstacle: req.body.obstacle
         },
-        {new: true,
-        returnOriginal: false},
+        {new: true},
         function (err, updatedDream){
+            console.log(req.body);
             if(err) res.send(err);
             
             res.redirect(`/dreams/${updatedDream._id}`);
         }
     )
 }
-
 //destroy
 const destroy = (req, res) => {
     db.ActiveDream.findByIdAndDelete(req.params.id, (err, deletedActiveDream) => {
