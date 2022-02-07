@@ -9,8 +9,6 @@
 .box-area {
     overflow: hidden;
 }
-
-
 .dreams-small {
     border: 2px black solid;
     border-radius:50%;
@@ -96,3 +94,4 @@
     grid-column: 17/19;
     grid-row: 8/10
 }
+

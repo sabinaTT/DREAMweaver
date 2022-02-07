@@ -1,5 +1,6 @@
-
-
+* {
+    overflow: scroll;
+}
 .dream-box {
     display: flex;
     flex-direction: column;
@@ -14,6 +15,7 @@ h3 {
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
+    padding-right: 25px;
 }
 
 h4 {
@@ -22,9 +24,9 @@ h4 {
     margin-bottom: auto;
 }
 
-.box-area {
+/* .box-area {
     overflow: hidden;
-}
+} */
 
 #title {
     display: flex;
@@ -151,4 +153,5 @@ a {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     font-weight: bold;
 }
+
 

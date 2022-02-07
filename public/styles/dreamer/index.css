@@ -1,3 +1,9 @@
+* {
+    overflow: scroll;
+}
+.animation-area {
+    height: 100%;
+}
 #profile {
     display: flex;
     justify-content: center;
@@ -58,7 +64,7 @@
 }
 
 .dream {
-    border: 2px solid black;
+    border: 2px solid rgb(0, 0, 0);
     width: 20vw; 
     height: fit-content;
     padding: 1vw;  
