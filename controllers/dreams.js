@@ -100,6 +100,7 @@ const edit = (req, res) => {
 const update = (req, res) => {
     db.ActiveDream.findByIdAndUpdate(
         req.params.id,
+        
         {
             $set: {
                 ...req.body,

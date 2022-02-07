@@ -46,6 +46,8 @@
 <div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
         <h1>Dream</h1>
+    
+
     <textarea type="type" maxlength="140" class="dream" name="dream"><%=dream.dream%></textarea>
         <h2>Obstacles</h2>
     <textarea type="type" maxlength="140" class="obstacle" name="obstacle"> <%=dream.obstacle[0]%></textarea>

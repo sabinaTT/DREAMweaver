@@ -1,5 +1,9 @@
-body {
-    overflow: scroll;
+.box-area {
+    min-height: 100vh;
+    min-width: 100vw;
+    /* height: fit-content; */
+    overflow: hidden;
+    width: fit-content;
 }
 .dream-box {
     display: flex;
@@ -38,7 +42,7 @@ h4 {
     background-color: lightgrey;
     padding: 1px 8px;
     border-radius: 20px;
-    width: 700px;
+    width: 42vw;
     margin: 10px;
     margin-bottom: 5px;
 }
@@ -119,14 +123,16 @@ a {
 .edit {
     display: flex;
     font-size: 15px;
-    margin-left: 100px auto;
+    margin-left: 40vw auto;
     border: 0px;
     background-color: lightgrey;
 }
 
 .delete {
+    display: flex;
     font-size: 15px;
     margin: 0 5px 0 auto;
+    margin-left: 40vw auto;
     border: 0px;
     background-color: lightgrey;
 }
