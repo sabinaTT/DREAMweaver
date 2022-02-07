@@ -17,22 +17,23 @@
         <li class="bubble5 bubble"></li>
         <li class="bubble6 bubble"></li> 
 <body>
-    <div class = "banner-text">
+      <div class = "banner-text">
         <h1>DREAMWEAVER</h1>
+      </div>
 <div class="animation-area">
     <div class="nav">
         <div id="logo">
         </div>
             <ul id="nav">
-                <% if (user) { %>
+                <%// if (user) { %>
                     <li><a href="/dreams">Home</a></li>
-                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                    <li><a href="/dreamers/<%= //user._id %>">Profile</a></li>
                     <li><a href="/how-to">How-To</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/logout">Log Out</a></li>
-                <% } else { %>
+                <% //} else { %>
                     <li><a href="/auth/google">Login with Google</a></li>
-                <% } %>
+                <% //} %>
             </ul>
     </div>
 
@@ -40,17 +41,25 @@
 <% if(user) { %>
   <h1 class="create-comment">Create comment</h1>
 <div class="new-comment-form">
-  <form id="add-comment-form" method="POST" action="/comments/:id/create">
+  <form action="/comments/:id/create" method="POST" >
+    <!-- action="/comments/:id/create" -->
     <input type="hidden" name="Dreamer" value="<%= user.id %>"/>
+
     <input type="hidden" name="ActiveDream" value="<%= dreamId %>"/>
+
     <label>Comment:</label>
-    <textarea name="comment"></textarea>
-    <input type="submit" value="Add comment">
+
+    <textarea type="type" name="comment" placeholder="Leave your comment here!">WHY WON'T THIS WORK</textarea>
+
     <input type="hidden" name="name" value="<%= user.name %>"/>
+
+    <input type="submit" value="Add comment"/>
+    
   </form>
 </div>
 <% } else { %> 
   <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
-
 </body>
+</div>
+

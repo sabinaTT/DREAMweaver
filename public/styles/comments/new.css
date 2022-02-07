@@ -1,6 +1,7 @@
-* {
+.box-animation {
     overflow: hidden;
-}
+    min-height: 100vh;
+} 
 .create-comment {
     text-align: center;
     padding-top: 40px;
@@ -17,7 +18,7 @@
     border: 2px black solid;
     justify-content: center;
     text-align: center;
-    margin: 20px 200px;
+    margin: 200px 200px;
     border-radius: 30px;
     flex-direction: column;
 }
