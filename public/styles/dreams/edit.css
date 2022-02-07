@@ -12,6 +12,12 @@ body {
     flex-direction: column;
     padding: 20px;
 }
+#comment-form {
+    width: 80%;
+    margin: 20px 40px;
+    border-radius: 5px;
+}
+
 h1 {
     display: flex;
     text-align: center;
@@ -21,7 +27,7 @@ h1 {
     color: black;
 }
 
-.dream {
+.dream{
     width: 80%;
     margin: 10px;
     height: 100px;
