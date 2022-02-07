@@ -1,6 +1,4 @@
-
-<% if(user) { %>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -19,12 +17,7 @@
         <li class="bubble5 bubble"></li>
         <li class="bubble6 bubble"></li> 
 
-
-
-
 <body>
-
-
 
 <div class="animation-area">
     <div class="nav">
@@ -43,10 +36,9 @@
     </div>
 
 
-
-
-
 <main>
+
+<% if(user) { %>
 <div class="form">
     <form action="/dreams/<%= dream._id %>?_method=PUT" method="POST">
         <h1>Dream</h1>
@@ -79,4 +71,3 @@
 
 </body>
 
-<%- include ('../partials/footer') %>
