@@ -17,11 +17,7 @@
         <li class="bubble5 bubble"></li>
         <li class="bubble6 bubble"></li> 
 
-
-
-
 <body>
-
 
 <!-- 
 <div class = "banner-text">
@@ -44,10 +40,8 @@
         </ul>
     </div>
 
-
     <% if(user) { %> 
-        
-
+    
 <% let publishedDreams = []; %>
 <% let usedNumbers = [] %>
 
@@ -57,9 +51,9 @@
 <% }}); %>
 <% let randomNumber; %>
 
-<% function dreamPick() { %>
+<% function dreamPick() { %> 
     <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>">
-    <%= publishedDreams[randomNumber].dream  %></a>
+    <%= publishedDreams[randomNumber].dream[0].slice(0,35)  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
 
