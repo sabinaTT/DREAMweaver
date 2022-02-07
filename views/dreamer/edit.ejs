@@ -1,6 +1,30 @@
-<%- include ('../partials/header') %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/views/index.css">
+	</head>
+    <ul class="box-area">
+        <li class="bubble1 bubble"></li>
+        <li class="bubble2 bubble"></li>
+        <li class="bubble3 bubble"></li>
+        <li class="bubble4 bubble"></li>
+        <li class="bubble5 bubble"></li>
+        <li class="bubble6 bubble"></li> 
 
 <body>
+
+<!-- <div class = "banner-text">
+    <h1>DREAMWEAVER</h1>
+
+</div> -->
+<div class="animation-area">
+
 <%  if(user) { %>
     <h1>Edit your profile here!</h1>
     <form action="/dreamers/<%= dreamer._id %>?_method=PUT" method="POST">
@@ -19,4 +43,3 @@
 <% } %> 
 
 </body>
-<%- include ('../partials/footer') %>

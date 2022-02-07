@@ -1,4 +1,49 @@
-.form {
+* {
+    overflow: hidden;
+}
+/* .edit-comments{
+    margin: auto;
+    padding-top: 10px;
+    font-family: 'Cardo', serif;
+} */
+#edit-comment {
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Cardo', serif;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.edit-comment-form {
+    text-align: center;
+    padding: 25px 25px 25px 25px;
+    font-family: 'Cardo', serif;
+    color: white;
+    display: flex;
+    border: 2px black solid;
+    justify-content: center;
+    text-align: center;
+    margin: 40px 400px;
+    border-radius: 30px;
+    flex-direction: column;
+}
+
+.edit-comment-textarea {
+    background-color: transparent;
+    width: 350px;
+    height: 90px;
+    color: rgb(255, 255, 255);
+}
+
+.update-comment-btn {
+    background-color: white;
+    width: 140px;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    font-family:'Cardo', serif; 
+    font-size: 15px;
+}
+
+/* .form {
     display: flex;
     border: 2px black solid;
     justify-content: center;
@@ -116,5 +161,5 @@ h1 {
 
 .update:hover, .submit:hover {
     font-weight: bold;
-}
+} */
 
