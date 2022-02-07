@@ -3,6 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 /* font-family: 'Cardo', serif; */
 
+#nav {
+    list-style: none;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    width: 100%;
+    text-align: center;
+    padding: 10px 250px 10px 250px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +32,7 @@ body {
     margin-top: -40%;
 }
 
-.animation-area, nav {
+.animation-area {
     background: linear-gradient(to left, #8a32b3, #c05227 );
     width: 100%;
     height: 100%;
@@ -102,13 +111,8 @@ body {
     }
 }
 
-#nav {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50vw;
-}
+
+
 
 
 /* Main Styles */
