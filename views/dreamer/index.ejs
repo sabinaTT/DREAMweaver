@@ -14,7 +14,7 @@
         <a href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
         <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST">
         <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
-        <input type="submit" value="Delete My Profile" />
+        <input type="submit" onclick="confirm('Are you sure you want to delete your profile? This action cannot be undone, and all of your dreams will be lost.')"value="Delete My Profile" />
         </form>
 
         <h3>Dreams</h3>

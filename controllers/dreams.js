@@ -31,8 +31,9 @@ const showDream = (req, res) => {
         .populate("Dreamer")
         .exec((err, foundDream) => {
             if(err) res.send(err);
-            
-            db.Comment.find({ActiveDream: foundDream._id}, function (err, foundComments){
+            db.Comment.find({
+                ActiveDream: foundDream._id
+            }, function (err, foundComments){
                 
                 const context = {
                     dream: foundDream,
