@@ -6,6 +6,10 @@
     justify-self: center;
 
 }
+.box-area {
+    overflow: hidden;
+}
+
 
 .dreams-small {
     border: 2px black solid;
