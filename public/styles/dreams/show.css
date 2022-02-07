@@ -34,12 +34,16 @@ h4 {
     background-color: lightgrey;
     padding: 10px;
     border-radius: 20px;
-    width: 400px;
+    width: 350px;
     margin: 10px;
 }
 .name {
     font-weight:bold;
     margin-right: 5px;
+}
+
+ul {
+    list-style: none;
 }
 
 #obstacles-comments {
@@ -58,6 +62,7 @@ h4 {
     margin-bottom: 40px;
     padding: 15px;
     border-radius: 5px;
+    align-content: center;
 }
 
 .obstacle-list {
@@ -67,8 +72,6 @@ h4 {
 .comment-buttons {
     display: flex;
     flex-direction: row;
-    /* margin-left: auto; */
-    /* margin-bottom: 10px; */
     justify-content: right;
 }
 
@@ -143,3 +146,4 @@ a {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     font-weight: bold;
 }
+
