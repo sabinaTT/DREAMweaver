@@ -5,7 +5,7 @@
 
 .box-area {
     min-height: 100vh;
-    /* height:fit-content; */
+    height:fit-content;
     overflow: hidden;
 }
 .animation-area {

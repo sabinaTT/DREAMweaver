@@ -1,7 +1,17 @@
-.box-animation {
-    overflow: hidden;
+.box-area {
     min-height: 100vh;
-} 
+    min-width: 100vw;
+    /* height: fit-content; */
+    overflow: hidden;
+    width: fit-content;
+}
+
+.comment-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .create-comment {
     text-align: center;
     padding-top: 40px;
@@ -10,16 +20,20 @@
     font-size: 20px;
 };
 .new-comment-form {
-    text-align: center;
+    flex-direction: column;
+    /* text-align: center; */
     padding: 50px 50px 50px 50px;
     font-family: 'Cardo', serif;
     color: white;
     display: flex;
     border: 2px black solid;
-    justify-content: center;
-    text-align: center;
-    margin: 200px 200px;
+    justify-self: center;
     border-radius: 30px;
-    flex-direction: column;
+    margin-left: 500px;
 }
 
+
+form {
+    display: flex;
+    flex-direction: column;
+}

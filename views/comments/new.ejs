@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/comments/new.css">
+        <link rel="stylesheet" href="/styles/dreams/edit.css">
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -39,27 +39,28 @@
 
         
 <% if(user) { %>
-  <h1 class="create-comment">Create comment</h1>
-<div class="new-comment-form">
+<div class="form">
   <form action="/comments/:id/create" method="POST" >
     <!-- action="/comments/:id/create" -->
     <input type="hidden" name="Dreamer" value="<%= user.id %>"/>
 
     <input type="hidden" name="ActiveDream" value="<%= dreamId %>"/>
 
-    <label>Comment:</label>
-
-    <textarea type="type" name="comment" placeholder="Leave your comment here!"></textarea>
-
+    <h2>Comment:</h2>
+    <h1>
+    <textarea type="type" class="dream" name="comment" placeholder="Leave your comment here!"></textarea>
+    </h1>
     <input type="hidden" name="name" value="<%= user.name %>"/>
 
-    <input type="submit" value="Add comment"/>
+    <input type="submit" class="update" value="Add comment"/>
     
   </form>
+</div>
 </div>
 <% } else { %> 
   <p>You must be <span><a href="/auth/google">logged in</a></span> to view this page.</p>
 <% } %>
-</body>
 </div>
+</body>
+
 
