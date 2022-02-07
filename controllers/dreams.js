@@ -30,8 +30,6 @@ const showDream = (req, res) => {
     db.ActiveDream.findById(req.params.id)
         .populate("Dreamer")
         .exec((err, foundDream) => {
-            console.log("req params id: " + req.params.id)
-            console.log("req user" + req.user)
             if(err) res.send(err);
             db.Comment.find({
                 ActiveDream: foundDream._id

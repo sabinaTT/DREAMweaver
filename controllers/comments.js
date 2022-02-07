@@ -1,23 +1,31 @@
 const db = require('../models');
 
 const newComment = (req, res) => {
-    db.ActiveDream.findById(req.params.id, (err, foundDream) => {
+    db.ActiveDream.findById(req.params.id)
+    .populate("Dreamer")
+    .exec((err, foundDream) => {
         if(err) res.send(err);
-        const context = {
-            user: req.user, 
-            dreamId: req.params.id,
-            title: "New Comment"
-        }
-        res.render('comments/new', context);
+        db.Comment.find({
+            ActiveDream: foundDream._id
+        }, function (err, foundComments) {
+            const context = {
+                user: req.user, 
+                dream: foundDream,
+                comments: foundComments,
+                title: "New Comment"
+            }
+            res.render('comments/new', context);
+        })
+       
     })
 };
 
 // create a comment
 const create = (req, res) => {
     db.Comment.create(req.body, (err, createdComment) => {
-
+        console.log("req body comment: " + req.body.comment)
         if(err) res.send(err);
-
+        console.log("created comment" + createdComment)
         db.ActiveDream.findById(createdComment.ActiveDream) 
             .exec(function (err, foundActiveDream) {
             if (err) res.send(err);
