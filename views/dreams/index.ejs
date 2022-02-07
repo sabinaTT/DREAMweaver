@@ -8,18 +8,26 @@
         
 
 <% let publishedDreams = []; %>
+<% let usedNumbers = [] %>
 
 <% dreams.forEach(dream => { %>
     <% if (dream.published == "on") { %>
         <% publishedDreams.push(dream) %>
-    <% }}); %>
+<% }}); %>
+<% let randomNumber; %>
 
+<% function dreamPick() { %>
+    <a href="/dreams/= <%=publishedDreams[randomNumber]._id  %>">
+    <%= publishedDreams[randomNumber].dream  %></a>
+    <% usedNumbers.push(randomNumber)%> 
+<% } %>
 
 <% function dreamPicker() { %>
-    <% let randomNumber = Math.floor(Math.random() * (publishedDreams.length)); %>
-        <a href="/dreams/<%= publishedDreams[randomNumber]._id %>">
-            <%= publishedDreams[randomNumber].dream %></a>
-<% }; %>
+    <% randomNumber = Math.floor(Math.random() * (publishedDreams.length));  %>
+    <% !usedNumbers.includes(randomNumber) ? dreamPick() : dreamPicker() } %> 
+
+
+
 <div class="container">
     <div class="one dreams-medium"><%= dreamPicker() %></div>
     <div class="two dreams-small"><%= dreamPicker() %></div>
