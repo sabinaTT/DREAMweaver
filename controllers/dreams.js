@@ -50,7 +50,6 @@ const showDream = (req, res) => {
 
 //new
 const newDream = (req, res) => {
-    // console.log("line 17: " + req.params.id)
     db.Dreamer.findById(req.params.id, (err, foundDreamer) => {
         if(err) res.send(err);
 
