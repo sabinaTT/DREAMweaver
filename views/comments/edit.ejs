@@ -1,6 +1,40 @@
-<%- include ('../partials/header') %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/dreamer/edit.css">
+    </head>
+    <ul class="box-area">
+        <li class="bubble1 bubble"></li>
+        <li class="bubble2 bubble"></li>
+        <li class="bubble3 bubble"></li>
+        <li class="bubble4 bubble"></li>
+        <li class="bubble5 bubble"></li>
+        <li class="bubble6 bubble"></li> 
 
 <body>
+<div class="animation-area">
+    <div class="nav">
+        <div id="logo">
+        </div>
+            <ul id="nav">
+                <% if (user) { %>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+                    <li><a href="/how-to">How-To</a></li>
+                    <li><a href="/dreams">Dreams</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/logout">Log Out</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google">Login with Google</a></li>
+                <% } %>
+            </ul>
+    </div>
 
 <Main><h1>Edit Comment</h1>
     <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
