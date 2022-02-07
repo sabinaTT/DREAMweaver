@@ -25,10 +25,11 @@ const db = require('../models');
 //     }
 
 //index: home page, show login etc
-function index (req, res, next){
-        db.Dreamer.find({}, function(err, dreamers){
+function index (req, res){
+        db.ActiveDream.find({}, function(err, foundDreams){
+            if(err) res.send(err);
             const context = {
-                dreamers, // I don't think we need this 'dreamers'
+                dreams: foundDreams, 
                 user: req.user,
                 title: "Home"
             };
