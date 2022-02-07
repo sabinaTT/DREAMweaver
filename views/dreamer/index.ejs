@@ -76,7 +76,6 @@
     </div>
   </section>
   <section id='dreams'>
-    <h2>My Dreams</h2>
     <div id='profile-dreams'>
       <% dreamer.activeDreams.forEach((dream, idx )=> { %>
         <div class="dream">
@@ -84,22 +83,30 @@
             <% if(dream.isCompleted) { %>
             <p>Completed!</p>
             <% } else if (dream.published === "on") { %>
-              <p>Published</p>
+              <p>Published Dream</p>
             <% } else { %>
-              <p>Un-Published</p>
+              <p>Un-Published Dream</p>
             <% }; %> 
           </div>
 
-          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2>
+          <h2><a href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
           <h3> Obstacles: </h3><% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
-            <ul>
+            <ul class="obstacles">
+            <% if(obstacle.length === 0) { %> 
+              <% } else { %> 
               <li>
                   <%= obstacle %>
               </li>
             </ul>  
+            <% }; %> 
           <% }) } %> 
-          <p>Number of Comments: <%= dream.Comments.length %></p>
+          <div class='numComments'>
+            <p># of Comments: <%= dream.Comments.length %></p>
+          </div>
+          <br>
+          <div class="edit-dream">
             <a href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+          </div>
         </div>
       <% }) %> 
     </div>
@@ -110,6 +117,7 @@
       <input type="submit" value="Delete My Profile" />
       </form>
 	<% } else { %>
+    <h3>Please Login to view this page.</h3>
 	<% } %>
     
    

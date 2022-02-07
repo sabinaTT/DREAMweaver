@@ -8,6 +8,14 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 80vw;
+    margin: 2vh;
+    padding: 1vw;
+    background-color: #E0745C;
+    color: black;
+}
+
+#dream-profile a {
+    color: black;
 }
 
 #account-info {
@@ -27,7 +35,7 @@
     border-radius: 5px;
     margin: 2vh 0 2vh 6vh;
     width: 60vw;
-
+    padding: 1vw;
 }
 
 #profile-buttons {
@@ -50,16 +58,41 @@
 }
 
 .dream {
-    border: 2px solid purple;
+    border: 2px solid black;
     width: 20vw; 
+    height: fit-content;
     padding: 1vw;  
-    border-radius: 5px;
+    border-radius: 20px;
     margin: 1.5vh;
+    background-color:#FF8469;
+    color: black;
+}
+
+.obstacles {
+    list-style-type: square;
+    margin: 5px 5px 5px 15px;
+}
+
+.numComments {
+    display: flex;
+    justify-content: center;
+
+}
+
+.dream-status {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 5px 0;
+    color: black;
 }
 
 .edit-dream {
-    position: relative;
-    left: 7.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.dream a {
+    color: black;
 }
 
 #delete-account {
@@ -70,4 +103,15 @@
 
 #create-dream {
     margin: 2vw;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: .5vh;
+    color: black; 
+    text-decoration: none;
+    background-color: #E0745C;
+}
+
+#create-dream:hover {
+    cursor: pointer;
+    background-color: #FF8469;
 }
