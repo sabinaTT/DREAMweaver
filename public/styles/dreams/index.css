@@ -1,8 +1,8 @@
 .container {
     display: inline-grid;
-    grid-template-columns: 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px;
+    grid-template-columns: 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw 5vw;
     gap: 0px;
-    grid-template-rows: 90px 90px 90px 90px 90px 90px 90px 90px 90px 90px;
+    grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
     justify-self: center;
 
 }
