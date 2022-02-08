@@ -1,9 +1,14 @@
 .box-area {
     min-height: 100vh;
     min-width: 100vw;
-    /* height: fit-content; */
+    height: fit-content;
     overflow: hidden;
     width: fit-content;
+}
+
+.animation-area {
+    padding-bottom: 100vh;
+    overflow: hidden;
 }
 
 .comment-container {
@@ -36,4 +41,45 @@
 form {
     display: flex;
     flex-direction: column;
+}
+
+#comment-form {
+    width: 80%;
+    margin: 20px 40px;
+    border-radius: 5px;
+}
+
+.comment {
+    width: 40vw;
+    /* margin: 10px; */
+    height: 80px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* resize: none; */
+    padding: 12px;
+    margin-top: -1.5vh;
+    margin-left: -55vw;
+    resize: none;
+}
+
+#add-comment {
+    display:flex;
+    font-size: 20px;
+    margin-top: 1vh;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0px;
+    background-color:#ffffff80;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 1px black solid;
+    /* float:right; */
+    /* justify-self: end; */
+    width: 150px;
+    margin-left: 44vw;
+    z-index: 10;
+}
+
+#add-comment:hover{
+    background-color: #ffffff;
 }
