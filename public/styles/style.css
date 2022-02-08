@@ -28,10 +28,12 @@ h1 {
 .nav {
     display: flex;
     justify-content: center;
-    height: 4vh;
-    padding: 1vh 0 3.8vw 2vw;
+    height: 5%;
+    /* padding: 2% 0 3% 2vw; */
+    min-height: 60px;
     border-bottom: 2px solid black;
     z-index: 10;
+    min-width: 600px;
 }
 
 .nav a {
@@ -49,7 +51,12 @@ h1 {
     justify-content: space-between;
     width: 50vw;
     position: relative;
-    top: -4vh;
+    /* top: -4vh; */
+    width: 100%;
+    text-align: center;
+    padding: 15px 350px 10px 350px;
+    font-family: 'Cardo', serif; 
+    font-size: 18px;
 }
 
 #logo {
@@ -62,9 +69,6 @@ h1 {
     top: -.5vh;
     left: .5vw;
 }
-
-#logo
-
 
 body {
     font-family:'Cardo', serif; 
@@ -152,18 +156,6 @@ body {
     height: 110px;
     animation-delay: 3.5s;
     border-radius: 50%;
-}
-
-#nav {
-    list-style: none;
-    display: flex;
-    /* flex-direction: row; */
-    justify-content: space-between;
-    width: 100%;
-    text-align: center;
-    padding: 40px 350px 10px 350px;
-    font-family: 'Cardo', serif; 
-    font-size: 18px;
 }
 
 @keyframes animate {
