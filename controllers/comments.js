@@ -87,14 +87,14 @@ const update = (req, res) => {
 
 // delete a comment
 const destroy = (req, res) => {
-    db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
-        if(err) res.send(err);
-        db.ActiveDream.findById(deletedComment.ActiveDream, (err, foundDream) => {
-            foundDream.Comments.remove(deletedComment);
-            foundDream.save();
-            res.redirect(`/dreams/${deletedComment.ActiveDream}`)
-        })
-    })
+        db.Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
+            if(err) res.send(err);
+            db.ActiveDream.findById(deletedComment.ActiveDream, (err, foundDream) => {
+                foundDream.Comments.remove(deletedComment);
+                foundDream.save();
+                res.redirect(`/dreams/${deletedComment.ActiveDream}`)
+            })
+        })  
 };
 
 
