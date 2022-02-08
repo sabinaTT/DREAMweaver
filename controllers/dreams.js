@@ -34,14 +34,16 @@ const showDream = (req, res) => {
             db.Comment.find({
                 ActiveDream: foundDream._id
             }, function (err, foundComments){
-                
-                const context = {
-                    dream: foundDream,
-                    comments: foundComments,
-                    user: req.user,
-                    title: "Dream"
-                };
-                res.render("dreams/show", context)
+                db.Dreamer.findById(foundDream.Dreamer, function (err, foundDreamer){
+                    const context = {
+                        dream: foundDream,
+                        comments: foundComments,
+                        dreamer: foundDreamer,
+                        user: req.user,
+                        title: "Dream"
+                    };
+                    res.render("dreams/show", context)
+                })
             })
         })
 }
