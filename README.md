@@ -37,11 +37,30 @@ As a user, I want to be able to edit my comments.
 As a user, I want to be able to delete my comments.
 As a user, I want to be able to sign in with my google credentials.
 
-WIREFRAMES LINK:
+WIREFRAMES LINKS:
+Landing Page (User/Non-User) 
+https://user-images.githubusercontent.com/93886062/152926718-ea181f8e-89ab-47cf-ad58-760ccfa11dfa.png
+Home Page (User Only)
+https://user-images.githubusercontent.com/93886062/152926733-cd4530fd-3dad-4b9f-8e42-4b7cdff53839.png
+About Page
+https://user-images.githubusercontent.com/93886062/152926743-e0dabbad-75e4-4c14-9d5f-cce6c012b4f8.png
+Profile Page
+https://user-images.githubusercontent.com/93886062/152926754-ea0bfec4-c303-4c33-8b92-93497a5450b6.png
+Create Dream Page
+https://user-images.githubusercontent.com/93886062/152926765-b617a9da-95e9-4c03-a1b1-749403987954.png
+View Own Dream Page
+https://user-images.githubusercontent.com/93886062/152926778-36c18cd8-e57c-4ccc-ae02-1d5a8636be0d.png
+View Other User's Dream Page
+https://user-images.githubusercontent.com/93886062/152926795-2fe1a746-9626-41da-a9c1-8b8782963860.png
+Add Comment To Other User's Dream Page
+https://user-images.githubusercontent.com/93886062/152926805-3fed4c33-073a-425b-9eca-789c125151a3.png
 
 FLOW CHART LINK:
+https://user-images.githubusercontent.com/93886062/152926676-3b46dab2-c192-4a02-830e-7fe8ab0815a7.png
 
 ERD LINK:
+https://user-images.githubusercontent.com/93886062/152926691-6849926c-b1c9-4c62-a5cd-957fa4f896cf.png
+
 
 
 
