@@ -53,14 +53,17 @@ h1 {
 }
 
 #logo {
-    background-image: url('https://i.imgur.com/P53Tb2u.png');
-    background-size: cover;
-    width: 10em;
-    height: 10em;
+    background-image: url('https://i.imgur.com/JE8p05n.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 8em;
+    height: 8em;
     position: absolute;
-    top: -3.8em;
-    left: 0;
+    top: -.5vh;
+    left: .5vw;
 }
+
+#logo
 
 
 body {
