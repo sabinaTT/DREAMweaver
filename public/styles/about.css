@@ -25,6 +25,18 @@
     border-radius: 30px;
 }
 
+.animation-area {
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 5vh;
+}
+
+.box-area {
+    min-height: 100vh;
+    width: fit-content;
+    overflow: hidden;
+}
+
 #how-to {
     list-style: square;
 }
@@ -64,3 +76,7 @@
     color: white;
 }
 
+iframe {
+    position: relative;
+    left: 14vw;
+}
