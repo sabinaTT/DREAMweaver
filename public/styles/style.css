@@ -29,7 +29,7 @@ h1 {
     display: flex;
     justify-content: center;
     height: 4vh;
-    padding: 1vh 0 3vw 2vw;
+    padding: 1vh 0 3.8vw 2vw;
     border-bottom: 2px solid black;
 }
 
@@ -57,7 +57,7 @@ h1 {
     width: 10em;
     height: 10em;
     position: absolute;
-    top: -7.3vh;
+    top: -3.8em;
     left: 0;
 }
 
