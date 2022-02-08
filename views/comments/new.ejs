@@ -30,14 +30,13 @@
             <a href="/"><div id="logo"></div></a> %>
         <% } %>
             <ul id="nav">
-                <%// if (user) { %>
+                <% if (user) { %>
                     <li><a href="/dreams">Home</a></li>
                     <li><a href="/dreamers/<%= //user._id %>">Profile</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/logout">Log Out</a></li>
-                <% //} else { %>
-                    <li><a href="/auth/google">Login with Google</a></li>
-                <% //} %>
+                
+                <% } %>
             </ul>
     </div>
 
