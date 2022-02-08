@@ -67,6 +67,7 @@
     </div>
   </section>
   <section id='dreams'>
+    <a href="/dreams/<%=dreamer._id%>/new" ><button id="create-dream">Add a new Dream</button></a>
     <div id='profile-dreams'>
       <% dreamer.activeDreams.forEach((dream, idx )=> { %>
         <div class="dream">
@@ -101,7 +102,6 @@
         </div>
       <% }) %> 
     </div>
-      <a href="/dreams/<%=dreamer._id%>/new" ><button id="create-dream">Add a new Dream</button></a>
       <br>
       <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" >
       <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
