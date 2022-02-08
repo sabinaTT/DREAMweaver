@@ -56,7 +56,7 @@
 <% let randomNumber; %>
 
 <% function dreamPick() { %> 
-    <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>">
+    <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>"> <span></span>
     <%= publishedDreams[randomNumber].dream[0].slice(0,100)  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
@@ -68,7 +68,7 @@
 
 
 <div class="container">
-    <div class="one dreams-medium"><h3><%= dreamPicker() %></h3></div>
+    <div class="one dreams-medium"><%= dreamPicker() %></div>
     <div class="two dreams-small"><h5><%= dreamPicker() %></h5></div>
     <div class="three dreams-medium"><h3><%= dreamPicker() %></h3></div>
     <div class="four dreams-small"><h5><%= dreamPicker() %></h5></div>
