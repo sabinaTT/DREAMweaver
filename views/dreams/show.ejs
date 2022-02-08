@@ -23,8 +23,11 @@
     <div class = "banner-text"> 
         
     <div class="nav">
-        <div id="logo">
-        </div>
+        <% if (user) { %> 
+            <a href="/dreams"><div id="logo"></div></a>
+        <% } else { %>
+            <a href="/"><div id="logo"></div></a> %>
+        <% } %>
             <ul id="nav">
                 <% if (user) { %>
                     <li><a href="/dreams">Home</a></li>
