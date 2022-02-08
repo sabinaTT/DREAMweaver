@@ -55,6 +55,7 @@
 
 .profile-buttons {
     margin: 5vh 0 0 5vh;
+    background: transparent;
 }
 
 .profile-buttons:hover {
@@ -83,6 +84,46 @@
     flex-wrap: wrap;
     width: 80vw;
     border-radius: 5px;
+}
+.edit-dream {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    text-decoration: none;
+}
+
+.profile-buttons {
+    margin: 5vh 0 0 5vh;
+    background: transparent;
+    width: 100px;
+}
+
+.profile-buttons:hover {
+    color: #fffefe;
+}
+#edit-dream-button {
+    display: flex;
+    font-size: 15px;
+    margin: 0 5px -25px auto;
+    /* margin-left: 10px; */
+    float: left;
+    border: 0px;
+    background-color: transparent;
+    font-family: 'Cardo', serif;
+    border-radius: 2px;
+    padding: 2px;
+}
+#delete-dream-button {
+    display: flex;
+    font-size: 15px;
+    margin: 0 5px 0 auto;
+    /* margin-left: 40vw auto; */
+    float: right;
+    border: 0px;
+    background-color: transparent;
+    font-family: 'Cardo', serif;
+    border-radius: 2px;
+    padding: 2px;
 }
 
 .dream {
@@ -115,38 +156,14 @@
     color: black;
 }
 
-.edit-dream {
-    display: flex;
-    justify-content: center;
-}
+
 
 .dream a {
     color: black;
 }
 
-/* #delete-account {
-    position: relative;
-    left: 42vw;
-    margin: 2vw;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 1vh;
-    color: black; 
-    /* background-color: #E0745C; */
-    /*background-color: #ffffff40;
-    font-family: "Cardo, serif";
-} */
 
-/* #create-dream {
-    margin: 2vw;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: .5vh;
-    color: black; 
-    text-decoration: none;
-    /* background-color: #E0745C; */
-   /*background-color: #ffffff40;
-} */
+
 #create-dream, #delete-account {
     display:flex;
     font-size: 20px;
@@ -171,6 +188,6 @@
     background-color: #ffffff;
 }
 
-p {
+/* p {
     padding-bottom: 1vh;
-}
+} */

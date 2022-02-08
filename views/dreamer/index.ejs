@@ -34,17 +34,16 @@
                   <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/logout">Log Out</a></li>
-              <% } else { %>
-                  <li><a href="/auth/google">Login with Google</a></li>
-              <% } %>
+              <% }%>
           </ul>
   </div>
 
 
 <main>
   <section id='profile'>
-    <div id='dream-profile'>
+    
       <% if (user && (dreamer.id === user.id)) { %>
+        <div id='dream-profile'>
         <div id="account-info">
           <ul>
             <li>
@@ -68,6 +67,7 @@
     </div>
   </section>
   <section id='dreams'>
+    <a href="/dreams/<%=dreamer._id%>/new" ><button id="create-dream">Add a new Dream</button></a>
     <div id='profile-dreams'>
       <% dreamer.activeDreams.forEach((dream, idx )=> { %>
         <div class="dream">
@@ -97,12 +97,21 @@
           </div>
           <br>
           <div class="edit-dream">
-            <a class='profile-buttons' href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+            <a class='profile-buttons edit-dream' id="edit-dream-button" href="/dreams/edit/<%= dream._id %>" >Edit Dream</a>
+            <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+              <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+              <input type="submit" class="profile-buttons" id="delete-dream-button" value="Delete Dream" />
+            </form>
+            <script>
+              $('#delete-dream-button').click(function(e){
+                  let confirm = window.confirm('Are you sure you want to delete your account?');
+                  if(confirm){} else {e.preventDefault()}
+              })
+            </script>
           </div>
         </div>
       <% }) %> 
     </div>
-      <a href="/dreams/<%=dreamer._id%>/new" ><button id="create-dream">Add a new Dream</button></a>
       <br>
       <form action="/dreamers/<%+ dreamer._id %>?_method=DELETE" method="POST" >
       <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
@@ -114,9 +123,17 @@
             if(confirm){} else {e.preventDefault()}
         })
       </script>
-    
+      </main>
+  </section>
 	    <% } else { %>
-        <p>To access this page you must be logged in</p>
+      
+      </div>
+
+      </script>
+    </main>
+  </section>
+</section>
+        <h1 id="logged-in">You must be logged in to view this page.</h1>
 
         <div id="dreamweaver-index-title">
           
@@ -128,8 +145,8 @@
     
    
  
-  </section>
-</main>
+  
+
 </div>
 </body>
 
