@@ -18,43 +18,27 @@
         <li class="bubble5 bubble"></li>
         <li class="bubble6 bubble"></li> 
 
-<body>
-    <div class = "banner-text">
-        <h1>DREAMWEAVER</h1>
-
-    </div>
-
-
- 
+<body> 
 <div class="animation-area">
-    <div class="nav">
-        <div id="logo">
-        </div>
-            <ul id="nav">
-                <% if (user) { %>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
-                    <li><a href="/dreams">Dreams</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/logout">Log Out</a></li>
-                <% } else { %>
-                    <li><a href="/auth/google">Login with Google</a></li>
-                <% } %>
-            </ul>
+<div class="about-nav">
+    <div id="logo">
     </div>
+    <ul id="nav">
+        <% if (user) { %>
+            <li><a href="/dreams">Home</a></li>
+            <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        <% } else { %>
+            <li><a href="/auth/google">Login with Google</a></li>
+        <% } %>
+    </ul>
+</div>
     <h1 id="about">About</h1>
     <div class="about-form">
-        <h3>This is an app designed to encourage users to pursue their dream in a community format. It was inspired by Barbara Sher's TED talk titled "Isolation is the dream-killer, not your attitude," that put forth the idea of success teams, or groups of people who work together to make each other's dream come true. In this app, a user gets to see, comment on and encourage other users' goals. There are times when everyone gets tired and in those times, when a specific user needs an extra reminder/push, the community members (other users) step in, posting comments of encouragement or personal stories of their journey designed to give strength to the user. This app is for users who value the setting and accomplishment of dreams, be it their own or a complete stranger's. </h3>
+        <p>This is an app designed to encourage users to pursue their dream in a community format. It was inspired by Barbara Sher's TED talk titled "Isolation is the dream-killer, not your attitude," that put forth the idea of success teams, or groups of people who work together to make each other's dream come true. In this app, a user gets to see, comment on and encourage other users' goals. There are times when everyone gets tired and in those times, when a specific user needs an extra reminder/push, the community members (other users) step in, posting comments of encouragement or personal stories of their journey designed to give strength to the user. This app is for users who value the setting and accomplishment of dreams, be it their own or a complete stranger's. </p>
     </div>
-
-    <a href="/home" id="home-button"><button id="home">Home</a></button>    
-
-    
-
-
-
-
-
-<!-- the description of the app will go in here (e.g. p tag) -->
-
+    <div id="home-button">
+        <a href="/home" id='home-link'><button id="home">Home</a></button>    
+    </div>
 </body>
