@@ -97,7 +97,17 @@
           </div>
           <br>
           <div class="edit-dream">
-            <a class='profile-buttons' href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+            <a class='profile-buttons edit-dream' id="edit-dream-button" href="/dreams/edit/<%= dream._id %>" >Edit Dream</a>
+            <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+              <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
+              <input type="submit" class="profile-buttons" id="delete-dream-button" value="Delete Dream" />
+            </form>
+            <script>
+              $('#delete-dream-button').click(function(e){
+                  let confirm = window.confirm('Are you sure you want to delete your account?');
+                  if(confirm){} else {e.preventDefault()}
+              })
+            </script>
           </div>
         </div>
       <% }) %> 

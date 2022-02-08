@@ -108,7 +108,6 @@ const update = (req, res) => {
         },
         {new: true},
         function (err, updatedDream){
-            console.log(req.body);
             if(err) res.send(err);
             
             res.redirect(`/dreams/${updatedDream._id}`);
