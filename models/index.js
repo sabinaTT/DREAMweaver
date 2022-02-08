@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const db = mongoose.connection;
-// require('dotenv').config(); //comment out after locally testing
+require('dotenv').config(); //comment out after locally testing
 
 mongoose
     .connect(process.env.DATABASE_URL)
