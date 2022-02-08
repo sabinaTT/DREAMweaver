@@ -9,7 +9,7 @@ router.get('/home', (req, res) => {
 router.get('/', ctrl.dreamers.index);
 //router.get('/dreamers', ctrl.dreamers.dreams);
 router.get('/about', ctrl.dreamers.about);
-router.get('/how-to', ctrl.dreamers.howTo);
+// router.get('/how-to', ctrl.dreamers.howTo);
 router.get('/dreamers/:id', ctrl.dreamers.showDreamer);
 router.get('/dreamers/dreams/:id', ctrl.dreamers.showDreamersDreams)
 //router.get('new', ctrl.dreamers.newDreamer);
