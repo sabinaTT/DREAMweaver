@@ -112,6 +112,7 @@
     font-family: 'Cardo', serif;
     border-radius: 2px;
     padding: 2px;
+    margin-bottom: 2px;
 }
 #delete-dream-button {
     display: flex;
