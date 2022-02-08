@@ -37,6 +37,7 @@
 
 <% function dreamPick() { %>
     <%= publishedDreams[randomNumber].dream  %></a>
+    <%= publishedDreams[randomNumber].dream[0].slice(0,100)  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
 
