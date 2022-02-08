@@ -2,7 +2,7 @@
     min-height: 100vh;
     min-width: 100vw;
     /* height: fit-content; */
-    overflow: hidden;
+    /* overflow: hidden; */
     width: fit-content;
     padding-bottom: 20vh;
 }
