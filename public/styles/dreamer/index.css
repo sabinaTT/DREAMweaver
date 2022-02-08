@@ -53,11 +53,20 @@
     padding: 1vw;
 }
 
-#profile-buttons {
+.profile-buttons {
     margin: 5vh 0 0 5vh;
 }
 
-#profile-buttons:hover {
+.profile-buttons:hover {
+    color: #fffefe;
+}
+
+#edit-profile {
+    display: flex;
+    justify-content: center;
+}
+
+#edit-profile:hover {
     color: #fffefe;
 }
 
@@ -160,4 +169,8 @@
     cursor: pointer;
     /* background-color: #FF8469; */
     background-color: #ffffff;
+}
+
+p {
+    padding-bottom: 1vh;
 }

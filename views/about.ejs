@@ -21,8 +21,11 @@
 <body> 
 <div class="animation-area">
 <div class="about-nav">
-    <div id="logo">
-    </div>
+    <% if (user) { %> 
+        <a href="/dreams"><div id="logo"></div></a>
+    <% } else { %>
+        <a href="/"><div id="logo"></div></a> %>
+    <% } %>
     <ul id="nav">
         <% if (user) { %>
             <li><a href="/dreams">Home</a></li>
@@ -66,9 +69,9 @@
     </div>
     <div id="home-button">
         <% if(user) { %> 
-            <a href="/dreamers/<%= user.id %>" id='home-link'><button id="home">Profile</a></button> 
+            <a href="/dreamers/<%= user.id %>" id='home-link'><button id="home">Profile</button></a> 
         <% } else { %>
-            <a href="/home" id='home-link'><button id="home">Back</a></button> 
+            <a href="/home" id='home-link'><button id="home">Back</button></a> 
         <% } %> 
            
     </div>

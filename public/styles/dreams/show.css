@@ -72,7 +72,7 @@ ul {
     align-items: center;
 }
 
-.obstacles, .comments {
+.obstacles, .comments, .bio {
     display: flex;
     flex-direction: column;
     border: 2px black solid;

@@ -16,6 +16,17 @@
 a {
     text-decoration: none;
 }
+
+span {
+  position: absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+}
+
 .dreams-small {
     border: 2px black solid;
     border-radius:50%;
@@ -23,10 +34,9 @@ a {
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #ffffff;
     border: 1px solid black;
-    opacity: 0.6;
     text-align: center;
+    position: relative;
 }
 
 .dreams-medium {
@@ -36,10 +46,8 @@ a {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    /* background-color: #ffffff; */
-    /* font-size: 20px; */
-    /* opacity: 0.6; */
     text-align: center;
+    position: relative;
 }
 
 .dreams-large {
@@ -49,9 +57,35 @@ a {
     justify-content: center;
     align-items: center;
     padding: 30px;
-    background-color: #ffffff;
-    opacity: 0.9;
     text-align: center;
+    position: relative;
+}
+
+.transparent:hover {
+    background-color: #ffffff;
+    opacity: 0.4;
+    color: black;
+
+}
+
+.semi-transparent {
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+.semi-transparent:hover {
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+
+.opaque {
+    background-color: #ffffff;
+    opacity: 0.8;
+}
+
+.opaque:hover {
+    background-color: #ffffff;
+    opacity: 1.0;
 }
 
 .one {
@@ -83,8 +117,7 @@ a {
 .six {
     grid-column: 14/17;
     grid-row: 5/8;
-    background: #ffffff;
-    opacity: 0.6;
+
 }
 
 .seven {
@@ -95,8 +128,7 @@ a {
 .eight {
     grid-column: 2/5;
     grid-row: 8/11;
-    background: #ffffff;
-    opacity: 0.6;
+
 }
 
 .nine {

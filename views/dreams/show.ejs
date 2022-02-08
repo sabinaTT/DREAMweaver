@@ -23,8 +23,11 @@
     <div class = "banner-text"> 
         
     <div class="nav">
-        <div id="logo">
-        </div>
+        <% if (user) { %> 
+            <a href="/dreams"><div id="logo"></div></a>
+        <% } else { %>
+            <a href="/"><div id="logo"></div></a> %>
+        <% } %>
             <ul id="nav">
                 <% if (user) { %>
                     <li><a href="/dreams">Home</a></li>
@@ -42,9 +45,13 @@
 
 <% if(user.id === dream.Dreamer.toString()) { %> 
 <div class="dream-box">
-    <h2><%= dreamer.name %>'s dream: </h2>
+    <h2><%= dreamer.name.split(' ')[0] %>'s dream: </h2>
     <h3 id="title"><%= dream.dream %> </h3>
     <div id="obstacles-comments">
+        <div class="bio">
+            <h3><%= dreamer.name.split(' ')[0] %>'s story: </h3>
+            <p><%= dreamer.profile ? dreamer.profile : `${dreamer.name.split(' ')[0]} has not shared their story yet. Comment on their dream to inspire them!`  %></p>
+        </div>
     <div class="obstacles">
         <h3>Obstacles</h3>
         <ol>
@@ -111,9 +118,13 @@
 
 <% } else if (user) {%> 
     <div class="dream-box">
-        <h2><%= dreamer.name %>'s dream: </h2>
+        <h2><%= dreamer.name.split(' ')[0] %>'s dream: </h2>
         <h3 id="title"><%= dream.dream %> </h3>
         <div id="obstacles-comments">
+            <div class="bio">
+                <h3><%= dreamer.name.split(' ')[0] %>'s story: </h3>
+                <p><%= dreamer.profile ? dreamer.profile : `${dreamer.name.split(' ')[0]} has not shared their story yet. Comment on their dream to inspire them!`  %></p>
+            </div>
             <div class="obstacles">
                 <h3>Obstacles</h3>
                 <ol>

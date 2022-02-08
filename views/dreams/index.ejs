@@ -27,8 +27,11 @@
 <div class="animation-area">
     <div class="nav">
 
-        <div id="logo">
-        </div>
+        <% if (user) { %> 
+            <a href="/dreams"><div id="logo"></div></a>
+        <% } else { %>
+            <a href="/"><div id="logo"></div></a> %>
+        <% } %>
             <ul id="nav">
                 <% if (user) { %>
                     <li><a href="/dreams">Home</a></li>
@@ -53,7 +56,7 @@
 <% let randomNumber; %>
 
 <% function dreamPick() { %> 
-    <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>">
+    <a href="/dreams/<%=publishedDreams[randomNumber]._id  %>"> <span></span>
     <%= publishedDreams[randomNumber].dream[0].slice(0,100)  %></a>
     <% usedNumbers.push(randomNumber)%> 
 <% } %>
@@ -65,16 +68,16 @@
 
 
 <div class="container">
-    <div class="one dreams-medium"><h3><%= dreamPicker() %></h3></div>
-    <div class="two dreams-small"><h5><%= dreamPicker() %></h5></div>
-    <div class="three dreams-medium"><h3><%= dreamPicker() %></h3></div>
-    <div class="four dreams-small"><h5><%= dreamPicker() %></h5></div>
-    <div class="five dreams-large"><h2><%= dreamPicker() %></h2></div>
-    <div class="six dreams-medium"><h3><%= dreamPicker() %></h3></div>
-    <div class="seven dreams-small"><h5><%= dreamPicker() %></h5></div>
-    <div class="eight dreams-medium"><h3><%= dreamPicker() %></h3></div>
-    <div class="nine dreams-medium"><h3><%= dreamPicker() %></h3></div>
-    <div class="ten dreams-small"><h5><%= dreamPicker() %></h5></div>
+    <div class="one dreams-medium transparent"><%= dreamPicker() %></div>
+    <div class="two dreams-small semi-transparent"><h5><%= dreamPicker() %></h5></div>
+    <div class="three dreams-medium transparent"><h3><%= dreamPicker() %></h3></div>
+    <div class="four dreams-small semi-transparent"><h5><%= dreamPicker() %></h5></div>
+    <div class="five dreams-large opaque"><h2><%= dreamPicker() %></h2></div>
+    <div class="six dreams-medium semi-transparent"><h3><%= dreamPicker() %></h3></div>
+    <div class="seven dreams-small semi-transparent"><h5><%= dreamPicker() %></h5></div>
+    <div class="eight dreams-medium semi-transparent"><h3><%= dreamPicker() %></h3></div>
+    <div class="nine dreams-medium transparent"><h3><%= dreamPicker() %></h3></div>
+    <div class="ten dreams-small semi-transparent"><h5><%= dreamPicker() %></h5></div>
 </div>
 
 
