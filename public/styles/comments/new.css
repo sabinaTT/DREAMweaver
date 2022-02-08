@@ -47,6 +47,8 @@ form {
     width: 80%;
     margin: 20px 40px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment {
@@ -58,16 +60,16 @@ form {
     border-radius: 5px;
     /* resize: none; */
     padding: 12px;
-    margin-top: -1.5vh;
-    margin-left: -55vw;
+    margin-top: ;
+    margin-left: -45vw;
     resize: none;
 }
 
 #add-comment {
     display:flex;
     font-size: 20px;
-    margin-top: 1vh;
-    margin-bottom: 20px;
+    margin-top: 12vh;
+    margin-bottom: 14px;
     padding: 10px;
     border: 0px;
     background-color:#ffffff80;
@@ -76,7 +78,7 @@ form {
     /* float:right; */
     /* justify-self: end; */
     width: 150px;
-    margin-left: 44vw;
+    margin-left: 24vw;
     z-index: 10;
 }
 
