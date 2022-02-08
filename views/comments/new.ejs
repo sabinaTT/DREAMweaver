@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/style.css">
         <link rel="stylesheet" href="/styles/dreams/edit.css">
         <link rel="stylesheet" href="/styles/dreams/show.css">
+        <link rel="stylesheet" href="/styles/comments/new.css">
     </head>
     <ul class="box-area" style=" min-height: 100%; min-width: 100%; height: fit-content; overflow: hidden; width: fit-content;">
         <li class="bubble1 bubble"></li>
@@ -85,11 +86,11 @@
               
                   <input type="hidden" name="ActiveDream" value="<%= dream.id %>"/>
                   <h1>
-                  <textarea type="type" class="comment" name="comment" placeholder="Leave your comment here!"></textarea>
+                  <textarea autofocus type="type" class="comment" name="comment" placeholder="Leave your comment here!"></textarea>
                   </h1>
                   <input type="hidden" name="name" value="<%= user.name %>"/>
               
-                  <input type="submit" class="update" value="Add comment"/>
+                  <input type="submit" id="add-comment" value="Add comment"/>
                   
                 </form>
               </div>
@@ -155,11 +156,11 @@
           
           
               <h1>
-              <textarea type="type" class="comment" name="comment" placeholder="Leave your comment here!"></textarea>
+              <textarea autofocus type="type" class="comment" name="comment" placeholder="Leave your comment here!"></textarea>
               </h1>
               <input type="hidden" name="name" value="<%= user.name %>"/>
           
-              <input type="submit" class="update" value="Add comment"/>
+              <input type="submit" id="add-comment" value="Add comment"/>
               
             </form>
           </div>

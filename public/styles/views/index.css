@@ -44,7 +44,7 @@ h3 {
     gap: 0px;
     grid-template-rows: 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh 9vh;
     justify-self: center;
-
+    margin-left: 4.5%;
 }
 
 .dreams-small { 

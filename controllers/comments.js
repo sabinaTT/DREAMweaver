@@ -23,9 +23,7 @@ const newComment = (req, res) => {
 // create a comment
 const create = (req, res) => {
     db.Comment.create(req.body, (err, createdComment) => {
-        console.log("req body comment: " + req.body.comment)
         if(err) res.send(err);
-        console.log("created comment" + createdComment)
         db.ActiveDream.findById(createdComment.ActiveDream) 
             .exec(function (err, foundActiveDream) {
             if (err) res.send(err);
