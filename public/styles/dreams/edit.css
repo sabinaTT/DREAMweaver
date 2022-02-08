@@ -1,19 +1,19 @@
 .box-area {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     min-width: 100vw;
-    /* height: fit-content; */
+    height: fit-content;
     overflow: hidden;
     width: fit-content;
-    padding-bottom: 20vh;
+    /* padding-bottom: 20vh; */
 }
 
 .animation-area {
     padding-bottom: 100vh;
     overflow: hidden;
 }
-body {
+/* body {
     overflow: scroll;
-}
+} */
 .form {
     display: flex;
     border: 2px black solid;
@@ -32,7 +32,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #fff;
+    color: #ffffff;
     font-size: 35px;
     width: 100%;
     position: absolute;
