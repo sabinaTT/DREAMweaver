@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/style.css">
         <link rel="stylesheet" href="/styles/dreams/edit.css">
         <link rel="stylesheet" href="/styles/dreams/show.css">
+        <link rel="stylesheet" href="/styles/comments/new.css">
     </head>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
@@ -78,10 +79,10 @@
 <div class="form" id="comment-form">
     <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
     <p>
-        <textarea type="text" name="comment" class="dream" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
+        <textarea type="text" name="comment" class="update-comment" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
         </textarea>
     </p>
-    <input type="submit" class="update" value="Update Comment" />
+    <input type="submit" id="update-comment" value="Update Comment" />
     </form>
 </div>
 
@@ -141,13 +142,13 @@
 
 
 
-<div class="form"  id="comment-form">
+<div class="form" id="comment-form">
     <form action="/comments/<%= comment._id%>?_method=PUT" method="POST">
-    <h1>
-        <textarea type="text" name="comment" class="dream" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
+    <p>
+        <textarea type="text" name="comment" class="update-comment" autofocus="true" placeholder="Add your comment here"><%= comment.comment %>
         </textarea>
-    </h1>
-    <input type="submit" class="update" value="Update Comment" />
+    </p>
+    <input type="submit" id="update-comment" value="Update Comment" />
     </form>
 </div>
 
@@ -156,22 +157,22 @@
 </div>
 </div>
 
-<div class="form" id="comment-form">
+<!-- <div class="form" id="comment-form">
 <form action="/comments/:id/create" method="POST" >
-<!-- action="/comments/:id/create" -->
-<input type="hidden" name="Dreamer" value="<%= user.id %>"/>
+ action="/comments/:id/create"
+<input type="hidden" name="Dreamer" value="<%= //user.id %>"/>
 
-<input type="hidden" name="ActiveDream" value="<%= dream.id %>"/>
+<input type="hidden" name="ActiveDream" value="<%= //dream.id %>"/>
 
 <h1>
 <textarea type="type" class="dream" name="comment" placeholder="Leave your comment here!"></textarea>
 </h1>
-<input type="hidden" name="name" value="<%= user.name %>"/>
+<input type="hidden" name="name" value="<%= //user.name %>"/>
 
 <input type="submit" class="update" value="Add comment"/>
 
 </form>
-</div>
+</div> -->
 </div>
 <% } else { %>
     <h1 id="logged-in">You must be logged in to view this page.</h1>
