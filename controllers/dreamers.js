@@ -48,16 +48,16 @@ function about (req, res) {
     res.render('about', context)
 };
 
-// Show: How-To page after user is logged in
-function howTo (req, res) {
-    // will need to add function to see if user if indeed logged in in order to make this visible
-    const context = {
-        user: req.user,
-        title: "How-to"
-    };
+// // Show: How-To page after user is logged in
+// function howTo (req, res) {
+//     // will need to add function to see if user if indeed logged in in order to make this visible
+//     const context = {
+//         user: req.user,
+//         title: "How-to"
+//     };
 
-    res.render('dreamer/how-to', context)
-};
+//     res.render('dreamer/how-to', context)
+// };
 
 //show
 function showDreamer (req, res) {
@@ -140,6 +140,6 @@ module.exports = {
     update,
   //  dreams,
     about,
-    howTo,
+    // howTo,
     destroy
 }
