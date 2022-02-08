@@ -57,7 +57,7 @@
               <p><h3>Zip Code</h3><%= dreamer.zipCode %></p>
             </li>
             <li >
-              <a id='profile-buttons' href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
+              <a class='profile-buttons' id="edit-profile" href="/dreamers/<%=dreamer._id%>/edit">Edit Profile</a>
             </li>
           </ul>
           <div id="bio">
@@ -81,7 +81,7 @@
             <% }; %> 
           </div>
 
-          <h2><a id='profile-buttons' href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
+          <h2><a class='profile-buttons' href="/dreams/<%= dream._id %>" ><%= dream.dream %> </a></h2><br>
           <h3> Obstacles: </h3><% if (dream.obstacle) {dream.obstacle.forEach( obstacle => { %>
             <ul class="obstacles">
             <% if(!obstacle.replace(/\s/g, '').length) { %> 
@@ -97,7 +97,7 @@
           </div>
           <br>
           <div class="edit-dream">
-            <a id='profile-buttons' href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
+            <a class='profile-buttons' href="/dreams/edit/<%= dream._id %>" class="edit-dream">Edit Dream</a>
           </div>
         </div>
       <% }) %> 
