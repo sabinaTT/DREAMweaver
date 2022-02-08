@@ -1,5 +1,5 @@
 * {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .login-with-google {
     margin: auto;
@@ -18,11 +18,15 @@
     font-family: 'Cardo', serif;
     color: white;
     display: flex;
+    flex-direction: column;
     border: 2px black solid;
     justify-content: center;
-    text-align: center;
     margin: 20px 200px;
     border-radius: 30px;
+}
+
+#how-to {
+    list-style: square;
 }
 
 #home #home-link{
@@ -59,3 +63,4 @@
 .about-nav a:hover {
     color: white;
 }
+

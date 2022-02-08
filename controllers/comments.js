@@ -1,4 +1,5 @@
 const db = require('../models');
+const popup = require('node-popup');
 
 const newComment = (req, res) => {
     db.ActiveDream.findById(req.params.id)
