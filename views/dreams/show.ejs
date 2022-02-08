@@ -41,6 +41,7 @@
 
 <% if(user.id === dream.Dreamer.toString()) { %> 
 <div class="dream-box">
+    <h2><%= dreamer.name %>'s dream: </h2>
     <h3 id="title"><%= dream.dream %> </h3>
     <div id="obstacles-comments">
     <div class="obstacles">
@@ -99,6 +100,7 @@
 
 <% } else if (user) {%> 
     <div class="dream-box">
+        <h2><%= dreamer.name %>'s dream: </h2>
         <h3 id="title"><%= dream.dream %> </h3>
         <div id="obstacles-comments">
             <div class="obstacles">

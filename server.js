@@ -1,4 +1,4 @@
-// require('dotenv').config() //comment out after locally testing
+ require('dotenv').config() //comment out after locally testing
 require('./models/index')
 require('./config/passport')
 const express = require('express')
