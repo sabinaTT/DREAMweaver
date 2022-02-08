@@ -13,29 +13,38 @@ Project Instructions:
 First, the user is prompted to sign in or create an account. Before they do so, they have the option to read about the project. Second, after signing in or creating a new account,the user is taken to a page where they can see others' dreams called the community page. At this point, the user can decide to view a community member's dream or go to own dream/profile page. If user decides to see another member's dream, the user has the option to leave a comment. In the user's own profile page, the use can edit their profile/dream, add comment to their own dream or create a brand new one. After making those changes, the user is taken back to the profile page where they can exit back to the community page and finally logout. 
 
 Project User Stories:
-As a user, I want to be directed through the site and be given a comprehensive rule book.
 As a user, I want to be able to understand what the site is about.
-As a user, I want to be able to create my profile in order to give others more context on my goals.
+As a user, I want to be able to create my profile in order to give others more context on my goals // ICEBOX
 As a user, I want to be able to see my profile.
-As a user, I want to be able to se my past fulfilled dreams.
+As a user, I want to be able to see my past fulfilled dreams.
 As a user, I want to be able to edit profile, in case something in my life changes.
 As a user, I want to be able to delete my profile.
-As a user, I want to be able to create an inactive dream and its obstacles, so that I can remember them for later.
-As a user, I want to be able to see all of my inactive dreams.
-As a user, I want to be able to edit an inactive dream.
+As a user, I want to be able to create an inactive dream and its obstacles, so that I can remember them for later // ICEBOX
+As a user, I want to be able to see all of my inactive dreams // ICEBOX
+As a user, I want to be able to edit an inactive dream. // ICEBOX
 As a user, I want to be able to create my dream and its obstacles, so that I can participate in the community. 
 As a non-user, I want to be able to see a random assortment of users' dreams.
-As a user, I want to be able to see all of my dreams and their comments at once.
+As a user, I want to be able to see all of my dreams and their comments at once // ICEBOX
 As a user, I want to be able to view a specific dream and its comments.
 As a user, I want to be able to see comments on other people's active dreams.
 As a user, I want to be able to edit my active dream.
-As a user, I want to be able to mark a dream as complete (to show others and self that it's possible to accomplish those dreams)
+As a user, I want to be able to mark a dream as complete (to show others and self that it's possible to accomplish those dreams) // ICEBOX
 As a user, I want to be able to publish and un-publish my dream/make it only visible to me.
-As a user, I want to be able to change my dream from inacgive to active or vise versa.
+As a user, I want to be able to change my dream from inacgive to active or vise versa // ICEBOX
 As a user, I want to be able to delete my active dream.
 As a user, I want to to be able to comment on other people's dreams so that I can inspire them.
 As a user, I want to be able to edit my comments.
 As a user, I want to be able to delete my comments.
+As a user, I want to be able to sign in with my google credentials.
+
+WIREFRAMES LINK:
+
+FLOW CHART LINK:
+
+ERD LINK:
+
+
+
 
 
 
