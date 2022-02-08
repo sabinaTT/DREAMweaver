@@ -81,7 +81,6 @@
               
               <div class="form" id="comment-form">
                 <form action="/comments/:id/create" method="POST" >
-                  <!-- action="/comments/:id/create" -->
                   <input type="hidden" name="Dreamer" value="<%= user.id %>"/>
               
                   <input type="hidden" name="ActiveDream" value="<%= dream.id %>"/>
@@ -99,10 +98,10 @@
           </div>
       
           <div class="buttons">
-              <a  href="/dreams/edit/<%= dream._id %>"><button id="edit-dream">Edit Dream</button></a>
+              <a  href="/dreams/edit/<%= dream._id %>"><button id="edit-dream-comment">Edit Dream</button></a>
               <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
                       <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
-                      <input type="submit" onclick="confirm('Are you sure you want to delete your dream? This action cannot be undone.')" id="delete-dream" value="Delete Dream" />
+                      <input type="submit" onclick="confirm('Are you sure you want to delete your dream? This action cannot be undone.')" id="delete-dream-comment" value="Delete Dream" />
               </form>
               
       
