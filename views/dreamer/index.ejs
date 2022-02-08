@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/style.css">
         <link rel="stylesheet" href="/styles/dreamer/index.css">
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <ul class="box-area" >
         <li class="bubble1 bubble"></li>
         <li class="bubble2 bubble"></li>
@@ -104,6 +105,12 @@
       <input type="hidden" name="Dreamer" value="<%=dreamer._id%>"/>
       <input type="submit" id="delete-account" value="Delete My Profile" />
       </form>
+      <script>
+        $('#delete-account').click(function(e){
+            let confirm = window.confirm('Are you sure you want to delete your account?');
+            if(confirm){} else {e.preventDefault()}
+        })
+      </script>
     
 	    <% } else { %>
         <p>To access this page you must be logged in</p>

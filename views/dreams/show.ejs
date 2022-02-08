@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="/styles/style.css">
         <link rel="stylesheet" href="/styles/dreams/show.css">
     </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <ul class="box-area">
         <li class="bubble1 bubble"></li>
         <li class="bubble2 bubble"></li>
@@ -68,10 +69,15 @@
                         <a class="edit"href="/comments/<%= comment._id %>/edit">Edit</a>
                         <% } %>
                         <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                            <input type="submit" onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
+                            <input type="submit"  class="delete" value="Delete" />
                         </form>
                     </div>
-                
+                    <script>
+                        $('.delete').click(function(e){
+                            let confirm = window.confirm('Are you sure you want to delete this comment?');
+                            if(confirm){} else {e.preventDefault()}
+                        })
+                    </script>
                 
                     </li>
                 <% })} else {%>
@@ -91,9 +97,14 @@
         <a  href="/dreams/edit/<%= dream._id %>"><button id="edit-dream">Edit Dream</button></a>
         <form action="/dreams/<%= dream._id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="Dreamer" value="<%= dream.Dreamer %>" />
-                <input type="submit" onclick="confirm('Are you sure you want to delete your dream? This action cannot be undone.')" id="delete-dream" value="Delete Dream" />
+                <input type="submit" id="delete-dream" value="Delete Dream" />
         </form>
-        
+        <script>
+            $('#delete-dream').click(function(e){
+                let confirm = window.confirm('Are you sure you want to delete this dream?');
+                if(confirm){} else {e.preventDefault()}
+            })
+        </script>
 
     </div>
 
@@ -124,9 +135,16 @@
                             <% if(comment.Dreamer.toString() === user.id) { %>
                                 <div class="comment-buttons">
                                     <a class="edit" href="/comments/<%= comment._id %>/edit">Edit</a>
+                                    
                                     <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                                        <input type="submit"  onclick="confirm('Are you sure you want to delete your comment?')" class="delete" value="Delete" />
+                                        <input type="submit"  class="delete" value="Delete" />
                                     </form>
+                                    <script>
+                                        $('.delete').click(function(e){
+                                            let confirm = window.confirm('Are you sure you want to delete this comment?');
+                                            if(confirm){} else {e.preventDefault()}
+                                        })
+                                    </script>
                                 </div>
                             </li>
                         <% } %>
