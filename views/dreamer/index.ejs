@@ -34,9 +34,7 @@
                   <li><a href="/dreamers/<%= user._id %>">Profile</a></li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/logout">Log Out</a></li>
-              <% } else { %>
-                  <li><a href="/auth/google">Login with Google</a></li>
-              <% } %>
+              <% }%>
           </ul>
   </div>
 
@@ -114,9 +112,17 @@
             if(confirm){} else {e.preventDefault()}
         })
       </script>
-    
+      </main>
+  </section>
 	    <% } else { %>
-        <p>To access this page you must be logged in</p>
+      
+      </div>
+
+      </script>
+    </main>
+    
+</section>
+        <h1 id="logged-in">You must be logged in to view this page.</h1>
 
         <div id="dreamweaver-index-title">
           
@@ -128,8 +134,8 @@
     
    
  
-  </section>
-</main>
+  
+
 </div>
 </body>
 
