@@ -45,6 +45,10 @@
       <div class="dream-box">
           <h3 id="title"><%= dream.dream %> </h3>
           <div id="obstacles-comments">
+            <div class="bio">
+                <h3><%= dreamer.name.split(' ')[0] %>'s story: </h3>
+                <p><%= dreamer.profile ? dreamer.profile : `${dreamer.name.split(' ')[0]} has not shared their story yet. Comment on their dream to inspire them!`  %></p>
+            </div>
           <div class="obstacles">
               <h3>Obstacles</h3>
               <ol>
