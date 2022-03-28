@@ -38,6 +38,7 @@ As a user, I want to be able to delete my comments.
 As a user, I want to be able to sign in with my google credentials.
 
 WIREFRAMES:
+
 Landing Page (User/Non-User) 
 ![Home](https://user-images.githubusercontent.com/90972554/160488374-8529d80a-b251-4682-9886-71e2f69932d7.png)
 Home Page (User Only)
