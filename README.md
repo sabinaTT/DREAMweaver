@@ -56,11 +56,12 @@ View Other User's Dream Page
 Add Comment To Other User's Dream Page
 ![Comment on another's dream](https://user-images.githubusercontent.com/90972554/160488562-3f9549d9-58f9-4af4-8c4f-50c12d6423b8.png)
 
-FLOW CHART LINK:
-https://user-images.githubusercontent.com/93886062/152926676-3b46dab2-c192-4a02-830e-7fe8ab0815a7.png
+USER FLOW:
+<img width="873" alt="user flow" src="https://user-images.githubusercontent.com/90972554/160488929-b4de911e-734d-44d1-80f5-ff34e44a6b9c.png">
 
-ERD LINK:
-https://user-images.githubusercontent.com/93886062/152926691-6849926c-b1c9-4c62-a5cd-957fa4f896cf.png
+ERD:
+<img width="1060" alt="erd" src="https://user-images.githubusercontent.com/90972554/160488959-36902503-2341-49e3-9f0b-717708876fae.png">
+
 
 
 
