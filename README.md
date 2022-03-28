@@ -37,23 +37,23 @@ As a user, I want to be able to edit my comments.
 As a user, I want to be able to delete my comments.
 As a user, I want to be able to sign in with my google credentials.
 
-WIREFRAMES LINKS:
+WIREFRAMES:
 Landing Page (User/Non-User) 
-https://user-images.githubusercontent.com/93886062/152926718-ea181f8e-89ab-47cf-ad58-760ccfa11dfa.png
+![Home](https://user-images.githubusercontent.com/90972554/160488374-8529d80a-b251-4682-9886-71e2f69932d7.png)
 Home Page (User Only)
-https://user-images.githubusercontent.com/93886062/152926733-cd4530fd-3dad-4b9f-8e42-4b7cdff53839.png
+![Logged in user's home page](https://user-images.githubusercontent.com/90972554/160488426-261720a7-6bad-4886-b740-ed661c423ce8.png)
 About Page
-https://user-images.githubusercontent.com/93886062/152926743-e0dabbad-75e4-4c14-9d5f-cce6c012b4f8.png
+![About](https://user-images.githubusercontent.com/90972554/160488461-6d84b808-abba-4271-9a2c-d9efcae4b4b3.png)
 Profile Page
-https://user-images.githubusercontent.com/93886062/152926754-ea0bfec4-c303-4c33-8b92-93497a5450b6.png
+![Profile](https://user-images.githubusercontent.com/90972554/160488485-e7c6f5ef-8785-4b58-ba07-b294d7a0bb6b.png)
 Create Dream Page
-https://user-images.githubusercontent.com/93886062/152926765-b617a9da-95e9-4c03-a1b1-749403987954.png
+![Add a new dream_edit existing](https://user-images.githubusercontent.com/90972554/160488518-8a78c186-f06c-4623-97e2-a011c4ee78df.png)
 View Own Dream Page
-https://user-images.githubusercontent.com/93886062/152926778-36c18cd8-e57c-4ccc-ae02-1d5a8636be0d.png
+![View own dream](https://user-images.githubusercontent.com/90972554/160488535-093ac519-dad7-4ecc-b968-d68d261b9b7c.png)
 View Other User's Dream Page
-https://user-images.githubusercontent.com/93886062/152926795-2fe1a746-9626-41da-a9c1-8b8782963860.png
+![View other user's dream](https://user-images.githubusercontent.com/90972554/160488547-08dc2a08-7d85-40f0-bd9d-82740eac07ad.png)
 Add Comment To Other User's Dream Page
-https://user-images.githubusercontent.com/93886062/152926805-3fed4c33-073a-425b-9eca-789c125151a3.png
+![Comment on another's dream](https://user-images.githubusercontent.com/90972554/160488562-3f9549d9-58f9-4af4-8c4f-50c12d6423b8.png)
 
 FLOW CHART LINK:
 https://user-images.githubusercontent.com/93886062/152926676-3b46dab2-c192-4a02-830e-7fe8ab0815a7.png
